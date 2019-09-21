@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/devices.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Phone EchoRP</title>
+</head>
+<body>
+    <div id="content" class="section section-device" v-if="draw">
+        <div :id="phoneContainerGrid" class="container grid-xl text-center">
+          <h3 class="s-title">
+          <div class="columns">
+            <div class="column col-12">
+            
+              <div :class="phoneDeviceDiv">
+                <div class="device-frame" v-on:click="drawMenu(1)" v-bind:style="{ background: appStyle }">
+                    <span id="phone_bar_time" v-bind:style="{ color: timeStyle }">{{currentHours}}:{{currentMinutes}}</span>
+                    <img src="styles/img/bars.png" class="iphonex-bars" v-if="app == 0"></img>
+                    <img src="styles/img/bars_dark.png" class="iphonex-bars" v-if="app == 1"></img>
+                    <template  v-if="drawLock == false && app == 0">
+                      <div id="apps">
+                        <div class="iphone-apps">
+                          <img class="icon-app" src="styles/img/App Icons/Messages.png"></img>
+                          <h4 class="app-name">Сообщения</h4>
+                        </div>
+                        <div class="iphone-apps">
+                          <img class="icon-app" src="styles/img/App Icons/Wallet.png"></img>
+                          <h4 class="app-name">Банк</h4>
+                        </div>
+                        <div class="iphone-apps">
+                          <img class="icon-app" src="styles/img/App Icons/Notes.png"></img>
+                          <h4 class="app-name">Заметки</h4>
+                        </div>
+                        <div class="iphone-apps" v-on:click="selectApp(1)">
+                          <img class="icon-app" src="styles/img/App Icons/Settings.png"></img>
+                          <h4 class="app-name">Настройки</h4>
+                        </div>
+                  
+                      </div>
+                      <div id="iphone-bottom-apps">
+                          <div class="iphone-apps">
+                              <img class="icon-app" src="styles/img/App Icons/Phone.png"></img>
+                            </div>
+                            <div class="iphone-apps">
+                              <img class="icon-app" src="styles/img/App Icons/Contacts.png"></img>
+                            </div>
+                            <div class="iphone-apps">
+                              <img class="icon-app" src="styles/img/App Icons/GPS.png"></img>
+                            </div>
+                            <div class="iphone-apps">
+                              <img class="icon-app" src="styles/img/App Icons/Settings.png"></img>
+                            </div>
+                      </div>
+                      <img id="bg-bottom-apps" src="styles/img/App Icons/Background.png"></img>
+                    </template>
+                  <template v-if="app == 1">
+                    <div id="settings">
+                      <h1 class="app-title">Настройки</h1>
+                      <hr>
+                      <input type="checkbox" class="checkbox" id="checkbox" />
+                      <span>Я переключаю чекбокс</span>
+                    </div>
+                  </template>
+                      
+                  <span id="time" v-if="drawLock">{{currentHours}}:{{currentMinutes}}</span>
+                  <img src="styles/img/bg-01.jpg" class="device-content" v-if="app == 0"></img>  
+                </div>
+              
+                <div class="device-header"></div>
+                <div class="device-sensors"></div>
+                <div class="device-btns"></div>
+                <div class="device-home"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+<script src="phone.js"></script>
+</html>
