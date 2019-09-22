@@ -103,7 +103,7 @@ namespace Wave.Database
                     {
                         account.status = 0;
                         return account;
-                    };
+                    }
                 }
             }
 

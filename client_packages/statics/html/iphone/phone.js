@@ -15,7 +15,7 @@ var devicesApp = new Vue({
       },
       selectApp(event) {
         this.app = event;
-        if (event == 1) {
+        if (event == 1 || event == 5) {
           this.timeStyle = "#222";
         } else if (event == 0) this.timeStyle = "#fff"
       },
@@ -28,6 +28,12 @@ var devicesApp = new Vue({
       },
       createNote(){
         alert(this.createNoteContent + this.createNoteTitle);
+      },
+      nbutton(key){
+        if(key == 'del') this.number = this.number.substring(0, this.number.length - 1);
+        else {
+          if(this.number.length < 8) this.number += key;
+        }
       },
       setWallpaper(id){
         switch (id) {
@@ -75,6 +81,7 @@ var devicesApp = new Vue({
       noteTitle: [],
       noteContent: [],
       createNoteTitle: '',
-      createNoteContent: ''
+      createNoteContent: '',
+      number: ''
     }
   })
