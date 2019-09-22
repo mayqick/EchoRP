@@ -1,0 +1,12 @@
+﻿<meta>
+  <info name="Wave RolePlay" author="Oniel, LexKreyn" type="script" />
+  <script src="compiled/netcoreapp2.1/Wave.dll"/>
+  <!-- Настройки базы данных -->
+  <settings>
+    <setting name="host" value="localhost"/>
+    <setting name="username" value="root"/>
+    <setting name="password" value=""/>
+    <setting name="database" value="waverp"/>
+  </settings>
+
+</meta>

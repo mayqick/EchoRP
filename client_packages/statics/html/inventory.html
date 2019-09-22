@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/inventory.css">
+    <link rel="stylesheet" href="./css/inventory.css">
+
+    <link rel="stylesheet" href="../js/libs/jquery/jquery.contextMenu.min.css">
+    <title>Inventory</title>
+</head>
+<body>
+    <main>
+        <div class="inventory-conteiner">
+            <div class="inventory-conteiner_main">
+                <div class="inventory-conteiner_header">
+                    <section>
+                        <img src="../images/icons/money.png" alt="">
+                        <p id="moneyCount">$</p>
+                    </section>
+                    <section>
+                        <img src="../images/icons/card.png" alt="">
+                        <p id="cardMoneyCount">$</p>
+                    </section>
+                </div>
+                <div class="inventory-conteiner_text" text-fch>
+                    <p id="characterName">Player, Ваш:</p>
+                </div>
+                <div class="inventory-conteiner_title" nth-bl style="margin-top: 0;">
+                    <section>
+                        <h1>Инвентарь</h1>
+                    </section>
+                    <section>
+                        <p>Общий вес:</p>
+                        <p id="mainWeight">0 KG / 25 KG</p>
+                    </section>
+                </div>
+                <div class="inventory-conteiner_items">
+                    <div class="inventory-conteiner_item" id="cell0" ondragstart="dragStartCell(0)"></div>
+                    <div class="inventory-conteiner_item" id="cell1" ondragstart="dragStartCell(1)"></div> <!--<div class="item-content" id="gun01"><img src="./images/icons/gun.png" alt="" id="gun"><span>1</span></div></div>-->
+                    <div class="inventory-conteiner_item" id="cell2" ondragstart="dragStartCell(2)"></div>
+                    <div class="inventory-conteiner_item" id="cell3" ondragstart="dragStartCell(3)"></div>
+                    <div class="inventory-conteiner_item" id="cell4" ondragstart="dragStartCell(4)"></div>
+                    <div class="inventory-conteiner_item" id="cell5" ondragstart="dragStartCell(5)"></div>
+                    <div class="inventory-conteiner_item" id="cell6" ondragstart="dragStartCell(6)"></div>
+                    <div class="inventory-conteiner_item" id="cell7" ondragstart="dragStartCell(7)"></div>
+                    <div class="inventory-conteiner_item" id="cell8" ondragstart="dragStartCell(8)"></div>
+                    <div class="inventory-conteiner_item" id="cell9" ondragstart="dragStartCell(9)"></div>
+                    <div class="inventory-conteiner_item" id="cell10" ondragstart="dragStartCell(10)"></div>
+                </div>
+                <div class="inventory-conteiner_title" nth-bl id="backpack_title">
+                    <section>
+                        <h2>Рюкзак</h2>
+                    </section>
+                    <section style="padding-top: 10px;">
+                        <p style="font-size: 1.5em;">Общий вес: <span id="backpackWeight">17KG / 25KG</span></p>
+                    </section>
+                </div>
+                <div class="inventory-conteiner_items" id="backpack">
+                    <div class="inventory-conteiner_item" id="bcell0" ondragstart="dragStartBCell(0)"></div>
+                    <div class="inventory-conteiner_item" id="bcell1" ondragstart="dragStartBCell(1)"></div>
+                    <div class="inventory-conteiner_item" id="bcell2" ondragstart="dragStartBCell(2)"></div>
+                    <div class="inventory-conteiner_item" id="bcell3" ondragstart="dragStartBCell(3)"></div>
+                    <div class="inventory-conteiner_item" id="bcell4" ondragstart="dragStartBCell(4)"></div>
+                    <div class="inventory-conteiner_item" id="bcell5" ondragstart="dragStartBCell(5)"></div>
+                    <div class="inventory-conteiner_item" id="bcell6" ondragstart="dragStartBCell(6)"></div>
+                    <div class="inventory-conteiner_item" id="bcell7" ondragstart="dragStartBCell(7)"></div>
+                    <div class="inventory-conteiner_item" id="bcell8" ondragstart="dragStartBCell(8)"></div>
+                    <div class="inventory-conteiner_item" id="bcell9" ondragstart="dragStartBCell(9)"></div>
+                    <div class="inventory-conteiner_item" id="bcell10" ondragstart="dragStartBCell(10)"></div>
+                </div>
+            </div>
+            <div class="inventory-conteiner_items-sliders">
+                <div class="inventory-conteiner_items-slider"></div>
+                <div class="inventory-conteiner_items-slider" id="backpack_slider"></div>
+            </div>
+            <div class="inventory-conteiner_side">
+                <div class="inventory-conteiner_side-item"><img src="../images/icons/1.png" alt=""></div>
+                <div class="inventory-conteiner_side-item"><img src="../images/icons/2.png" alt=""></div>
+                <div class="inventory-conteiner_side-item"><img src="../images/icons/3.png" alt=""></div>
+                <div class="inventory-conteiner_side-item"><img src="../images/icons/4.png" alt=""></div>
+                <div class="inventory-conteiner_side-item"><img src="../images/icons/5.png" alt=""></div>
+                <div class="inventory-conteiner_side-item"><img src="../images/icons/6.png" alt=""></div>
+                <div class="inventory-conteiner_side-item" item-selected><img src="../images/icons/7.png" alt=""></div>
+                <div class="inventory-conteiner_side-item"><img src="./images/icons/8.png" alt=""></div>
+                <div class="inventory-conteiner_side-item" item-selected><img src="../images/icons/9.png" alt=""></div>
+                <div class="inventory-conteiner_side-item" item-selected><img src="../images/icons/10.png" alt=""></div>
+            </div>
+            <div class="inventory-conteiner_side-slider"></div>
+        </div>
+    </main>
+    <div class="guns">
+        <div class="guns-item">
+            <div class="guns-item_hand">
+                <img src="../images/icons/hand.png" alt="">
+                <p>Левая рука</p>
+            </div>
+        </div>
+        <div class="guns-item">
+            <div class="guns-item_hand">
+                <img src="../images/icons/hand.png" alt="">
+                <p>Правая рука</p>
+            </div>
+        </div>
+    </div>
+    <script src="../js/libs/jquery/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../js/libs/jquery/jquery.contextMenu.min.js"></script>
+    <script src="../js/libs/jquery/jquery.ui.position.js"></script>
+    <script src="../js/invetory.js"></script>
+</body>
+</html>

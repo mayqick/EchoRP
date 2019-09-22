@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/chat.css">
+</head>
+
+<body>
+
+<ul id="scope-bar">
+  <li>
+    <input type="radio" name="tab-switcher" id="Say" value="Say" onclick="ChatModeChanged(1)"/><label for="Say">Говорить</label>
+  </li>
+  <li>
+    <input type="radio" name="tab-switcher" id="Yell" value="Yell" onclick="ChatModeChanged(2)"/><label for="Yell">Кричать</label>
+  </li>
+  <li>
+    <input type="radio" name="tab-switcher" id="Whisper" value="Whisper" onclick="ChatModeChanged(3)"/><label for="Whisper">Шептать</label>
+  </li>
+  <li>
+    <input type="radio" name="tab-switcher" id="Ooc" value="Ooc" onclick="ChatModeChanged(4)"/><label for="Ooc">OOC-чат</label>
+  </li>
+  <li>
+    <input type="radio" name="tab-switcher" id="me" value="me" onclick="ChatModeChanged(5)"/><label for="me">/ME</label>
+  </li>
+  <li>
+    <input type="radio" name="tab-switcher" id="do" value="do" onclick="ChatModeChanged(6)"/><label for="do">/DO</label>
+  </li>
+  <li>
+    <input type="radio" name="tab-switcher" id="try" value="try" onclick="ChatModeChanged(7)"/><label for="try">/TRY</label>
+  </li>
+</ul>
+<p id="output"></p>
+</body>
+</html>
+<script src="../js/chat.js"></script>
+

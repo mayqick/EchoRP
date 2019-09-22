@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class='container-fluid'>
+
+        <div id='center__items'>
+            <img src="../images/arrow_left.png" alt="" id="back_arrow" onclick='backToAuth()' style="display: none;">
+            <div id='main_box'>
+
+                <div id="auth_main">
+                    <div><img id='waves' src="../images/characters_view/wave.png"></div>
+
+                    <div id='box-header'>
+                        <div id='logo' class='col-md-6 text-center'>
+                            <img src='../images/characters_view/logo.png' width='80%'>
+                        </div>
+
+                        <div id='project_name' class='col-md-6'>
+                            Wave project RolePlay
+                        </div>
+                    </div>
+
+                    <div id='reg' class='col-md-10 col-md-offset-1'>Авторизация</div>
+
+                    <div id='forms' class='col-md-10 col-md-offset-1'>
+                        <p id='info'>Чтобы войти на аккаунт, заполните поля, которые вы указывали при регистрации.
+                        </p>
+                        <p id='error'>Аккаунт с таким Email или паролем не найден.</p>
+
+                        <input type='text' placeholder='Логин' class='i_mail' id='login'>
+                        <input type='password' placeholder='Пароль' class='i_mail' id='password'>
+                        <input type='password' placeholder='Подтверждение пароля' class='i_mail' id='password_again'
+                            style="display: none;">
+                        <input type='number' placeholder='Промокод от друга' class='i_mail' id='promo'
+                            style="display: none;">
+
+                        <div class='col-md-12'>
+                            <button id='auth_btn' onclick='authAccount()'>Войти</button>
+                        </div>
+
+                        <br><br>
+                        <div class='text-center' id='recovery'>Восстановить пароль</div>
+                    </div>
+
+                </div>
+                <div id="reg_main">
+                    <div id='reg' class='col-md-10 col-md-offset-1' style="margin-top: 75px;">Регистрация</div>
+                    <p id="reg__info" class='col-md-10 col-md-offset-1'>Создать нового персонажа, это как создать новую
+                        жизнь</p>
+                    <button id='reg_btn' onclick='registerAccount()'>Регистрация</button>
+
+                    <img src="../images/reg_girl.png" alt="" style="float: right;" id="reg_girl">
+                    </img>
+                    <img src="../images/reg_image_mask.png" alt="" id="reg_mask_image">
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+<script src="../js/func.js"></script>
+
+</html>

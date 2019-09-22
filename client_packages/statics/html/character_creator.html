@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+        <script src="https://kit.fontawesome.com/e6662ce289.js"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/creator_test.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    </head>
+<body>
+
+<div class="sidebar_left">
+    <div class='sex_selector'>
+        <h1 class='creator__text'>Создание <br>персонажа</h1>
+        <button class='sex' id='male' onclick='setGender(0)' style="border: 3px solid #f7f7f7;"> <i class="fas fa-male" id='fa-male' style="color: #9335d9; font-size: 50px;"></i></button>
+        <button class='sex' id='female' onclick='setGender(1)'> <i class="fas fa-female" id='fa-female' style="font-size: 50px; color: #000000;"></i></button>
+    </div>
+    <div class='input_boxes'>
+            <input type="text" class="input_name" id="name_row"  placeholder="Имя">
+            <input type="text" class="input_name" id="surname_row" placeholder="Фамилия">
+    </div>
+            <div class='border_bottom' id="border_name"></div>
+            <div class='border_bottom' id="border_surname"></div>
+            
+            <span class='bdate__text'>Возаст персонажа:</span>
+            <input type="text" id='b_date' class="bdate" placeholder="ДД/ММ/ГГГГ">
+            <div class='border_bdate'></div>
+        <div class='menu'>
+            <div class="btn-group-vertical">
+            <button class='menu_button' id='heritage' onclick='show(1)'>Наследственность</button>
+            <button class='menu_button' id='person' onclick='show(2)'>Внешний вид</button>
+            <button class='menu_button' id='hair' onclick='show(3)'>Волосы и цвет</button>
+            <button class='menu_button' id='face' onclick='show(4)'>Черты лица</button>
+            <button class='menu_button' id='clothes' onclick='show(5)'>Одежда</button>
+        </div>
+        <h2 id="ttt"></h2>
+        <div class="end_buttons">
+            
+            <button class='canсel_button' onclick="cancel()"><p class="cansel_p"><i class="fas fa-ban" style="margin-right: 10px;"></i>Отменить</p></button>
+            <button class='accept_button' onclick="save()"><p class="accept_p"><i class="fas fa-check" style="margin-right: 10px;"></i>Подтвердить</p></button>
+        </div>
+        
+    </div>
+</div>
+    <div class="sidebar_right">
+        <h1 class='creator__text' id="sidebar_right_text" style="visibility: hidden">Опции раздела</h1>
+        <p class="info" id="info_text" style="visibility: hidden"></p>
+        <form id='settings_form' style="visibility: hidden">
+        <div id='enter_Heritage'>
+            <label class="range_info">Отец</label class="range_info">
+            <input type='range' min='0' max='45' step='1' value='0' id='shapeFather' oninput='updateShape()'>
+
+            <label class="range_info">Мать</label class="range_info">
+            <input type='range' min='0' max='45' step='1' value='0' id='shapeMather' oninput='updateShape()'>
+
+            <label class="range_info">Цвет кожи отца</label class="range_info">
+            <input type='range' min='0' max='45' step='1' value='0' id='skinFather' oninput='updateShape()'>
+
+            <label class="range_info">Цвет кожи матери</label class="range_info">
+            <input type='range' min='0' max='45' step='1' value='0' id='skinMather' oninput='updateShape()'>
+
+            <label class="range_info">Смешение формы:</label class="range_info">
+            <input type='range' min='0.0' max='1.0' step='0.1' value='0.5' id='shapeMix' oninput='updateShape()'>
+
+            <label class="range_info">Смешение кожи</label class="range_info">
+            <input type='range' min='0.0' max='1.0' step='0.1' value='0.5' id='skinMix' oninput='updateShape()'>
+        </div>
+        <div id='enter_Person'>
+            <label class="range_info">Шрамы</label class="range_info">
+            <input type='range' min='0' max='23' step='1' value='0' id='Blemishes' oninput='updateFace()'>
+
+            <label class="range_info">Брови</label class="range_info">
+            <input type='range' min='0' max='33' step='1' value='0' id='Eyebrows' oninput='updateFace()'>
+
+            <label class="range_info">Цвет бровей</label class="range_info">
+                <input type='range' min='0' max='100' step='1' value='0' id='Eyebrows_Color' oninput='updateFace()'>
+
+            <label class="range_info">Морщины</label class="range_info">
+            <input type='range' min='0' max='14' step='1' value='0' id='Ageing' oninput='updateFace()'>
+
+            <label class="range_info">Макияж</label class="range_info">
+            <input type='range' min='0' max='74' step='1' value='0' id='Makeup' oninput='updateFace()'>
+
+            <label class="range_info">Румянец</label class="range_info">
+            <input type='range' min='0' max='6' step='1' value='0' id='Blush' oninput='updateFace()'>
+
+            <label class="range_info">Цвет румянца</label class="range_info">
+            <input type='range' min='0' max='100' step='1' value='0' id='Blush_Color' oninput='updateFace()'>
+
+            <label class="range_info">Цвет лица</label class="range_info">
+            <input type='range' min='0' max='11' step='1' value='0' id='Complexion' oninput='updateFace()'>
+
+            
+            <label class="range_info">Солнечные ожоги</label class="range_info">
+            <input type='range' min='0' max='10' step='1' value='0' id='Sun_Damage' oninput='updateFace()'>
+
+            <label class="range_info">Помада </label class="range_info">
+            <input type='range' min='0' max='9' step='1' value='0' id='Lipstick' oninput='updateFace()'>
+
+            <label class="range_info">Цвет помады </label class="range_info">
+           <input type='range' min='0' max='100' step='1' value='0' id='Lipstick_Color' oninput='updateFace()'>
+
+            <label class="range_info">Родинки</label class="range_info">
+            <input type='range' min='0' max='17' step='1' value='0' id='Moles' oninput='updateFace()'>
+
+
+        </div>
+        <div id='enter_Hair'>
+            <label class="range_info">Волосы на лице</label class="range_info">
+            <input type='range' min='0' max='28' step='1' value='0' id='Facial_Hair' oninput='updateFace()'>
+
+            <label class="range_info">Волосы на груди</label class="range_info">
+            <input type='range' min='0' max='16' step='1' value='0' id='Chest_Hair' oninput='updateFace()'>
+
+            <label class="range_info">Цвет волос на груди</label class="range_info">
+            <input type='range' min='0' max='100' step='1' value='0' id='Chest_Hair_Color' oninput='updateFace()'>
+
+            <label class="range_info">Стиль волос</label class="range_info">
+            <input type='range' min='0' max='73' step='1' value='0' id='Hair_Style' oninput='updateHair()'>
+
+            <label class="range_info">Цвет волос 1</label class="range_info">
+            <input type='range' min='0' max='100' step='1' value='0' id='Hair_Color1' oninput='updateHair()'>
+            <label class="range_info">Цвет волос 2</label class="range_info">
+                <input type='range' min='0' max='100' step='1' value='0' id='Hair_Color2' oninput='updateHair()'>
+            
+            <label class="range_info">Борода</label class="range_info">
+            <input type='range' min='0' max='28' step='1' value='0' id='Beard_Model' oninput='updateHair()'>
+
+            <label class="range_info">Цвет бороды</label class="range_info">
+            <input type='range' min='0' max='100' step='1' value='0' id='Beard_Color' oninput='updateHair()'>
+        </div>
+        <div id='enter_Face'>
+            <label class="range_info">Ширина носа</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Nose_width' oninput='update_trueFace()'>
+
+            <label class="range_info">Высота носа</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Nose_height' oninput='update_trueFace()'>
+
+            <label class="range_info">Длина носа</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Nose_length' oninput='update_trueFace()'>
+
+            <label class="range_info">Высота кончика носа</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Nose_tip' oninput='update_trueFace()'>
+            
+            <label class="range_info">Сдвиг переносицы вверх и вниз</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Nose_bridge' oninput='update_trueFace()'>
+
+            <label class="range_info">Сдвиг переносицы</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Nose_bridge_shift' oninput='update_trueFace()'>
+
+            <label class="range_info">Высота бровей</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Brow_height' oninput='update_trueFace()'>
+
+            <label class="range_info">Ширина бровей</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Brow_width' oninput='update_trueFace()'>
+
+            <label class="range_info">Высота скул</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Cheekbone_height' oninput='update_trueFace()'>
+
+            <label class="range_info">Ширина скул</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Cheekbone_width' oninput='update_trueFace()'>
+
+            <label class="range_info">Ширина щек</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Cheeks_width' oninput='update_trueFace()'>
+
+            <label class="range_info">Глаза</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Eyes' oninput='update_trueFace()'>
+
+            <label class="range_info">Цвет глаз</label class="range_info">
+            <input type='range' min='0' max='31' step='1' value='0' id='Eye_Color' oninput='update_trueFace()'>
+
+            <label class="range_info">Губы</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Lips' oninput='update_trueFace()'>
+
+            <label class="range_info">Ширина челюсти</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Jaw_width' oninput='update_trueFace()'>
+
+            <label class="range_info">Высота челюсти</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Jaw_height' oninput='update_trueFace()'>
+
+            <label class="range_info">Длина подбородка</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Chin_length' oninput='update_trueFace()'>
+
+            <label class="range_info">Положение подбородка</label class="range_info">
+            <input type='range' min='0' max='1.0' step='0.1' value='0' id='Chin_position' oninput='update_trueFace()'>
+
+            <label class="range_info">Ширина подбородка</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Chin_width' oninput='update_trueFace()'>
+
+            <label class="range_info">Форма подбородка</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Chin_shape' oninput='update_trueFace()'>
+
+            <label class="range_info">Ширина шеи</label class="range_info">
+            <input type='range' min='-1.0' max='1.0' step='0.1' value='0' id='Neck_width' oninput='update_trueFace()'>
+        </div>
+        <div id='enter_Clothes'>
+            <label class="range_info">Верхняя часть туловища</label class="range_info">
+            <input type='range' min='1' max='3' step='1' value='1' id='top' oninput='updateClothes()'>
+
+            <label class="range_info">Нижняя часть туловища</label class="range_info">
+            <input type='range' min='1' max='3' step='1' value='1' id='legs' oninput='updateClothes()'>
+            
+            <label class="range_info">Обувь</label class="range_info">
+            <input type='range' min='1' max='3' step='1' value='1' id='feet' oninput='updateClothes()'>
+        </div>
+    </form>
+        
+    </div>
+
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js'></script>
+<script src="../js/input_range.js"></script>
+<script src="../js/creator.js"></script>
+</body>
+</html>

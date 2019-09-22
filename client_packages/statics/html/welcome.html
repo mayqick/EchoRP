@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" title="default" href="css/main.css">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&display=swap" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="./style.css">
+
+  
+</head>
+
+<body>
+    <h1>Добро пожаловать на Wave RolePlay!</h1>
+  <div class="circle-ripple" onclick='update()', id='rotate'>
+    
+      <a href="#" class="transition">
+       
+        <img src="img/logo.png">
+      </a>
+  </div>
+  
+  <script>
+   
+    var rect = document.getElementById('rotate');
+    var a = 1, b = 0, c = 0, d = 1, tx = 10, ty = 10, angle = 0, currentAngle;
+
+    function getAngleToRAD(){
+      if(angle === 360){
+        angle = 0;
+      }
+
+      return angle++ * Math.PI / 180;
+    }
+    
+
+    function update(){
+      currentAngle = getAngleToRAD();
+
+      rect.style.transform = 'matrix(' + Math.cos(currentAngle) + ',' + Math.sin(currentAngle) + ',' + -Math.sin(currentAngle) + ',' + Math.cos(currentAngle) + ',' + tx + ',' + tx + ')'
+      window.requestAnimationFrame(update);
+      showReg()
+    }
+
+
+  </script>
+<script src="../js/func.js"></script>
+</body>
+
+</html>
