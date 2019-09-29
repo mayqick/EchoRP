@@ -118,7 +118,7 @@ namespace Wave.Character
 
             });
             
-            Login.OnCharSelected(player, characterModel.characterName);
+            Auth.OnCharSelected(player, characterModel.characterName);
 
         }
         [RemoteEvent("setGender")]

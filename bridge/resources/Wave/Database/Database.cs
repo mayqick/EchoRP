@@ -25,6 +25,7 @@ namespace Wave.Database
         {
             // Узнаем статус аккаунта. 0 - не существует, -1 - забанен, иначе существует.
             // Эта простая проверка позволит понять, есть ли аккаунт в базе.
+            // Если аккаунт существует, то возвращаем токен и HWID для авторизации.
 
             AccountModel account = new AccountModel();
             account.status = 0;
@@ -33,7 +34,7 @@ namespace Wave.Database
             {
                 connection.Open();
                 MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT status FROM accounts WHERE socialName = @socialName LIMIT 1";
+                command.CommandText = "SELECT `serial`, `token` FROM `accounts` WHERE `socialName` = @socialName LIMIT 1";
                 command.Parameters.AddWithValue("@socialName", socialName);
 
                 using (MySqlDataReader reader = command.ExecuteReader())
@@ -41,12 +42,20 @@ namespace Wave.Database
                     if (reader.HasRows)
                     {
                         reader.Read();
-                        account.status = reader.GetInt16("status");
+                        account.status = 1;
+                        account.serial = reader.GetString("serial");
+                        account.token = reader.GetString("token");
+                        return account;
+                    }
+                    else
+                    {
+                        account.status = 0;
+                        return account;
                     }
                 }
+               
             }
 
-            return account;
         }
         public static AccountModel GetAccount(string login) 
         {
@@ -85,10 +94,10 @@ namespace Wave.Database
             {
                 connection.Open();
                 MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT status, donate, slot_3, slot_4 FROM accounts WHERE login = @login AND password = SHA2(@password, '256') LIMIT 1";
+                command.CommandText = "SELECT `status`, `donate`, `slot_3`, `slot_4` FROM `accounts` WHERE `login` = @login AND `password` = SHA2(@password, '256') LIMIT 1";
                 command.Parameters.AddWithValue("@login", login);
                 command.Parameters.AddWithValue("@password", password);
-
+                Console.WriteLine(command.CommandText);
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.HasRows)
@@ -110,28 +119,28 @@ namespace Wave.Database
             return account;
         }
 
-        public static bool RegisterAccount(string login, string socialName, string password, string promo, string regIp)
+        public static bool RegisterAccount(string socialName, string token, string hwid, string regIp)
         {
-            // Пароль в метод нужно передавать в открытом виде.
-            // Отправится он в хэше.
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                connection.Open();
-                MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT status FROM accounts WHERE login = @login LIMIT 1";
-                command.Parameters.AddWithValue("@login", login);
-                using (MySqlDataReader reader = command.ExecuteReader())
+                try
                 {
-                    if (reader.HasRows) return false;
+                    connection.Open();
+                    MySqlCommand command = connection.CreateCommand();
+                    command.CommandText = "INSERT INTO `accounts` (`socialName` , `token`, `serial`, `regIp`) VALUES(@socialName, @token, @serial, @regIp)";
+                    command.Parameters.AddWithValue("@socialName", socialName);
+                    command.Parameters.AddWithValue("@token", token);
+                    command.Parameters.AddWithValue("@serial", hwid);
+                    command.Parameters.AddWithValue("@regIp", regIp);
+                    command.ExecuteNonQuery();
+                    return true;
                 }
-                command.CommandText = "INSERT INTO `accounts` (`login`, `socialName` , `password`, `promo`, `regIp`) VALUES(@login, @socialName, SHA2(@password, '256'), @promo, @regIp)";
-                command.Parameters.AddWithValue("@socialName", socialName);
-                command.Parameters.AddWithValue("@password", password);
-                command.Parameters.AddWithValue("@promo", promo);
-                command.Parameters.AddWithValue("@regIp", regIp);
-                command.ExecuteNonQuery();
-                return true;
-                
+                catch (Exception ex)
+                {
+                    NAPI.Util.ConsoleOutput("[EXCEPTION RegisterAccount] " + ex.Message);
+                    NAPI.Util.ConsoleOutput("[EXCEPTION RegisterAccount] " + ex.StackTrace);
+                    return false;
+                }
             }
         }
 

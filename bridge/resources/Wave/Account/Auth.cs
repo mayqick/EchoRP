@@ -7,7 +7,7 @@ using Wave.Model;
 using Wave.Global;
 namespace Wave.Account
 {
-    class Login : Script
+    class Auth : Script
     {
         private void InitializePlayerData(Client player)
         {
@@ -66,29 +66,68 @@ namespace Wave.Account
             // Тут должна быть инициализация данных игрока.
             InitializePlayerData(player);
 
-            player.SetData("AuthCount", (int)0); // Устанавливаем счетчик попыток входа в сис-му на 0.
-            player.TriggerEvent("showAuthPage");
+            /*player.SetData("AuthCount", (int)0); // Устанавливаем счетчик попыток входа в сис-му на 0.
+            player.TriggerEvent("showAuthPage");*/
+            AuthPlayerAccount(player);
 
         }
+        // Создаем аккаунт пользователя.
+        [RemoteEvent("createAccount")]
+        public void AuthPlayerAccount(Client player)
+        {
+            AccountModel account = new AccountModel();
+            account = Database.Database.GetAccountBySocialName(player.SocialClubName);
+            if (account.status == 0) // Если аккаунта нет, то создаем его.
+            {
+                Random random = new Random();
+                string token = "";
 
+                Char[] pwdChars = new Char[36] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+                for (int i = 0; i < 31; i++)
+                    token += pwdChars[random.Next(0, 35)];
+
+                NAPI.Task.Run(() =>
+                {
+                    if (Database.Database.RegisterAccount(player.SocialClubName, token, player.Serial, player.Address))
+                        player.TriggerEvent("setToken", token);
+                });
+            }
+            else   
+            {
+                player.TriggerEvent("getToken");
+
+                while (player.HasData("token") == false)
+                {
+                    continue;
+                }
+                if (player.GetData("token") == account.token && player.Serial == account.serial)
+                    Console.WriteLine("Успешная авторизация.");
+                else Console.WriteLine("Неуспешная авторизация.");
+            }
+        }
+        [RemoteEvent("setTokenData")]
+        public void SetTokenToPlayerData(Client player, string token)
+        {
+            player.SetData("token", token);
+        }
         [RemoteEvent("loginAccount")]
         public void LoginToAccount(Client player, string login, string password)
         {
             NAPI.Task.Run(() =>
             {
-                int n = player.GetData("AuthCount");
+                int attempts = player.GetData("AuthCount");
 
                 AccountModel account = Database.Database.LoginAccount(login, password);
                 if (account.status == 0)
                 {
-                    if (n == 3)
+                    if (attempts == 3)
                     {
                         player.TriggerEvent("destroyBrowser");
                         player.Kick("Вы привысили количество попыток авторизации.");
                     }
                     else
                     {
-                        player.SetData("AuthCount", ++n);
+                        player.SetData("AuthCount", ++attempts);
                         player.TriggerEvent("showError");
                     }
                 }
