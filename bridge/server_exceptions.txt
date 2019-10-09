@@ -149,3 +149,79 @@ System.IO.FileNotFoundException: Could not load the specified file.
 File name: 'System.Net.Sockets.resources'
    at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
 =========================================================
+
+==================[07.10.2019 22:33:32]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[07.10.2019 22:33:32]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[07.10.2019 22:33:32]==================
+System.IO.IOException: Unable to read data from the transport connection: The connection was closed.
+   at int System.Net.Mail.SmtpReplyReaderFactory.ProcessRead(byte[] buffer, int offset, int read, bool readLine)
+=========================================================
+
+==================[07.10.2019 22:33:32]==================
+System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[07.10.2019 22:33:32]==================
+System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+=========================================================
+
+==================[07.10.2019 22:33:32]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================
+
+==================[07.10.2019 22:36:08]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[07.10.2019 22:36:09]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[07.10.2019 22:36:09]==================
+System.IO.IOException: Unable to read data from the transport connection: The connection was closed.
+   at int System.Net.Mail.SmtpReplyReaderFactory.ProcessRead(byte[] buffer, int offset, int read, bool readLine)
+=========================================================
+
+==================[07.10.2019 22:36:09]==================
+System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[07.10.2019 22:36:09]==================
+System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+=========================================================
+
+==================[07.10.2019 22:36:09]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================

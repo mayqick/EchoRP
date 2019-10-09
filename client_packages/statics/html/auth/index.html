@@ -5,36 +5,117 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="auth.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="js/vue-typed-js.css" />
+    <link rel="stylesheet" href="../ui/echo-ui.css" />
+    <script src="js/vue-typed-js.browser.js"></script>
+
 </head>
 
 <body>
-    <div class="container">
-        <h1 id="title">Йо!<br>Создадим аккаунт?</h1>
-        <div id="auth-button">
-            <span id="login-text">Есть аккаунт?</span>
-            <button id="login">Вход</button>
+    <div id="main">
+        <div class="container" id="main" v-bind:style="{ filter: blurType }">
+            <div class="actor">
+                <template v-if="show == 1">
+                    <transition name="fade">
+                        <div id="message-box" v-if="show">
+                            <h3 id="name">Джон</h3>
+                            <vue-typed-js
+                                :strings="['Привет! Я покажу тебе мир возможностей, но сперва подскажи свой email']">
+                                <h2 class="typing" id="typed-text"></h2>
+                            </vue-typed-js>
+
+                            <div id="holder"></div>
+                        </div>
+                    </transition>
+                    <transition name="slide-fade">
+                        <img src="images/character.png" alt="" id="character" v-if="show">
+                    </transition>
+                </template>
+                <template v-if="show == 2">
+                    <div id="message-box" v-if="show">
+                        <h3 id="name">Джон</h3>
+                        <vue-typed-js
+                            :strings="['Отлично! Осталось подтвердить Email. Я выслал тебе проверочный 4-х значный код, введи его.']">
+                            <h2 class="typing" id="typed-text"></h2>
+                        </vue-typed-js>
+
+                        <div id="holder"></div>
+                    </div>
+                    <img src="images/character.png" alt="" id="character" v-if="show">
+                </template>
+            </div>
+
+            <hr>
+
+            <div class="mail-enter">
+                <template v-if="show == 1">
+                    <input type="email" name="" class="echo-big-input" id="mail" autofocus placeholder="Твой email" />
+
+                    <button type="button" class="echo-button" type='submit' @click='this.app.renderType(2)'>Дальше
+                        <svg id="next_arrow" class="next_arrow" viewBox="0 0 35 35">
+                            <path d="M17.5001 23.3333L23.3334 17.5L17.5001 11.6666" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                            <path d="M11.6667 17.5H23.3334" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" fill="none" />
+                        </svg>
+                    </button>
+                </template>
+                <template v-if="show == 2">
+                    <input v-on:keyup="$event.target.nextElementSibling.focus()" type="number" name=""
+                        class="echo-big-input number-input" id="code-1" placeholder="0" />
+                    <input v-on:keyup="$event.target.nextElementSibling.focus()" type="number" name=""
+                        class="echo-big-input number-input" id="code-2" placeholder="0" />
+                    <input v-on:keyup="$event.target.nextElementSibling.focus()" type="number" name=""
+                        class="echo-big-input number-input" id="code-3" placeholder="0" />
+                    <input type="number" name="" class="echo-big-input number-input" id="code-4" placeholder="0" />
+                    <button type="button" class="echo-button" @click='this.app.renderType(3)'>Дальше
+                        <svg id="next_arrow" class="next_arrow" viewBox="0 0 35 35">
+                            <path d="M17.5001 23.3333L23.3334 17.5L17.5001 11.6666" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                            <path d="M11.6667 17.5H23.3334" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" fill="none" />
+                        </svg>
+
+                    </button>
+                </template>
+            </div>
+
+            <hr style="margin-top: 170px;">
+            <div class="footer">
+                <img id="social-logo" src="images/social.png">
+                <p id="social-text">Мы позаботились о том, чтобы ты не вводил каждый раз данные для входа, поэтому для
+                    авторизации используем твой аккаунт в Social Club. В целях безопасности нам нужен только твой email
+                    ;)
+                </p>
+            </div>
         </div>
-        <form class="main-form">
-            <input type="email" name="" id="" class="input-box" placeholder="Введите email">
-            <input type="password" name="" id="" class="input-box" placeholder="Пароль">
-            <input type="password" name="" id="" class="input-box" placeholder="Подтверждение пароля">
-        </form>
-        <div class="hr-line"></div>
-        <div class="continue">
-            <span
-                style="font-family: Montserrat; color: rgba(255, 255, 255, 0.23); letter-spacing: 0.02em; font-size: 14px;">перейдем
-                к выбору персонажа</span>
-            <button id="register" style="border: none; float: right;"><img src="images/arrow-right-circle.png" alt="" srcset="" class="social-icon"></button>
-            <div class="hr-line"></div>
-        </div>
-        <div class="social" style="
-        float: left; width: 120%; display: flex;">
-            <button href="" class="social-button"><img src="images/vkontakte.png" alt="" srcset="" class="social-icon"></button>
-            <button href="" class="social-button"><img src="images/google-plus.png" alt="" srcset="" class="social-icon"></button>
-            <button href="" class="social-button"><img src="images/facebook.png" alt="" srcset="" class="social-icon"></button>
-            <button href="" class="social-button"><img src="images/twitter.png" alt="" srcset="" class="social-icon"></button>
+
+        <div id="dialog" v-if="show == 3">
+            <img src="images/Ellipse.png" alt="" id="ellipse">
+            <div id="messages">
+                <div class="message-dialog" style="width: 319px; ">
+                    <div class="left-arrow"></div>
+                    <p class="dialog-ellipse-message">Секунду, занесу тебя в базу данных.</p>
+                </div>
+                <div class="message-dialog" style="width: 134px;">
+                    <div class="left-arrow"></div>
+                    <p class="dialog-ellipse-message">Готово :)</p>
+                </div>
+                <div class="message-dialog" style="width: 379px;">
+                    <div class="left-arrow"></div>
+                    <p class="dialog-ellipse-message">Теперь поработаем над твоей внешностью.</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 
+<script src="js/auth.js"></script>
+
 </html>
+<script>
+    app.renderType(1);
+</script>

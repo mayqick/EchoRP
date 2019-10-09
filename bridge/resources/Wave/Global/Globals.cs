@@ -23,6 +23,7 @@ namespace Wave.Global
         [ServerEvent(Event.ResourceStart)]
         public void OnResourceStart()
         {
+            Mail.SendMailToPlayer("iamoniel@yandex.ru", "Тестовое содержание", "iamoniel@yandex.ru");
             secondTimer = new Timer(OnSecondSpent, null, 1000, 1000);
             minuteTimer = new Timer(OnMinuteSpent, null, 60000, 60000);
         }

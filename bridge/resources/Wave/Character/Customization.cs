@@ -159,12 +159,6 @@ namespace Wave.Character
         }
         public static void ApplyPlayerClothes(Client player, List <ClothesModel> clothesModel)
         {
-            foreach (ClothesModel cloth in clothesModel)
-            {
-                Console.WriteLine(cloth.slot);
-                Console.WriteLine(cloth.drawable);
-                Console.WriteLine(cloth.texture);
-            }
             foreach (ClothesModel clothes in clothesModel)
             {
                 player.SetClothes(clothes.slot, clothes.drawable, clothes.texture);

@@ -17,7 +17,7 @@ namespace Wave.Database
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             
             Console.ForegroundColor = ConsoleColor.Green; // Зеленый цвет для строки.
-            Console.WriteLine("Подключение к базе данных успешно инициализировано.");
+            NAPI.Util.ConsoleOutput("Подключение к базе данных успешно инициализировано.");
             Console.ResetColor();
 
         }
@@ -97,7 +97,7 @@ namespace Wave.Database
                 command.CommandText = "SELECT `status`, `donate`, `slot_3`, `slot_4` FROM `accounts` WHERE `login` = @login AND `password` = SHA2(@password, '256') LIMIT 1";
                 command.Parameters.AddWithValue("@login", login);
                 command.Parameters.AddWithValue("@password", password);
-                Console.WriteLine(command.CommandText);
+                NAPI.Util.ConsoleOutput(command.CommandText);
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.HasRows)

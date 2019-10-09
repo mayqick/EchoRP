@@ -22,7 +22,7 @@ namespace Wave.Character
         [RemoteEvent("ChangeItemPosition")]
         public void OnPlayerItemMove(Client player, string from, string to)
         {
-            Console.WriteLine(from, to);
+            NAPI.Util.ConsoleOutput(from, to);
             NAPI.Task.Run(() =>
             {
                 Database.Database.ChangeItemPosition(player.GetData(EntityData.PLAYER_SQL_ID), from, to);

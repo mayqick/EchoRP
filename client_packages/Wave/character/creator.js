@@ -10,7 +10,6 @@ mp.events.add('showCreatorPage', () => {
     //sceneryCamera.pointAtCoord(-813.5496, 174.5891, 76.74077); 
     sceneryCamera.setActive(true);
     mp.game.cam.renderScriptCams(true, false, 0, true, false);
-    mp.events.call('destroyBrowser');
 
     playerData = new PlayerModel();
 	applyPlayerModelChanges();

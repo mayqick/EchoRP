@@ -68,7 +68,9 @@ namespace Wave.Account
 
             /*player.SetData("AuthCount", (int)0); // Устанавливаем счетчик попыток входа в сис-му на 0.
             player.TriggerEvent("showAuthPage");*/
-            AuthPlayerAccount(player);
+
+            Creator.OnCharCreate(player);
+            //AuthPlayerAccount(player);
 
         }
         // Создаем аккаунт пользователя.
@@ -101,8 +103,8 @@ namespace Wave.Account
                     continue;
                 }
                 if (player.GetData("token") == account.token && player.Serial == account.serial)
-                    Console.WriteLine("Успешная авторизация.");
-                else Console.WriteLine("Неуспешная авторизация.");
+                    NAPI.Util.ConsoleOutput("Успешная авторизация.");
+                else NAPI.Util.ConsoleOutput("Неуспешная авторизация.");
             }
         }
         [RemoteEvent("setTokenData")]
@@ -133,7 +135,7 @@ namespace Wave.Account
                 }
                 else
                 {
-                    Console.WriteLine("Игрок {0} вошел в игру и залогинился. SocialClub: {1}", login, player.SocialClubName);
+                    NAPI.Util.ConsoleOutput("Игрок {0} вошел в игру и залогинился. SocialClub: {1}", login, player.SocialClubName);
                     player.Name = login; // устанавливаем логин персонажа
                     // Получаем список персонажей в лист.
                     List<string> playerList = Database.Database.GetAccountCharacters(login);
@@ -142,7 +144,7 @@ namespace Wave.Account
                     player.TriggerEvent("destroyBrowser");
                     string characters = NAPI.Util.ToJson(playerList);
                     string charactersInformation = NAPI.Util.ToJson(charactersInfo);
-                    Console.WriteLine(charactersInformation);
+                    NAPI.Util.ConsoleOutput(charactersInformation);
                     player.TriggerEvent("showPlayerCharacters", characters, account.slot_3, account.slot_4, account.donate, login, charactersInformation);
                 }
             });
@@ -158,12 +160,12 @@ namespace Wave.Account
                 SkinModel skinModel = Database.Database.GetCharacterSkin(characterModel.id);
                 List<ClothesModel> clothesModel = Database.Database.GetCharacterClothes(characterModel.id);
 
-                Console.WriteLine(characterName + " вошел на сервер.");
+                NAPI.Util.ConsoleOutput(characterName + " вошел на сервер.");
 
                 LoadCharacterData(player, characterModel);
 
                 NAPI.Player.SetPlayerNametag(player, characterName);
-                Console.WriteLine("{0}", characterModel.sex);
+                NAPI.Util.ConsoleOutput("{0}", characterModel.sex);
                 NAPI.Player.SetPlayerSkin(player, characterModel.sex == 0 ? PedHash.FreemodeMale01 : PedHash.FreemodeFemale01);
                 // Устанавливаем внешний вид игроку (в том числе и волосы).
                 Customization.ApplyPlayerCustomization(player, skinModel, characterModel.sex);

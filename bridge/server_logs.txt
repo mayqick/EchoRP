@@ -551,3 +551,259 @@ Wave: loading remote events.. found 4 remote event(s)
 Wave: loaded 16 remote event(s)
 -> Resource Wave started!
 Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 02.10.2019 21:31:48
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loaded 16 remote event(s)
+-> Resource Wave started!
+Started! Waiting for connections..
+WARNING: "FreezePlayer" function is not implemented yet.
+WeirdNewbie покинул игру.
+WARNING: "FreezePlayer" function is not implemented yet.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 02.10.2019 21:38:46
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loaded 16 remote event(s)
+-> Resource Wave started!
+Started! Waiting for connections..
+WARNING: "FreezePlayer" function is not implemented yet.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 07.10.2019 19:27:29
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loaded 16 remote event(s)
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 07.10.2019 19:36:52
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loaded 16 remote event(s)
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 07.10.2019 22:33:03
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loaded 16 remote event(s)
+The operation has timed out.
+-> Error starting 'Wave'
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at GTANetworkInternals.ScriptingEngine.InvokeVoidMethod(String method, Object[] args)
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at GTANetworkInternals.EventHandler.ParseEx(Event _event, ScriptingEngine engine, Object[] arguments)
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at GTANetworkInternals.GameServer.StartResource(String resourceName, String parent)
+
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 07.10.2019 22:35:43
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loaded 16 remote event(s)
+The operation has timed out.
+-> Error starting 'Wave'
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at GTANetworkInternals.ScriptingEngine.InvokeVoidMethod(String method, Object[] args)
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at GTANetworkInternals.EventHandler.ParseEx(Event _event, ScriptingEngine engine, Object[] arguments)
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at GTANetworkInternals.GameServer.StartResource(String resourceName, String parent)
+
+Started! Waiting for connections..
