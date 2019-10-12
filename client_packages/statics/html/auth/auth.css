@@ -122,6 +122,17 @@ hr{
     border-radius: 100px; transition: 0.4s ease;}
     
     /*  */
+#suspect-text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.39);
+    margin-top: 40px;
+    margin-left: 50px;
+}
 #social-text{
     width: 384px;
     font-family: Montserrat;
@@ -169,7 +180,30 @@ hr{
 .footer{
     
 }
+#suspect-title{
+font-family: "Montserrat";
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 32px;
 
+letter-spacing: 0.02em;
+
+color: #FFFFFF;
+margin-top: 40px;
+margin-left: 50px;
+}
+.suspect{
+  background: rgba(211, 218, 255, 0.02);
+
+  border: 1px solid #1A1E26;
+  box-sizing: border-box;
+  
+  margin:0 auto;
+
+  height: 388px;
+  width: 477px;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */

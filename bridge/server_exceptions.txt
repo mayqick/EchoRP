@@ -225,3 +225,621 @@ System.Reflection.TargetInvocationException: Exception has been thrown by the ta
    at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
    at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
 =========================================================
+
+==================[10.10.2019 19:48:02]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:48:03]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:48:03]==================
+System.IO.IOException: Unable to read data from the transport connection: The connection was closed.
+   at int System.Net.Mail.SmtpReplyReaderFactory.ProcessRead(byte[] buffer, int offset, int read, bool readLine)
+=========================================================
+
+==================[10.10.2019 19:48:03]==================
+System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[10.10.2019 19:48:10]==================
+System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+=========================================================
+
+==================[10.10.2019 19:48:10]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================
+
+==================[10.10.2019 19:49:16]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:49:16]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:49:16]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+=========================================================
+
+==================[10.10.2019 19:49:16]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[10.10.2019 19:49:16]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+=========================================================
+
+==================[10.10.2019 19:49:16]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================
+
+==================[10.10.2019 19:50:15]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:50:15]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:50:15]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+=========================================================
+
+==================[10.10.2019 19:50:15]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[10.10.2019 19:50:15]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+=========================================================
+
+==================[10.10.2019 19:50:15]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================
+
+==================[10.10.2019 19:52:46]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:52:46]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:52:46]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+=========================================================
+
+==================[10.10.2019 19:52:46]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[10.10.2019 19:52:46]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+=========================================================
+
+==================[10.10.2019 19:52:46]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================
+
+==================[10.10.2019 19:54:08]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:54:09]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:54:09]==================
+System.FormatException: The specified string is not in the form required for an e-mail address.
+   at int System.Net.Mail.MailAddressParser.ReadCfwsAndThrowIfIncomplete(string data, int index)
+=========================================================
+
+==================[10.10.2019 19:54:09]==================
+System.FormatException: The specified string is not in the form required for an e-mail address.
+   at int System.Net.Mail.MailAddressParser.ReadCfwsAndThrowIfIncomplete(string data, int index)
+   at string System.Net.Mail.MailAddressParser.ParseDomain(string data, ref int index)
+   at MailAddress System.Net.Mail.MailAddressParser.ParseAddress(string data, bool expectMultipleAddresses, ref int index)
+   at MailAddress System.Net.Mail.MailAddressParser.ParseAddress(string data)
+   at new System.Net.Mail.MailAddress(string address, string displayName, Encoding displayNameEncoding)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 17
+=========================================================
+
+==================[10.10.2019 19:54:09]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.FormatException: The specified string is not in the form required for an e-mail address.
+   at int System.Net.Mail.MailAddressParser.ReadCfwsAndThrowIfIncomplete(string data, int index)
+   at string System.Net.Mail.MailAddressParser.ParseDomain(string data, ref int index)
+   at MailAddress System.Net.Mail.MailAddressParser.ParseAddress(string data, bool expectMultipleAddresses, ref int index)
+   at MailAddress System.Net.Mail.MailAddressParser.ParseAddress(string data)
+   at new System.Net.Mail.MailAddress(string address, string displayName, Encoding displayNameEncoding)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 17
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================
+
+==================[10.10.2019 19:54:37]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:54:37]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:54:37]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+=========================================================
+
+==================[10.10.2019 19:54:37]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[10.10.2019 19:54:37]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+=========================================================
+
+==================[10.10.2019 19:54:37]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 37
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================
+
+==================[10.10.2019 19:57:31]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:57:31]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[10.10.2019 19:57:31]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+=========================================================
+
+==================[10.10.2019 19:57:31]==================
+System.Net.Mail.SmtpException: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[10.10.2019 19:57:31]==================
+System.Exception: Mail.Send: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void Wave.Global.Mail.SendMail(string smtpServer, string from, string password, string mailto, string caption, string message, string attachFile) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 34
+=========================================================
+
+==================[10.10.2019 19:57:31]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Exception: Mail.Send: Bad sequence of commands. The server response was: 5.5.4 Error: send AUTH command first.
+   at void Wave.Global.Mail.SendMail(string smtpServer, string from, string password, string mailto, string caption, string message, string attachFile) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 34
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================
+
+==================[11.10.2019 13:49:07]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 13:49:07]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 13:49:07]==================
+System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Access denied - Invalid HELO name (See RFC2821 4.1.1.1)
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+=========================================================
+
+==================[11.10.2019 13:49:07]==================
+System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Access denied - Invalid HELO name (See RFC2821 4.1.1.1)
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[11.10.2019 13:49:07]==================
+System.Exception: Mail.Send: Mailbox unavailable. The server response was: Access denied - Invalid HELO name (See RFC2821 4.1.1.1)
+   at void Wave.Global.Mail.SendMail(string smtpServer, string from, string password, string mailto, string caption, string message, string attachFile) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 34
+=========================================================
+
+==================[11.10.2019 13:49:08]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Exception: Mail.Send: Mailbox unavailable. The server response was: Access denied - Invalid HELO name (See RFC2821 4.1.1.1)
+   at void Wave.Global.Mail.SendMail(string smtpServer, string from, string password, string mailto, string caption, string message, string attachFile) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 34
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================
+
+==================[11.10.2019 13:55:46]==================
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'System.Net.Sockets.NetworkStream'.
+   at void System.Net.Sockets.NetworkStream.Write(byte[] buffer, int offset, int size)
+=========================================================
+
+==================[11.10.2019 13:55:46]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 13:55:46]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 13:55:46]==================
+System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[11.10.2019 13:55:46]==================
+System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 38
+=========================================================
+
+==================[11.10.2019 13:55:46]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 38
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================
+
+==================[11.10.2019 13:56:39]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 13:56:39]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 13:56:39]==================
+System.IO.IOException: Unable to read data from the transport connection: The connection was closed.
+   at int System.Net.Mail.SmtpReplyReaderFactory.ProcessRead(byte[] buffer, int offset, int read, bool readLine)
+=========================================================
+
+==================[11.10.2019 13:56:39]==================
+System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[11.10.2019 13:56:39]==================
+System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 38
+=========================================================
+
+==================[11.10.2019 13:56:39]==================
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.Net.Mail.SmtpException: The operation has timed out.
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at void Wave.Global.Mail.SendMailToPlayer(string targetAdress, string msgTitle, string msg) in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Mail.cs:line 38
+   at void Wave.Global.Globals.OnResourceStart() in C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\Global\Globals.cs:line 26
+   --- End of inner exception stack trace ---
+   at object RuntimeMethodHandle.InvokeMethod(object target, object[] arguments, Signature sig, bool constructor, bool wrapExceptions)
+   at object System.Reflection.RuntimeMethodInfo.Invoke(object obj, BindingFlags invokeAttr, Binder binder, object[] parameters, CultureInfo culture)
+=========================================================
+
+==================[11.10.2019 14:04:35]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 14:04:35]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 14:04:35]==================
+System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Access denied - Invalid HELO name (See RFC2821 4.1.1.1)
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+=========================================================
+
+==================[11.10.2019 14:04:35]==================
+System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Access denied - Invalid HELO name (See RFC2821 4.1.1.1)
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.EndSend(IAsyncResult result)
+   at void System.Net.Mail.SendMailAsyncResult.SendMailFromCompleted(IAsyncResult result)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:04:35]==================
+System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Access denied - Invalid HELO name (See RFC2821 4.1.1.1)
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.EndSend(IAsyncResult result)
+   at void System.Net.Mail.SendMailAsyncResult.SendMailFromCompleted(IAsyncResult result)
+   at MailWriter System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at void System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:08:29]==================
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен
+   at IPHostEntry System.Net.Dns.InternalGetHostByName(string hostName)
+=========================================================
+
+==================[11.10.2019 14:08:30]==================
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at void System.Net.Mail.SmtpConnection.Abort()
+=========================================================
+
+==================[11.10.2019 14:08:30]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 14:08:30]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 14:08:30]==================
+System.Net.Mail.SmtpException: Failure sending mail. ---> System.Net.Sockets.SocketException: Этот хост неизвестен
+   at IPHostEntry System.Net.Dns.InternalGetHostByName(string hostName)
+   at IPAddress[] System.Net.Dns.GetHostAddresses(string hostNameOrAddress)
+   at void System.Net.Sockets.TcpClient.Connect(string hostname, int port)
+   at void System.Net.Mail.SmtpConnection.GetConnection(string host, int port)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- End of inner exception stack trace ---
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[11.10.2019 14:09:18]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 14:09:18]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 14:09:18]==================
+System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Access denied - Invalid HELO name (See RFC2821 4.1.1.1)
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+=========================================================
+
+==================[11.10.2019 14:09:18]==================
+System.Net.Mail.SmtpException: Mailbox unavailable. The server response was: Access denied - Invalid HELO name (See RFC2821 4.1.1.1)
+   at void System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, string response)
+   at void System.Net.Mail.MailCommand.Send(SmtpConnection conn, byte[] command, MailAddress from, bool allowUnicode)
+   at MailWriter System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, string deliveryNotify, bool allowUnicode, out SmtpFailedRecipientException exception)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[11.10.2019 14:09:42]==================
+System.Net.Sockets.SocketException (11001): Этот хост неизвестен
+   at IPHostEntry System.Net.Dns.InternalGetHostByName(string hostName)
+=========================================================
+
+==================[11.10.2019 14:09:42]==================
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at void System.Net.Mail.SmtpConnection.Abort()
+=========================================================
+
+==================[11.10.2019 14:09:42]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 14:09:42]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Mail.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[11.10.2019 14:09:42]==================
+System.Net.Mail.SmtpException: Failure sending mail. ---> System.Net.Sockets.SocketException: Этот хост неизвестен
+   at IPHostEntry System.Net.Dns.InternalGetHostByName(string hostName)
+   at IPAddress[] System.Net.Dns.GetHostAddresses(string hostNameOrAddress)
+   at void System.Net.Sockets.TcpClient.Connect(string hostname, int port)
+   at void System.Net.Mail.SmtpConnection.GetConnection(string host, int port)
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- End of inner exception stack trace ---
+   at void System.Net.Mail.SmtpClient.Send(MailMessage message)
+=========================================================
+
+==================[11.10.2019 14:11:04]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 213.180.193.125:465
+   at void System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+=========================================================
+
+==================[11.10.2019 14:11:25]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 213.180.204.125:465
+   at void System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+=========================================================
+
+==================[11.10.2019 14:12:43]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 213.180.193.125:25
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:13:04]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 213.180.204.125:25
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:14:06]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 213.180.193.125:465
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:14:27]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 213.180.204.125:465
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:14:48]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 87.250.250.125:465
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:17:21]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 213.180.204.125:25
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:19:37]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 213.180.204.125:465
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:19:58]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 93.158.134.125:465
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:21:01]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 87.250.250.125:465
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:21:22]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 87.250.251.125:465
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:21:43]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 93.158.134.125:465
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================
+
+==================[11.10.2019 14:22:04]==================
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (10060): Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера 213.180.193.125:465
+   at void System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+=========================================================

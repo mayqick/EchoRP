@@ -48,7 +48,7 @@
                 </template>
             </div>
 
-            <hr>
+            <hr v-if="show == 1 || show == 2 || show == 3">
 
             <div class="mail-enter">
                 <template v-if="show == 1">
@@ -83,8 +83,8 @@
                 </template>
             </div>
 
-            <hr style="margin-top: 170px;">
-            <div class="footer">
+            <hr style="margin-top: 170px;" v-if="show == 1 || show == 2 || show == 3">
+            <div class="footer" v-if="show == 1 || show == 2 || show == 3">
                 <img id="social-logo" src="images/social.png">
                 <p id="social-text">Мы позаботились о том, чтобы ты не вводил каждый раз данные для входа, поэтому для
                     авторизации используем твой аккаунт в Social Club. В целях безопасности нам нужен только твой email
@@ -110,7 +110,32 @@
                 </div>
             </div>
         </div>
+        <div class="suspect" v-if="show == 4 || show == 5">
+            <h1 id="suspect-title" v-if="show == 4">Подозрительная<br>попытка входа</h1>
+            <h1 id="suspect-title" v-if="show == 5">Вход с нового<br>устройства</h1>
+            <p id="suspect-text" v-if="show == 4">Зафиксирована подозрительная попытка входа. <br>На твой email отправлен проверочный 4-х
+                значный код, <br>введи его ниже.
+            </p>
+            <p id="suspect-text" v-if="show == 5">Кажется, ты пытаешься зайти на сервер с другого  <br>компьютера. Мы отправили на твой email 4-х<br> значный проверочный код, введи его ниже
+            </p>
+            <div id="suspect-inputes" style="display: inline-flex; margin-top: 40px;">
+
+
+                <input type="email" name="" class="echo-big-input" style="width: 209px !important; margin-left: 50px;"
+                    id="suspect-code" autofocus placeholder="Введи код" />
+
+                <button type="button" class="echo-button" type='submit' @click='' style="margin-left: 35px;">Далее
+                    <svg id="next_arrow" class="next_arrow" viewBox="0 0 35 35">
+                        <path d="M17.5001 23.3333L23.3334 17.5L17.5001 11.6666" stroke="white" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        <path d="M11.6667 17.5H23.3334" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" fill="none" />
+                    </svg>
+                </button>
+            </div>
+        </div>
     </div>
+
 </body>
 
 <script src="js/auth.js"></script>
