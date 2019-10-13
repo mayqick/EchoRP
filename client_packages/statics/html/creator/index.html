@@ -18,86 +18,99 @@
             <span class="label-for">поворот</span>
             <input class="echo-big-range-slider" id="rotate" type="range" max="100" min="0">
             <span class="rotate-label-value">0 °</span>
-        </div> 
+        </div>
         <span class="label-value">50 %</span>
         <span class="label-for height-label">высота</span>
-            <div id=height-block> 
-                <input class="echo-big-range-slider" id="height" type="range" max="100" min="0" style="position: fixed;">
+        <div id=height-block>
+            <input class="echo-big-range-slider" id="height" type="range" max="100" min="0" style="position: fixed; margin-top: -8px;">
+        </div>
+        <div id="range-block">
+            <span class="label-for">дальность</span>
+            <button class="echo-control-circle">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7 9V16H9V9H16V7H9V0H7V7H0V9H7Z" fill="#FFEF63" />
+                </svg>
+            </button>
+            <button class="echo-control-circle">
+                <svg width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="padding-bottom: 3px;">
+                    <path d="M0.16 0.127999H9.592V2.36H0.16V0.127999Z" fill="#FFEF63" />
+                </svg>
+            </button>
+        </div>
+        <div class="creator-block" style="display: grid;">
+
+            <div class="echo-tabs">
+                <input id="echo-tab1" type="radio" name="tabs" value="gender" v-model="check_settings">
+                <label for="echo-tab1" title="Пол и генетика">Пол и генетика</label>
+
+                <input id="echo-tab2" type="radio" name="tabs" value="visual" v-model="check_settings">
+                <label for="echo-tab2" title="Внешний вид">Внешний вид</label>
             </div>
-            <div class="creator-block" style="display: grid;">
 
-                <div class="echo-tabs">
-                    <input id="echo-tab1" type="radio" name="tabs" value="gender" v-model="check_settings">
-                    <label for="echo-tab1" title="Пол и генетика">Пол и генетика</label>
+            <div class="creator-settings">
+                <template v-if="check_settings == 'gender'">
+                    <span class="gender-title">Пол</span>
+                    <div class="echo-select-buttons">
+                        <input id="echo-select-button1" type="radio" name="male" checked>
+                        <label for="echo-select-button1" title="Вкладка 1" style="margin-right: 12px;">Мужской</label>
 
-                    <input id="echo-tab2" type="radio" name="tabs" value="visual" v-model="check_settings">
-                    <label for="echo-tab2" title="Внешний вид">Внешний вид</label>
-                </div>
-
-                <div class="creator-settings">
-                    <template v-if="check_settings == 'gender'">
-                        <span class="gender-title">Пол</span>
-                        <div class="echo-select-buttons">
-                            <input id="echo-select-button1" type="radio" name="male" checked>
-                            <label for="echo-select-button1" title="Вкладка 1"
-                                style="margin-right: 12px;">Мужской</label>
-
-                            <input id="echo-select-button2" type="radio" name="male">
-                            <label for="echo-select-button2" title="Вкладка 2">Женский</label>
-                        </div>
-                        <span class="gender-title">Выбери лицо из набора</span>
-                        <div id="face-control" style="margin-top: 40px; display: inline-block;">
-                            <button class="echo-control-circle-arrow">
-                                <svg width="11" height="10" viewBox="0 0 11 10" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 1L1 5L5 9" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M10 5L2 5" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                            <span id="face-id">0</span>
-                            <button class="echo-control-circle-arrow">
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 10L10 6L6 2" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M1 6H9" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </button>
-
-                        </div>
-                        <div id="face-color-control">
-                            <span id="face-color-id">0</span>
-                            <span class="gender-title" style="margin-left: 32px !important;">Цвет лица</span>
-                        </div>
-                        <input class="echo-range-slider" type="range" max="100" min="0"
-                            style="margin-left: 50px; margin-top: 25px;">
-                        <hr style="margin-top: 50px;">
-                        <div class="echo-input-block" style="margin-top: 17px; margin-left: 42px;">
-                            <span class="echo-input-title">Имя</span>
-                            <input type="text" class="echo-input" placeholder="Пример: Anderson">
-                        </div>
-                        <div class="echo-input-block" style="margin-top: 17px; margin-left: 42px;">
-                            <span class="echo-input-title">Фамилия</span>
-                            <input type="text" class="echo-input" placeholder="Пример: Thomas">
-                        </div>
-                        <hr style="margin-top: 50px;">
-                        <button class="echo-button-centered" style="margin-top: 40px; margin-left: 56px;">Далее<svg
-                                id="next_arrow" class="next_arrow" viewBox="0 0 35 35">
-
-                                <path d="M17.5001 23.3333L23.3334 17.5L17.5001 11.6666" stroke="white" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" fill="none" />
-                                <path d="M11.6667 17.5H23.3334" stroke="white" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" fill="none" />
+                        <input id="echo-select-button2" type="radio" name="male">
+                        <label for="echo-select-button2" title="Вкладка 2">Женский</label>
+                    </div>
+                    <span class="gender-title">Выбери лицо из набора</span>
+                    <div id="face-control" style="margin-top: 40px; display: inline-block;">
+                        <button class="echo-control-circle-arrow">
+                            <svg width="11" height="10" viewBox="0 0 11 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 1L1 5L5 9" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M10 5L2 5" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
                             </svg>
                         </button>
-                    </template>
-                </div>
+                        <span id="face-id">0</span>
+                        <button class="echo-control-circle-arrow">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 10L10 6L6 2" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M1 6H9" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
 
+                    </div>
+                    <div id="face-color-control">
+                        <span id="face-color-id">0</span>
+                        <span class="gender-title" style="margin-left: 32px !important;">Цвет лица</span>
+                    </div>
+                    <input class="echo-range-slider" type="range" max="100" min="0"
+                        style="margin-left: 50px; margin-top: 25px;">
+                    <hr style="margin-top: 50px;">
+                    <div class="echo-input-block" style="margin-top: 17px; margin-left: 42px;">
+                        <span class="echo-input-title">Имя</span>
+                        <input type="text" class="echo-input" placeholder="Пример: Anderson">
+                    </div>
+                    <div class="echo-input-block" style="margin-top: 17px; margin-left: 42px;">
+                        <span class="echo-input-title">Фамилия</span>
+                        <input type="text" class="echo-input" placeholder="Пример: Thomas">
+                    </div>
+                    <hr style="margin-top: 50px;">
+                    <button class="echo-button-centered" style="margin-top: 40px; margin-left: 56px;">Далее<svg
+                            id="next_arrow" class="next_arrow" viewBox="0 0 35 35">
+
+                            <path d="M17.5001 23.3333L23.3334 17.5L17.5001 11.6666" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                            <path d="M11.6667 17.5H23.3334" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" fill="none" />
+                        </svg>
+                    </button>
+                </template>
             </div>
+
         </div>
+    </div>
 
 </body>
 <script src="creator.js"></script>
