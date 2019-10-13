@@ -22,7 +22,8 @@
         <span class="label-value">50 %</span>
         <span class="label-for height-label">высота</span>
         <div id=height-block>
-            <input class="echo-big-range-slider" id="height" type="range" max="100" min="0" style="position: fixed; margin-top: -8px;">
+            <input class="echo-big-range-slider" id="height" type="range" max="100" min="0"
+                style="position: fixed; margin-top: -8px;">
         </div>
         <div id="range-block">
             <span class="label-for">дальность</span>
@@ -106,6 +107,66 @@
                                 stroke-linejoin="round" fill="none" />
                         </svg>
                     </button>
+                </template>
+                <template v-if="check_settings == 'visual'">
+                    <h3 class="visual-title">Нос</h3>
+                    <div class="visual-setting">
+                        <span class="visual-values">0</span>
+                        <span class="visual-range-info">ширина носа</span>
+                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">0</span>
+                        <span class="visual-range-info">высота носа</span>
+                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">0</span>
+                        <span class="visual-range-info">длина носа</span>
+                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">0</span>
+                        <span class="visual-range-info">длина кончика носа</span>
+                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">0</span>
+                        <span class="visual-range-info">глубина моста носа</span>
+                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">0</span>
+                        <span class="visual-range-info">поломанность носа</span>
+                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <h3 class="visual-title">Брови</h3>
+                    <div class="visual-setting">
+                        <span class="visual-values">0</span>
+                        <span class="visual-range-info">высота бровей</span>
+                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">0</span>
+                        <span class="visual-range-info">ширина бровей</span>
+                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <h3 class="visual-title">Скулы и щеки</h3>
+                    <div class="visual-setting">
+                        <span class="visual-values">0</span>
+                        <span class="visual-range-info">высота скул</span>
+                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">0</span>
+                        <span class="visual-range-info">ширина скул</span>
+                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">0</span>
+                        <span class="visual-range-info">ширина щёк</span>
+                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                    </div>
                 </template>
             </div>
 

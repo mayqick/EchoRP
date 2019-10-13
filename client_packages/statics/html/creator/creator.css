@@ -2,6 +2,55 @@ body{
     padding: 0;
     margin: 0;
 }
+h3{
+    margin: 0;
+    padding: 0;
+}
+.visual-setting{
+    margin-bottom: 35px;
+}
+.visual-title{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 32px;
+    margin-left: 53px;
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+}
+.visual-values{
+    margin-left: 54px;
+    margin-right: 32px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+
+
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+
+}
+.visual-range-info{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 32px;
+    /* identical to box height, or 320% */
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    /* Moon */
+
+    color: #484F5B;
+}
 .container{
     margin-top: 50px;
     margin-left: 90px;
@@ -84,6 +133,7 @@ body{
 }
 .creator-settings{
     padding-top: 40px;
+    overflow-y: scroll;
     height: 715px;
     width: 508px;
     float: right;
@@ -91,6 +141,7 @@ body{
     margin-top: -1px;
     border: 1px solid #1A1E26;
 }
+.creator-settings::-webkit-scrollbar { width: 0; }
 .echo-tabs>label[for*="1"]:before {
 	content: "\f11a" !important;
 }
