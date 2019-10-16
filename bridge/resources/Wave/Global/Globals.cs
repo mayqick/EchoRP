@@ -23,7 +23,7 @@ namespace Wave.Global
         [ServerEvent(Event.ResourceStart)]
         public void OnResourceStart()
         {
-            Mail.SendEmailAsync("iamoniel@yandex.ru", "Test", "body of the email");
+            NAPI.Util.ConsoleOutput("Дака компиляции: {0}", DateTime.Now);
             secondTimer = new Timer(OnSecondSpent, null, 1000, 1000);
             minuteTimer = new Timer(OnMinuteSpent, null, 60000, 60000);
         }

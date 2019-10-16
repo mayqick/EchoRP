@@ -15,10 +15,7 @@ namespace Wave.Database
         public void OnResourceStart()
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            
-            Console.ForegroundColor = ConsoleColor.Green; // Зеленый цвет для строки.
             NAPI.Util.ConsoleOutput("Подключение к базе данных успешно инициализировано.");
-            Console.ResetColor();
 
         }
         public static AccountModel GetAccountBySocialName(string socialName)
