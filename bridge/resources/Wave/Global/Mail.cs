@@ -10,7 +10,7 @@ namespace Wave.Global
         private const string SenderAdrees = "noreply@echorp.com";
         private const string SenderPassword = "n!W]0xTYia!F";
         private const string SenderName = "Echo RolePlay";
-        private const string SenderServer = "mail.echorp.com";
+        private const string SenderServer = "piter21.dns-rus.net";
 
 
         public static void SendEmailAsync(string playerMail, string title, string message)
@@ -23,7 +23,7 @@ namespace Wave.Global
                 MailMessage m = new MailMessage(from, to);
                 m.Subject = title;
                 m.Body = message;
-                SmtpClient smtp = new SmtpClient(SenderServer, 465);
+                SmtpClient smtp = new SmtpClient(SenderServer, 25);
                 smtp.Credentials = new NetworkCredential(SenderAdrees, SenderPassword);
                 smtp.EnableSsl = true;
                 smtp.SendMailAsync(m);

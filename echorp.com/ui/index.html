@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="echo-ui.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body style="margin: 50px; background: #10151D;">
+    <input type="text" class="echo-big-input" placeholder="Input">
+
+    <div class="echo-input-block">
+        <span class="echo-input-title">Title</span>
+        <input type="text" class="echo-input" placeholder="Input">
+    </div>
+
+    <button class="echo-button">Button<svg id="next_arrow" class="next_arrow" viewBox="0 0 35 35">
+
+            <path d="M17.5001 23.3333L23.3334 17.5L17.5001 11.6666" stroke="white" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            <path d="M11.6667 17.5H23.3334" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+        </svg>
+    </button>
+    <button class="echo-button-centered">Button<svg id="next_arrow" class="next_arrow" viewBox="0 0 35 35">
+
+            <path d="M17.5001 23.3333L23.3334 17.5L17.5001 11.6666" stroke="white" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            <path d="M11.6667 17.5H23.3334" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+        </svg>
+    </button>
+
+
+    <div class="echo-tabs-rounded">
+        <input id="echo-tab-rounded-one" type="radio" name="echo-tabs-rounded" checked>
+        <label id="echo-tab-rounded-label-one" for="echo-tab-rounded-one" title="Вкладка 1">Вкладка 1</label>
+
+        <input id="echo-tab-rounded-two" type="radio" name="echo-tabs-rounded">
+        <label id="echo-tab-rounded-label-two" for="echo-tab-rounded-two" title="Вкладка 2">Вкладка 2</label>
+    </div>
+
+    <div class="echo-tabs">
+        <input id="echo-tab1" type="radio" name="tabs" checked>
+        <label for="echo-tab1" title="Вкладка 1">Вкладка 1</label>
+
+        <input id="echo-tab2" type="radio" name="tabs">
+        <label for="echo-tab2" title="Вкладка 2">Вкладка 2</label>
+    </div>
+
+    <div class="echo-select-buttons">
+        <input id="echo-select-button1" type="radio" name="tabs" checked>
+        <label for="echo-select-button1" title="Вкладка 1">Мужской</label>
+
+        <input id="echo-select-button2" type="radio" name="tabs">
+        <label for="echo-select-button2" title="Вкладка 2">Женский</label>
+    </div>
+
+    <button class="echo-control-circle">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7 9V16H9V9H16V7H9V0H7V7H0V9H7Z" fill="#FFEF63" />
+        </svg>
+    </button>
+    <button class="echo-control-circle">
+        <svg width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg"
+            style="padding-bottom: 3px;">
+            <path d="M0.16 0.127999H9.592V2.36H0.16V0.127999Z" fill="#FFEF63" />
+        </svg>
+    </button>
+
+    <button class="echo-control-circle-arrow">
+        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 1L1 5L5 9" stroke="#484F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 5L2 5" stroke="#484F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
+    <button class="echo-control-circle-arrow">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 10L10 6L6 2" stroke="#484F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M1 6H9" stroke="#484F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <button class="echo-control-big-circle-arrow">
+        <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 1L1.5 7L7.5 13" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path d="M15 7L3 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
+    <button class="echo-control-big-circle-arrow">
+        <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.50006 13L14.5001 7L8.50006 1" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path d="M1.00006 7H13.0001" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <div class="echo-text-slider">
+        <div class="echo-slider-items">
+            <button class="echo-control-circle-arrow">
+                <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 1L1 5L5 9" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M10 5L2 5" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <span class="echo-text-slider-title">Бенджамин</span>
+            <button class="echo-control-circle-arrow">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 10L10 6L6 2" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M1 6H9" stroke="#484F5B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <input class="echo-range-slider" type="range" max="100" min="0">
+    <input class="echo-big-range-slider" type="range" max="100" min="0">
+</body>
+
+</html>

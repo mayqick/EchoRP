@@ -1,0 +1,515 @@
+.echo-big-input::placeholder { color: #484F5B; }
+.echo-input::placeholder { color: #484F5B; }
+.echo-big-input{
+    /* Functional / Big input */
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21px;
+    /* identical to box height, or 105% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+
+    /* Moon */
+
+    color: #fff;
+
+    width: 405px;
+    height: 60px;
+
+    border: none;
+    background: none;
+    border-bottom: 1px solid rgba(211, 218, 255, 0.11);
+    outline:none;   
+}
+hr{
+  margin: 0;
+  border: 1px solid rgba(211, 218, 255, 0.11);
+  height: 0px;
+}
+.echo-input{
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+
+    letter-spacing: 0.01em; 
+
+    width: 405px;
+    height: 60px;
+
+    padding-left: 20px;
+
+    border: 1px solid rgba(211, 218, 255, 0.11);
+    border-radius: 4px;
+    background: none;
+    outline:none;   
+}
+.echo-input-block{
+  display: inline-grid;
+}
+.echo-input-title{
+  /* Labels / Function */
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 32px;
+  /* identical to box height, or 320% */
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  /* Moon */
+
+  color: #484F5B;
+}
+.echo-button-centered{
+  padding-left: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  padding: .5em 1em calc(.5em);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+
+  border: none;
+  outline:none;
+
+  width: 400px;
+  height: 72px;
+
+  background: #5C6BFF;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.echo-button {
+  padding-left: 30px;
+
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+
+  border: none;
+  outline:none;
+
+  width: 144px;
+  height: 72px;
+
+  background: #5C6BFF;
+  border-radius: 100px;
+  cursor: pointer;
+}
+  
+.echo-button svg, .echo-button-centered svg {
+  padding-left: 5px;
+  width: 35px;
+  height: 35px;
+}
+  
+  .echo-button:hover, .echo-button-centered:hover {background: none; padding-left: 30px; border: 2px solid #5C6BFF;
+  border-radius: 100px; transition: 0.2s ease;}
+  .echo-button:active, .echo-button-centered:active {background: rgba(255, 255, 255, 0.12);; padding-left: 30px; border: 2px solid #FFFFFF;
+  border-radius: 100px; transition: 0.4s ease;}
+  
+.echo-tabs-rounded{
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+}
+/* Прячем чекбоксы */
+.echo-tabs-rounded>input {
+	display: none;
+}
+/* Стили переключателей вкладок (табов) */
+#echo-tab-rounded-label-one {
+
+  
+  color: #484F5B;
+  width: 255px;
+  height: 72px;
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+	font-weight: 600;
+
+  border: 2px solid #1A1E26;
+  border-radius: 100px 0px 0px 100px;
+}
+#echo-tab-rounded-label-two {
+
+
+  color: #484F5B;
+  width: 255px;
+  height: 72px;
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+	font-weight: 600;
+
+  border: 2px solid #1A1E26;
+  border-radius: 0px 100px 100px 0px;
+}
+[type=radio]:checked + #echo-tab-rounded-label-two, [type=radio]:checked + #echo-tab-rounded-label-one{
+  color: #FFFFFF;
+}
+
+/* Шрифт-иконки от Font Awesome в формате Unicode */
+.echo-tabs-rounded>label:before {
+	font-family: fontawesome;
+	font-weight: normal;
+	margin-right: 10px;
+}
+#echo-tab-rounded-label-one:before {
+	content: "\f17a";
+}
+#echo-tab-rounded-label-two:before {
+	content: "\f17a";
+}
+
+/* Изменения стиля переключателей вкладок при наведении */
+ 
+.echo-tabs-rounded>label:hover {
+	color: #888;
+	cursor: pointer;
+}
+/* Стили для активной вкладки */
+.echo-tabs-rounded>input:checked+label {
+  color: #FFFFFF;
+	background: #1A1E26;
+}
+
+/* ************************************************************* */
+
+.echo-tabs {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+}
+
+/* Прячем чекбоксы */
+.echo-tabs>input {
+	display: none;
+	position: absolute;
+}
+/* Стили переключателей вкладок (табов) */
+.echo-tabs>label {
+
+  color: #484F5B;
+  width: 255px;
+  height: 72px;
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(211, 218, 255, 0.11);
+	background: #1A1E26;
+}
+/* Шрифт-иконки от Font Awesome в формате Unicode */
+.echo-tabs>label:before {
+	font-family: fontawesome;
+	font-weight: normal;
+	margin-right: 10px;
+}
+.echo-tabs>label[for*="1"]:before {
+	content: "\f17a";
+}
+.echo-tabs>label[for*="2"]:before {
+	content: "\f17a";
+}
+
+/* Изменения стиля переключателей вкладок при наведении */
+ 
+.echo-tabs>label:hover {
+	color: #888;
+	cursor: pointer;
+}
+/* Стили для активной вкладки */
+.echo-tabs>input:checked+label {
+	color: #fff;
+	border-bottom: 2px solid #fff !important;
+	background: #1A1E26;
+}
+/* ************************************************ */
+
+.echo-select-buttons {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+}
+
+.echo-select-buttons>input {
+	display: none;
+	position: absolute;
+}
+.echo-select-buttons>label {
+
+  color: #484F5B;
+  width: 154px;
+  height: 58px;
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1F242D;
+
+  border-radius: 100px;
+}
+.echo-select-buttons>label:before {
+	font-family: fontawesome;
+	font-weight: normal;
+	margin-right: 10px;
+}
+.echo-select-buttons>label[for*="1"]:before {
+	content: "\f222";
+}
+.echo-select-buttons>label[for*="2"]:before {
+	content: "\f221";
+}
+
+.echo-select-buttons>label:hover {
+	color: #888;
+	cursor: pointer;
+}
+.echo-select-buttons>input:checked+label {
+	color: #fff;
+  background: #1F242D;
+}
+.echo-control-circle{
+  width: 72px;
+  height: 72px;
+  border: 1px solid rgba(211, 218, 255, 0.11);
+}
+.echo-control-circle-arrow{
+  height: 50px;
+  width: 50px;
+  border: 2px solid rgba(211, 218, 255, 0.11);
+}
+.echo-control-big-circle-arrow{
+  border: 2px solid #FFFFFF;
+  height: 72px;
+  width: 72px;
+}
+.echo-control-big-circle-arrow, .echo-control-circle-arrow, .echo-control-circle{
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 100px;
+}
+.echo-text-slider{
+  display: table;
+  width: 477px;
+  height: 135px;
+  text-align: center;
+  background: rgba(219, 222, 255, 0.01);
+}
+.echo-slider-items{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: table-cell;
+  vertical-align: middle;
+}
+.echo-text-slider-title{
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin: 0px 58px 0px 58px;
+  color: #FFFFFF;
+}
+.echo-range-slider {
+  width: 405px;
+  -webkit-appearance: none;
+  outline: none;
+  background: rgba(211, 218, 255, 0.11);
+}
+  .echo-range-slider::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 1px;
+      cursor: pointer;
+      box-shadow: none;
+      background: rgba(211, 218, 255, 0.11);
+      border-radius: 0px;
+      border: 0px solid #010101;
+  }
+  .echo-range-slider::-moz-range-track {
+      width: 100%;
+      height: 1px;
+      cursor: pointer;
+      box-shadow: none;
+      background: rgba(211, 218, 255, 0.11);
+      border-radius: 0px;
+      border: 0px solid #010101;
+  }
+
+  .echo-range-slider::-webkit-slider-thumb {
+      background: #FFEF63;
+      border: 5px solid rgba(255, 239, 99, 0.02);
+
+      box-shadow: 0px 4px 30px 0px #FFEF63;
+      height: 24px;
+      width: 24px;
+      border-radius: 100px;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -10px;
+  }
+.echo-range-slider::-moz-range-thumb{
+      background: #FFEF63;
+      border: 5px solid rgba(255, 239, 99, 0.02);
+      /* control yellow */
+      
+      box-shadow: 0px 4px 30px 0px #FFEF63;
+      height: 24px;
+      width: 24px;
+      border-radius: 100px;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -10px;
+
+}
+
+.echo-range-slider::-moz-focus-outer {
+  border: 0;
+  }
+
+.echo-big-range-slider {
+  width: 405px;
+  -webkit-appearance: none;
+  outline: none;
+  background: rgba(211, 218, 255, 0.11);
+}
+  .echo-big-range-slider::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 1px;
+      cursor: pointer;
+      box-shadow: none;
+      background: rgba(211, 218, 255, 0.11);
+      border-radius: 0px;
+      border: 0px solid #010101;
+  }
+  .echo-big-range-slider::-moz-range-track {
+      width: 100%;
+      height: 1px;
+      cursor: pointer;
+      box-shadow: none;
+      background: rgba(211, 218, 255, 0.11);
+      border-radius: 0px;
+      border: 0px solid #010101;
+  }
+
+  .echo-big-range-slider::-webkit-slider-thumb {
+      background-image: url(range-ellipse.png);
+      background-repeat: no-repeat;
+      height: 72px;
+      width: 72px;
+      background-size: 100%;
+
+    
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -37px;
+  }
+.echo-big-range-slider::-moz-range-thumb{
+  background-image: url(range-ellipse.png);
+  
+      
+      height: 72px;
+      width: 72px;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -10px;
+
+}
+
+.echo-big-range-slider::-moz-focus-outer {
+  border: 0;
+  }
+
+label, input{ margin: 0 }
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
