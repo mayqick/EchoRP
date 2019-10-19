@@ -66,30 +66,11 @@ namespace Wave.Account
             // Тут должна быть инициализация данных игрока.
             InitializePlayerData(player);
 
-            /*player.SetData("AuthCount", (int)0); // Устанавливаем счетчик попыток входа в сис-му на 0.
-            player.TriggerEvent("showAuthPage");*/
-
-            /*Creator.OnCharCreate(player);*/
-            //AuthPlayerAccount(player);
-
             AccountModel account = new AccountModel();
             account = Database.Database.GetAccountBySocialName(player.SocialClubName);
             if (account.status == 0) // Если аккаунта нет, то создаем его.
             {
-                Random random = new Random();
-                string token = "";
-
-                Char[] pwdChars = new Char[36] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-                for (int i = 0; i < 31; i++)
-                    token += pwdChars[random.Next(0, 35)];
-
-                NAPI.Task.Run(() =>
-                {
-                    if (Database.Database.RegisterAccount(player.SocialClubName, token, player.Serial, player.Address))
-                    {
-                        player.TriggerEvent("setToken", token);
-                    }
-                });
+                player.TriggerEvent("showPlayerRegister");
             }
             else
             {
@@ -98,36 +79,37 @@ namespace Wave.Account
                 player.TriggerEvent("getToken");
             }
         }
-        // Создаем аккаунт пользователя.
-        [RemoteEvent("createAccount")]
-        public void AuthPlayerAccount(Client player)
+        [RemoteEvent("mailVerification")]
+        public void MailVerification(Client player, string mail)
         {
-            AccountModel account = new AccountModel();
-            account = Database.Database.GetAccountBySocialName(player.SocialClubName);
-            if (account.status == 0) // Если аккаунта нет, то создаем его.
-            {
-                Random random = new Random();
-                string token = "";
-
-                Char[] pwdChars = new Char[36] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-                for (int i = 0; i < 31; i++)
-                    token += pwdChars[random.Next(0, 35)];
-
-                NAPI.Task.Run(() =>
-                {
-                    if (Database.Database.RegisterAccount(player.SocialClubName, token, player.Serial, player.Address))
-                    {
-                        player.TriggerEvent("setToken", token);
-                    }
-                });
-            }
-            else   
-            {
-                // устанавливаем игроку серверную переменную, содержащую HWID, token
-                player.SetData("accountAuthInfo", account);
-                player.TriggerEvent("getToken");
-            }
+            Random random = new Random();
+            
+            string code = random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString();
+            Mail.SendEmailAsync(mail, "Echo Role Play - код подтверждения", "Echo Role Play - код подтверждения", code);
+            player.SetSharedData(EntityData.AUTH_CODE, code);
+            player.SetData(EntityData.PLAYER_MAIL, mail);
         }
+        [RemoteEvent("registerPlayerAccount")]
+        public void RegisterPlayer(Client player)
+        {
+            Random random = new Random();
+            string token = "";
+            // генерация случайного токена
+            Char[] pwdChars = new Char[36] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            for (int i = 0; i < 31; i++)
+                token += pwdChars[random.Next(0, 35)];
+
+            NAPI.Task.Run(() =>
+            {
+                // регистрация аккаунта
+                if (Database.Database.RegisterAccount(player.SocialClubName, token, player.Serial, player.Address, player.GetData(EntityData.PLAYER_MAIL)));
+                {
+                    // записываем токен игроку
+                    player.TriggerEvent("setToken", token);
+                }
+            });
+        }
+
         [RemoteEvent("setTokenData")]
         public void SetTokenToPlayerData(Client player, string token)
         {
@@ -141,12 +123,6 @@ namespace Wave.Account
                 NAPI.Util.ConsoleOutput("Неуспешная авторизация.");
             }
         }
-        [RemoteEvent("test")]
-        public void testEvent(Client player)
-        {
-            Console.WriteLine("Test!");
-        }
-
         [RemoteEvent("loginAccount")]
         public void LoginToAccount(Client player, string login, string password)
         {

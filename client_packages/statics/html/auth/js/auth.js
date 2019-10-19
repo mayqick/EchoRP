@@ -12,7 +12,14 @@ var app = new Vue({
     data: {
         show: 0,
         blurType: 'none',
-        dialog_animation: false
+        dialog_animation: false,
+        email: '',
+        emailError: false,
+        code_num1: '',
+        code_num2: '',
+        code_num3: '',
+        code_num4: '',
+        errorMessage: ''
     },
     methods: {
         renderType(data) {
@@ -36,6 +43,26 @@ var app = new Vue({
             else if (data == 5) {
                 this.show = 5;
             }
+        },
+        register(){
+            if(this.mailTest(this.email)){
+                this.show = 2;
+                mp.events.call('mailVerification', this.email);
+                this.emailError = false;
+            } 
+            else {
+                this.errorMessage = "Вы ввели некорректный адрес электронной почты!";
+                this.emailError = true;
+            }
+            
+        },
+        mailTest(email){
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        },
+        checkMailCode(){
+            var code = code_num1.toString() +  code_num2.toString() + code_num3.toString() + code_num4.toString();
+            mp.events.call('checkCode', code);
         }
     }
 })

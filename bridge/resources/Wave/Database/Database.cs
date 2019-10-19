@@ -116,7 +116,7 @@ namespace Wave.Database
             return account;
         }
 
-        public static bool RegisterAccount(string socialName, string token, string hwid, string regIp)
+        public static bool RegisterAccount(string socialName, string token, string hwid, string regIp, string mail)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -124,11 +124,12 @@ namespace Wave.Database
                 {
                     connection.Open();
                     MySqlCommand command = connection.CreateCommand();
-                    command.CommandText = "INSERT INTO `accounts` (`socialName` , `token`, `serial`, `regIp`) VALUES(@socialName, @token, @serial, @regIp)";
+                    command.CommandText = "INSERT INTO `accounts` (`socialName` , `token`, `serial`, `regIp`, `mail`) VALUES(@socialName, @token, @serial, @regIp, @mail)";
                     command.Parameters.AddWithValue("@socialName", socialName);
                     command.Parameters.AddWithValue("@token", token);
                     command.Parameters.AddWithValue("@serial", hwid);
                     command.Parameters.AddWithValue("@regIp", regIp);
+                    command.Parameters.AddWithValue("@mail", mail);
                     command.ExecuteNonQuery();
                     return true;
                 }

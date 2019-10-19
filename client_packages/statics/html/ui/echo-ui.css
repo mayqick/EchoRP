@@ -26,6 +26,23 @@
     border-bottom: 1px solid rgba(211, 218, 255, 0.11);
     outline:none;   
 }
+.echo-input-error{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 32px;
+  /* identical to box height, or 320% */
+  
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  
+  /* Red */
+  
+  color: #FF6363;
+}
 hr{
   margin: 0;
   border: 1px solid rgba(211, 218, 255, 0.11);

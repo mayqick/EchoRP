@@ -52,9 +52,8 @@
 
             <div class="mail-enter">
                 <template v-if="show == 1">
-                    <input type="email" name="" class="echo-big-input" id="mail" autofocus placeholder="Твой email" />
-
-                    <button type="button" class="echo-button" type='submit' @click='this.app.renderType(2)'>Дальше
+                    <input type="email" name="" class="echo-big-input" v-model="email" id="mail" autofocus placeholder="Твой email" />
+                    <button type="button" class="echo-button" type='submit' @click='this.app.register()'>Дальше
                         <svg id="next_arrow" class="next_arrow" viewBox="0 0 35 35">
                             <path d="M17.5001 23.3333L23.3334 17.5L17.5001 11.6666" stroke="white" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" fill="none" />
@@ -64,14 +63,14 @@
                     </button>
                 </template>
                 <template v-if="show == 2">
-                    <input v-on:keyup="$event.target.nextElementSibling.focus()" type="number" name=""
+                    <input v-on:keyup="$event.target.nextElementSibling.focus()" type="number" v-model="code_num1" name=""
                         class="echo-big-input number-input" id="code-1" placeholder="0" />
-                    <input v-on:keyup="$event.target.nextElementSibling.focus()" type="number" name=""
+                    <input v-on:keyup="$event.target.nextElementSibling.focus()" type="number" v-model="code_num2" name=""
                         class="echo-big-input number-input" id="code-2" placeholder="0" />
-                    <input v-on:keyup="$event.target.nextElementSibling.focus()" type="number" name=""
+                    <input v-on:keyup="$event.target.nextElementSibling.focus()" type="number" v-model="code_num3" name=""
                         class="echo-big-input number-input" id="code-3" placeholder="0" />
-                    <input type="number" name="" class="echo-big-input number-input" id="code-4" placeholder="0" />
-                    <button type="button" class="echo-button" @click='this.app.renderType(3)'>Дальше
+                    <input type="number" name="" class="echo-big-input number-input" id="code-4" v-model="code_num4" placeholder="0" />
+                    <button type="button" class="echo-button" @click='this.app.checkMailCode()'>Дальше
                         <svg id="next_arrow" class="next_arrow" viewBox="0 0 35 35">
                             <path d="M17.5001 23.3333L23.3334 17.5L17.5001 11.6666" stroke="white" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" fill="none" />
@@ -82,6 +81,7 @@
                     </button>
                 </template>
             </div>
+            <h3 class="echo-input-error" v-if="emailError">{{errorMessage}}</h3>
 
             <hr style="margin-top: 170px;" v-if="show == 1 || show == 2 || show == 3">
             <div class="footer" v-if="show == 1 || show == 2 || show == 3">
@@ -141,6 +141,3 @@
 <script src="js/auth.js"></script>
 
 </html>
-<script>
-    app.renderType(1);
-</script>
