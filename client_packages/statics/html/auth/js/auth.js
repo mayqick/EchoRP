@@ -44,25 +44,34 @@ var app = new Vue({
                 this.show = 5;
             }
         },
-        register(){
-            if(this.mailTest(this.email)){
-                this.show = 2;
-                mp.events.call('mailVerification', this.email);
-                this.emailError = false;
-            } 
-            else {
-                this.errorMessage = "Вы ввели некорректный адрес электронной почты!";
-                this.emailError = true;
-            }
-            
-        },
         mailTest(email){
             var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
         },
         checkMailCode(){
-            var code = code_num1.toString() +  code_num2.toString() + code_num3.toString() + code_num4.toString();
-            mp.events.call('checkCode', code);
+            var code = this.code_num1 + this.code_num2 + this.code_num3 + this.code_num4;
+        
+            mp.trigger('checkCode', code);
+        },
+        register(){
+            if(this.mailTest(this.email)){
+                this.show = 2;
+                mp.trigger('mailVerification', this.email);
+                this.emailError = false;
+            } 
+            else {
+                this.showError(1);
+            }
+        },
+        showError(type){
+            if (type == 1){
+                this.errorMessage = "Вы ввели некорректный адрес электронной почты!";
+                this.emailError = true;
+            }
+            else if (type == 2){
+                this.errorMessage = 'Неверный проверочный код.'; 
+                this.emailError = true;
+            }
         }
     }
 })

@@ -22,6 +22,6 @@
         public const string PLAYER_THIRST     = "PLAYER_THIRST";
         public const string CHAT_MODE         = "CHAT_MODE";
         public const string AUTH_COUNT        = "AUTH_COUNT";
-        public const string AUTH_CODE         = "AUTH_COUNT";
+        public const string AUTH_CODE         = "AUTH_CODE";
     }
 }

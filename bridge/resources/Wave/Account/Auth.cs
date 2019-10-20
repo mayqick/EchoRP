@@ -85,8 +85,9 @@ namespace Wave.Account
             Random random = new Random();
             
             string code = random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString();
-            Mail.SendEmailAsync(mail, "Echo Role Play - код подтверждения", "Echo Role Play - код подтверждения", code);
-            player.SetSharedData(EntityData.AUTH_CODE, code);
+            Mail.SendEmailAsync(mail, "Echo Role Play", "Echo Role Play - код подтверждения", code);
+            NAPI.Data.SetEntitySharedData(player, EntityData.AUTH_CODE, code);
+
             player.SetData(EntityData.PLAYER_MAIL, mail);
         }
         [RemoteEvent("registerPlayerAccount")]

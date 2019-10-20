@@ -6,9 +6,15 @@ mp.events.add('createBrowser', (arguments) => {
 	if(customBrowser === undefined) {
 		// Сохраняем аргументы
 		parameters = arguments.slice(1, arguments.length);
+		customBrowser = mp.browsers.new(arguments[0]);
+
+		setTimeout(() => { 
+			if(mp.game.ui.isPauseMenuActive()) {
+				mp.game.ui.setPauseMenuActive(false);
+			}
+		}, 1000);
 		
 		// Создаем окно браузера
-		customBrowser = mp.browsers.new(arguments[0]);
 	}
 });
 
