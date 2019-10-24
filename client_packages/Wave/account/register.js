@@ -5,6 +5,9 @@ mp.events.add('getToken', () => {
 mp.events.add('setToken', (authToken) => {
 	mp.storage.data.auth = authToken;
 	mp.events.call('executeFunction', ['app.renderType(3)']);
+
+	mp.events.call('destroyBrowser');
+	mp.events.call('showCreatorPage');
 });
 mp.events.add('showPlayerRegister', () => {
 	mp.events.call('createBrowser', ['package://statics/html/auth/index.html']);
@@ -14,7 +17,7 @@ mp.events.add('mailVerification', (mail) => {
 	mp.events.callRemote('mailVerification', mail);
 });
 mp.events.add('checkCode', (code) => {
-	var authCode = mp.players.local.getVariable('AUTH_CODE').ToString();
+	var authCode = mp.players.local.getVariable('AUTH_CODE');
 	mp.events.call('executeFunction', ["console.log('"+authCode+"');"]);
 	mp.events.call('executeFunction', ["console.log('"+code+"');"]);
 	if (code == authCode){

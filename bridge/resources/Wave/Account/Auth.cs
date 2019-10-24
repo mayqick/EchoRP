@@ -85,7 +85,7 @@ namespace Wave.Account
             Random random = new Random();
             
             string code = random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString();
-            Mail.SendEmailAsync(mail, "Echo Role Play", "Echo Role Play - код подтверждения", code);
+            Mail.SendEmailAsync(mail, "Echo Role Play", "Echo Role Play - код подтверждения", $"Ваш код подтверждения регистрации аккаунта: {code}");
             NAPI.Data.SetEntitySharedData(player, EntityData.AUTH_CODE, code);
 
             player.SetData(EntityData.PLAYER_MAIL, mail);
@@ -103,13 +103,11 @@ namespace Wave.Account
             NAPI.Task.Run(() =>
             {
                 // регистрация аккаунта
-                if (Database.Database.RegisterAccount(player.SocialClubName, token, player.Serial, player.Address, player.GetData(EntityData.PLAYER_MAIL)));
-                {
-                    // записываем токен игроку
-                    player.TriggerEvent("setToken", token);
-                }
+                Database.Database.RegisterAccount(player.SocialClubName, token, player.Serial, player.Address, player.GetData(EntityData.PLAYER_MAIL));
             });
+            player.TriggerEvent("setToken", token);
         }
+
 
         [RemoteEvent("setTokenData")]
         public void SetTokenToPlayerData(Client player, string token)

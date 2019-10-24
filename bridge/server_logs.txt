@@ -1027,3 +1027,496 @@ Wave: loaded 17 remote event(s)
 -> Resource Wave started!
 Started! Waiting for connections..
 Письмо отправлено на почтовый адрес SergDMITR.sergey@yandex.ru
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 22.10.2019 20:02:18
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 5 remote event(s)
+Wave: loaded 17 remote event(s)
+Дака компиляции: 22.10.2019 20:03:23
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+Письмо отправлено на почтовый адрес SergDMITR.sergey@yandex.ru
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 22.10.2019 20:09:26
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 5 remote event(s)
+Wave: loaded 17 remote event(s)
+Дака компиляции: 22.10.2019 20:09:32
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+Письмо отправлено на почтовый адрес SergDMITR.sergey@yandex.ru
+WeirdNewbie покинул игру.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 22.10.2019 20:25:47
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 5 remote event(s)
+Wave: loaded 17 remote event(s)
+Дака компиляции: 22.10.2019 20:25:52
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+Письмо отправлено на почтовый адрес SergDMITR.sergey@yandex.ru
+WeirdNewbie покинул игру.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 22.10.2019 20:41:48
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 5 remote event(s)
+Wave: loaded 17 remote event(s)
+Дака компиляции: 22.10.2019 20:41:53
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at void GTANetworkInternals.RemoteEventParser.Parse(Client sender, ulong eventNameHash, object[] args)
+WeirdNewbie покинул игру.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 22.10.2019 20:46:15
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 5 remote event(s)
+Wave: loaded 17 remote event(s)
+Дака компиляции: 22.10.2019 20:46:27
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+Письмо отправлено на почтовый адрес SergDMITR.sergey@yandex.ru
+WeirdNewbie покинул игру.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 22.10.2019 20:53:54
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 5 remote event(s)
+Wave: loaded 17 remote event(s)
+Дака компиляции: 22.10.2019 20:53:59
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+Письмо отправлено на почтовый адрес SergDMITR.sergey@yandex.ru
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 22.10.2019 21:00:27
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 5 remote event(s)
+Wave: loaded 17 remote event(s)
+Дака компиляции: 22.10.2019 21:00:32
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+Письмо отправлено на почтовый адрес SergDMITR.sergey@yandex.ru
+WeirdNewbie покинул игру.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 22.10.2019 21:11:19
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 5 remote event(s)
+Wave: loaded 17 remote event(s)
+Дака компиляции: 22.10.2019 21:11:24
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at void GTANetworkInternals.RemoteEventParser.Parse(Client sender, ulong eventNameHash, object[] args)
+WeirdNewbie покинул игру.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at void GTANetworkInternals.RemoteEventParser.Parse(Client sender, ulong eventNameHash, object[] args)
+WeirdNewbie покинул игру.
+Письмо отправлено на почтовый адрес SergDMITR.sergey@yandex.ru
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 22.10.2019 21:21:39
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 5 remote event(s)
+Wave: loaded 17 remote event(s)
+Дака компиляции: 22.10.2019 21:21:45
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+Письмо отправлено на почтовый адрес SergDMITR.sergey@yandex.ru
+WeirdNewbie покинул игру.
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 24.10.2019 20:23:52
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 5 remote event(s)
+Wave: loaded 17 remote event(s)
+Дака компиляции: 24.10.2019 20:24:00
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 24.10.2019 20:26:49
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 5 remote event(s)
+Wave: loaded 17 remote event(s)
+Дака компиляции: 24.10.2019 20:26:54
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+WeirdNewbie покинул игру.
+Письмо отправлено на почтовый адрес SergDMITR.sergey@yandex.ru
+Initializing Bootstrapper.dll (0.3.7.0)..
+-> SERVER STARTED AT 24.10.2019 20:34:25
+Loaded 451 entries from vehicleData.json
+Loading resources..
+-> Starting Wave resource..
+Wave: loading scripts.. found 1 script(s)
+Wave: instantiating Wave.Main..
+Wave: instantiating Wave.Model.SkinModel..
+Wave: instantiating Wave.Global.Globals..
+Wave: instantiating Wave.Database.Database..
+Wave: instantiating Wave.Commands.Admin..
+Wave: instantiating Wave.Commands.Chat..
+Wave: instantiating Wave.Chat.Chat..
+Wave: instantiating Wave.Chat.Voice..
+Wave: instantiating Wave.Character.Creator..
+Wave: instantiating Wave.Character.Customization..
+Wave: instantiating Wave.Character.Inventory..
+Wave: instantiating Wave.Account.Auth..
+Wave: instantiating Wave.Account.Register..
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 2 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loading server events.. found 1 server event(s)
+Wave: loaded 6 server events(s)
+Wave: loading commands.. found 7 command(s)
+Wave: loading commands.. found 6 command(s)
+Wave: loaded 13 commands(s)
+Wave: loading remote events.. found 3 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 1 remote event(s)
+Wave: loading remote events.. found 4 remote event(s)
+Wave: loading remote events.. found 2 remote event(s)
+Wave: loading remote events.. found 5 remote event(s)
+Wave: loaded 17 remote event(s)
+Дака компиляции: 24.10.2019 20:34:30
+Подключение к базе данных успешно инициализировано.
+-> Resource Wave started!
+Started! Waiting for connections..
+Письмо отправлено на почтовый адрес SergDMITR.sergey@yandex.ru

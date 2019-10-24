@@ -61,7 +61,7 @@
                     </div>
                     <span class="gender-title">Выбери лицо из набора</span>
                     <div id="face-control" style="margin-top: 40px; display: inline-block;">
-                        <button class="echo-control-circle-arrow">
+                        <button class="echo-control-circle-arrow" @click="faceIdMinus">
                             <svg width="11" height="10" viewBox="0 0 11 10" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 1L1 5L5 9" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
@@ -70,11 +70,11 @@
                                     stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <span id="face-id">0</span>
-                        <button class="echo-control-circle-arrow">
+                        <span id="face-id">{{faceId}}</span>
+                        <button class="echo-control-circle-arrow" @click="faceIdPlus"> 
                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 10L10 6L6 2" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
+                                <path d="M6 10L10 6L6 2" stroke="#484F5B" stroke-width="2"  stroke-linecap="round"
                                     stroke-linejoin="round" />
                                 <path d="M1 6H9" stroke="#484F5B" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" />
@@ -83,19 +83,19 @@
 
                     </div>
                     <div id="face-color-control">
-                        <span id="face-color-id">0</span>
+                        <span id="face-color-id">{{faceColorId}}</span>
                         <span class="gender-title" style="margin-left: 32px !important;">Цвет лица</span>
                     </div>
                     <input class="echo-range-slider" type="range" max="100" min="0"
-                        style="margin-left: 50px; margin-top: 25px;">
+                        style="margin-left: 50px; margin-top: 25px;" v-model="faceColorId">
                     <hr style="margin-top: 50px;">
                     <div class="echo-input-block" style="margin-top: 17px; margin-left: 42px;">
                         <span class="echo-input-title">Имя</span>
-                        <input type="text" class="echo-input" placeholder="Пример: Anderson">
+                        <input type="text" class="echo-input" placeholder="Пример: Anderson" v-model="name">
                     </div>
                     <div class="echo-input-block" style="margin-top: 17px; margin-left: 42px;">
                         <span class="echo-input-title">Фамилия</span>
-                        <input type="text" class="echo-input" placeholder="Пример: Thomas">
+                        <input type="text" class="echo-input" placeholder="Пример: Thomas" v-model="surname">
                     </div>
                     <hr style="margin-top: 50px;">
                     <button class="echo-button-centered" style="margin-top: 40px; margin-left: 56px;">Далее<svg
@@ -109,63 +109,224 @@
                     </button>
                 </template>
                 <template v-if="check_settings == 'visual'">
-                    <h3 class="visual-title">Нос</h3>
+                    <h3 class="visual-title">Внешний вид</h3>
                     <div class="visual-setting">
-                        <span class="visual-values">0</span>
-                        <span class="visual-range-info">ширина носа</span>
-                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                        <span class="visual-values">{{blemishesModel}}</span>
+                        <span class="visual-range-info">Шрамы</span>
+                        <input class="echo-range-slider" v-model="blemishesModel" v-on:input="this.app.updateFace()" type="range" max="23" min="0" style="margin-left: 50px;">
                     </div>
                     <div class="visual-setting">
-                        <span class="visual-values">0</span>
-                        <span class="visual-range-info">высота носа</span>
-                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                        <span class="visual-values">{{eyebrowsModel}}</span>
+                        <span class="visual-range-info">Брови</span>
+                        <input class="echo-range-slider" v-model="eyebrowsModel" type="range" v-on:input="this.app.updateFace()" max="33" min="0" style="margin-left: 50px;">
                     </div>
                     <div class="visual-setting">
-                        <span class="visual-values">0</span>
-                        <span class="visual-range-info">длина носа</span>
-                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                        <span class="visual-values">{{eyebrowsColor}}</span>
+                        <span class="visual-range-info">Цвет бровей</span>
+                        <input class="echo-range-slider" v-model="eyebrowsColor" type="range" v-on:input="this.app.updateFace()" max="100" min="0" style="margin-left: 50px;">
                     </div>
                     <div class="visual-setting">
-                        <span class="visual-values">0</span>
-                        <span class="visual-range-info">длина кончика носа</span>
-                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                        <span class="visual-values">{{ageingModel}}</span>
+                        <span class="visual-range-info">Морщины</span>
+                        <input class="echo-range-slider" v-model="ageingModel" type="range" v-on:input="this.app.updateFace()" max="14" min="0" style="margin-left: 50px;">
                     </div>
                     <div class="visual-setting">
-                        <span class="visual-values">0</span>
-                        <span class="visual-range-info">глубина моста носа</span>
-                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                        <span class="visual-values">{{makeupModel}}</span>
+                        <span class="visual-range-info">Макияж</span>
+                        <input class="echo-range-slider" v-model="makeupModel" type="range" v-on:input="this.app.updateFace()"  max="74" min="0" style="margin-left: 50px;">
                     </div>
                     <div class="visual-setting">
-                        <span class="visual-values">0</span>
-                        <span class="visual-range-info">поломанность носа</span>
-                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
-                    </div>
-                    <h3 class="visual-title">Брови</h3>
-                    <div class="visual-setting">
-                        <span class="visual-values">0</span>
-                        <span class="visual-range-info">высота бровей</span>
-                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                        <span class="visual-values">{{blushModel}}</span>
+                        <span class="visual-range-info">Румянец</span>
+                        <input class="echo-range-slider" v-model="blushModel" type="range" v-on:input="this.app.updateFace()"  max="6" min="0" style="margin-left: 50px;">
                     </div>
                     <div class="visual-setting">
-                        <span class="visual-values">0</span>
-                        <span class="visual-range-info">ширина бровей</span>
-                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
-                    </div>
-                    <h3 class="visual-title">Скулы и щеки</h3>
-                    <div class="visual-setting">
-                        <span class="visual-values">0</span>
-                        <span class="visual-range-info">высота скул</span>
-                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                        <span class="visual-values">{{blushColor}}</span>
+                        <span class="visual-range-info">Цвет румянца</span>
+                        <input class="echo-range-slider" v-model="blushColor" type="range" v-on:input="this.app.updateFace()"  max="100" min="0" style="margin-left: 50px;">
                     </div>
                     <div class="visual-setting">
-                        <span class="visual-values">0</span>
-                        <span class="visual-range-info">ширина скул</span>
-                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                        <span class="visual-values">{{complexionModel}}</span>
+                        <span class="visual-range-info">Цвет лица</span>
+                        <input class="echo-range-slider" v-model="complexionModel" type="range" v-on:input="this.app.updateFace()"  max="11" min="0" style="margin-left: 50px;">
                     </div>
                     <div class="visual-setting">
-                        <span class="visual-values">0</span>
-                        <span class="visual-range-info">ширина щёк</span>
-                        <input class="echo-range-slider" type="range" max="100" min="0" style="margin-left: 50px;">
+                        <span class="visual-values">{{sundamageModel}}</span>
+                        <span class="visual-range-info">Солнечные ожоги</span>
+                        <input class="echo-range-slider" v-model="sundamageModel" type="range" v-on:input="this.app.updateFace()"  max="10" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{lipstickModel}}</span>
+                        <span class="visual-range-info">Помада </span>
+                        <input class="echo-range-slider" v-model="lipstickModel" type="range" v-on:input="this.app.updateFace()"  max="9" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{lipstickColor}}</span>
+                        <span class="visual-range-info">Цвет помады</span>
+                        <input class="echo-range-slider" v-model="lipstickColor" type="range" v-on:input="this.app.updateFace()"  max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{frecklesModel}}</span>
+                        <span class="visual-range-info">Родинки</span>
+                        <input class="echo-range-slider" v-model="frecklesModel" type="range" v-on:input="this.app.updateFace()"  max="17" min="0" style="margin-left: 50px;">
+                    </div>
+                    <h3 class="visual-title">Волосы</h3>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{hairModel}}</span>
+                        <span class="visual-range-info">Волосы на лице</span>
+                        <input class="echo-range-slider" v-model="hairModel" type="range" v-on:input="this.app.updateHair()"  max="28" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{chestModel}}</span>
+                        <span class="visual-range-info">Волосы на груди</span>
+                        <input class="echo-range-slider" v-model="chestModel" type="range" v-on:input="this.app.updateHair()"  max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{chestColor}}</span>
+                        <span class="visual-range-info">Цвет волос на гружди</span>
+                        <input class="echo-range-slider" v-model="chestColor" type="range" v-on:input="this.app.updateHair()"  max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{hairStyle}}</span>
+                        <span class="visual-range-info">Стиль волос</span>
+                        <input class="echo-range-slider" v-model="hairStyle" type="range" v-on:input="this.app.updateHair()"  max="73" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{firstHairColor}}</span>
+                        <span class="visual-range-info">Цвет волос 1</span>
+                        <input class="echo-range-slider" v-model="firstHairColor" type="range" v-on:input="this.app.updateHair()"  max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{secondHairColor}}</span>
+                        <span class="visual-range-info">Цвет волос 2</span>
+                        <input class="echo-range-slider" v-model="secondHairColor" type="range" v-on:input="this.app.updateHair()"  max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{beardModel}}</span>
+                        <span class="visual-range-info">Борода</span>
+                        <input class="echo-range-slider" v-model="beardModel" type="range" v-on:input="this.app.updateHair()"  max="28" min="0" style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{beardColor}}</span>
+                        <span class="visual-range-info">Цвет бороды</span>
+                        <input class="echo-range-slider" v-model="beardColor" type="range" v-on:input="this.app.updateHair()"  max="100" min="0" style="margin-left: 50px;">
+                    </div>
+                    <h3 class="visual-title">Черты лица</h3>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{noseWidth}}</span>
+                        <span class="visual-range-info">Ширина носа</span>
+                        <input class="echo-range-slider" v-model="noseWidth" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{noseHeight}}</span>
+                        <span class="visual-range-info">Высота носа</span>
+                        <input class="echo-range-slider" v-model="noseHeight" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{noseLength}}</span>
+                        <span class="visual-range-info">Длина носа</span>
+                        <input class="echo-range-slider" v-model="noseLength" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{noseTip}}</span>
+                        <span class="visual-range-info">Высота кончика носа</span>
+                        <input class="echo-range-slider" v-model="noseTip" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{noseBridge}}</span>
+                        <span class="visual-range-info">Сдвиг переносицы вверх и вниз</span>
+                        <input class="echo-range-slider" v-model="noseBridge" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{noseShift}}</span>
+                        <span class="visual-range-info">Сдвиг переносицы</span>
+                        <input class="echo-range-slider" v-model="noseShift" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{browHeight}}</span>
+                        <span class="visual-range-info">Высота бровей</span>
+                        <input class="echo-range-slider" v-model="browHeight" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{browWidth}}</span>
+                        <span class="visual-range-info">Ширина бровей</span>
+                        <input class="echo-range-slider" v-model="browWidth" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{cheekboneHeight}}</span>
+                        <span class="visual-range-info">Высота скул</span>
+                        <input class="echo-range-slider" v-model="cheekboneHeight" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{cheekboneWidth}}</span>
+                        <span class="visual-range-info">Ширина скул</span>
+                        <input class="echo-range-slider" v-model="cheekboneWidth" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{eyes}}</span>
+                        <span class="visual-range-info">Глаза</span>
+                        <input class="echo-range-slider" v-model="eyes" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{eyesColor}}</span>
+                        <span class="visual-range-info">Цвет глаз</span>
+                        <input class="echo-range-slider" v-model="eyesColor" type="range" v-on:input="this.app.updateTrueFace()"  min='0' max='31' step='1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{lips}}</span>
+                        <span class="visual-range-info">Губы</span>
+                        <input class="echo-range-slider" v-model="lips" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{jawWidth}}</span>
+                        <span class="visual-range-info">Ширина челюсти</span>
+                        <input class="echo-range-slider" v-model="jawWidth" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{jawHeight}}</span>
+                        <span class="visual-range-info">Высота челюсти</span>
+                        <input class="echo-range-slider" v-model="jawHeight" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{chinLength}}</span>
+                        <span class="visual-range-info">Длина подбородка</span>
+                        <input class="echo-range-slider" v-model="chinLength" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{chinPosition}}</span>
+                        <span class="visual-range-info">Положение подбородка</span>
+                        <input class="echo-range-slider" v-model="chinPosition" type="range" v-on:input="this.app.updateTrueFace()"  min='0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{chinWidth}}</span>
+                        <span class="visual-range-info">Ширина подбородка</span>
+                        <input class="echo-range-slider" v-model="chinWidth" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{chinShape}}</span>
+                        <span class="visual-range-info">Форма подбородка</span>
+                        <input class="echo-range-slider" v-model="chinShape" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{neckWidth}}</span>
+                        <span class="visual-range-info">Ширина шеи</span>
+                        <input class="echo-range-slider" v-model="neckWidth" type="range" v-on:input="this.app.updateTrueFace()"  min='-1.0' max='1.0' step='0.1' style="margin-left: 50px;">
+                    </div>
+                    <h3 class="visual-title">Одежда</h3>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{top}}</span>
+                        <span class="visual-range-info">Верхняя часть туловища</span>
+                        <input class="echo-range-slider" v-model="top" type="range" v-on:input="this.app.test()" min='0' max='2' step='1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{legs}}</span>
+                        <span class="visual-range-info">Нижняя часть туловища</span>
+                        <input class="echo-range-slider" v-model="legs" type="range" v-on:input="this.app.test()" min='0' max='2' step='1' style="margin-left: 50px;">
+                    </div>
+                    <div class="visual-setting">
+                        <span class="visual-values">{{feet}}</span>
+                        <span class="visual-range-info">Обувь</span>
+                        <input class="echo-range-slider" v-model="feet" type="range" v-on:input="this.app.test()" min='0' max='2' step='1' style="margin-left: 50px;">
                     </div>
                 </template>
             </div>

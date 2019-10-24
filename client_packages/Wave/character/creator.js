@@ -20,7 +20,7 @@ mp.events.add('showCreatorPage', () => {
 	mp.gui.chat.activate(false);
 	mp.gui.chat.show(false);
 
-    mp.events.call('createBrowser', ['package://statics/html/character_creator.html']);
+    mp.events.call('createBrowser', ['package://statics/html/creator/index.html']);
 });
 mp.events.add('cameraPointTo', (arg) => {
     let id = arg;
@@ -42,14 +42,13 @@ mp.events.add('cef_setGender', (sex) => {
 
 });
 mp.events.add('setChanged_JSON', (shape) => {
-    let data = JSON.parse(shape);
 
-    playerData.firstHeadShape = parseInt(data[0])
-    playerData.secondHeadShape = parseInt(data[1])
-    playerData.firstSkinTone = parseInt(data[2])
-    playerData.secondSkinTone = parseInt(data[3])
-    playerData.headMix = parseFloat(data[4])
-    playerData.skinMix = parseFloat(data[5])
+    playerData.firstHeadShape = shape;
+    playerData.secondHeadShape = 0;
+    playerData.firstSkinTone = 0;
+    playerData.secondSkinTone = 0;
+    playerData.headMix = 0.0;
+    playerData.skinMix = 0.0;
    
     applyPlayerModelChanges();
 });

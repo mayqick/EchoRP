@@ -116,7 +116,7 @@ namespace Wave.Database
             return account;
         }
 
-        public static bool RegisterAccount(string socialName, string token, string hwid, string regIp, string mail)
+        public static void RegisterAccount(string socialName, string token, string hwid, string regIp, string mail)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -131,13 +131,11 @@ namespace Wave.Database
                     command.Parameters.AddWithValue("@regIp", regIp);
                     command.Parameters.AddWithValue("@mail", mail);
                     command.ExecuteNonQuery();
-                    return true;
                 }
                 catch (Exception ex)
                 {
                     NAPI.Util.ConsoleOutput("[EXCEPTION RegisterAccount] " + ex.Message);
                     NAPI.Util.ConsoleOutput("[EXCEPTION RegisterAccount] " + ex.StackTrace);
-                    return false;
                 }
             }
         }
@@ -149,18 +147,26 @@ namespace Wave.Database
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                connection.Open();
-                MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT characterName FROM characterlist WHERE login = @account";
-                command.Parameters.AddWithValue("@account", login);
-
-                using (MySqlDataReader reader = command.ExecuteReader())
+                try
                 {
-                    while (reader.Read())
+                    connection.Open();
+                    MySqlCommand command = connection.CreateCommand();
+                    command.CommandText = "SELECT characterName FROM characterlist WHERE login = @account";
+                    command.Parameters.AddWithValue("@account", login);
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        string name = reader.GetString("characterName");
-                        characters.Add(name);
+                        while (reader.Read())
+                        {
+                            string name = reader.GetString("characterName");
+                            characters.Add(name);
+                        }
                     }
+                }
+                catch(Exception ex)
+                {
+                    NAPI.Util.ConsoleOutput("[EXCEPTION GetAccountCharacters] " + ex.Message);
+                    NAPI.Util.ConsoleOutput("[EXCEPTION GetAccountCharacters] " + ex.StackTrace);
                 }
             }
 
