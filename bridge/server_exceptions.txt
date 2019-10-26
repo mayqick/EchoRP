@@ -373,3 +373,87 @@ System.IO.FileNotFoundException: Could not load the specified file.
 File name: 'System.Net.Sockets.resources'
    at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
 =========================================================
+
+==================[26.10.2019 17:45:32]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 17:45:32]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 17:51:16]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 17:51:16]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 17:53:42]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 17:53:42]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 18:00:41]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 18:00:41]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 18:09:33]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 18:09:33]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 18:48:19]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 18:48:19]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 19:01:30]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================
+
+==================[26.10.2019 19:01:30]==================
+System.IO.FileNotFoundException: Could not load the specified file.
+File name: 'System.Net.Sockets.resources'
+   at Assembly System.Runtime.Loader.AssemblyLoadContext.ResolveUsingEvent(AssemblyName assemblyName)
+=========================================================

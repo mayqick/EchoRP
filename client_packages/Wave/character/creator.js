@@ -7,7 +7,9 @@ mp.events.add('createNewChar', () => {
 });
 mp.events.add('showCreatorPage', () => {
     sceneryCamera = mp.cameras.new('default', new mp.Vector3(152.6008, -1003.25, -98), new mp.Vector3(-20.0, 0.0, 0.0), 90);
-    //sceneryCamera.pointAtCoord(-813.5496, 174.5891, 76.74077); 
+    sceneryCamera.setCoord(152.3708, -1001.75, -98.45);
+    sceneryCamera.setRot(-20.0, 0.0, 0.0, 90);
+    //sceneryCamera.pointAtCoord(-813.5496, 174.5891, 76.74077); я
     sceneryCamera.setActive(true);
     mp.game.cam.renderScriptCams(true, false, 0, true, false);
 
@@ -22,16 +24,32 @@ mp.events.add('showCreatorPage', () => {
 
     mp.events.call('createBrowser', ['package://statics/html/creator/index.html']);
 });
-mp.events.add('cameraPointTo', (arg) => {
-    let id = arg;
-    switch (id) {
-        case 1:
-            sceneryCamera.setCoord(152.3708, -1001.75, -98.45);
-            break;
-        case 2:
-            sceneryCamera.setCoord(152.6008, -1003.25, -98);
-            break;
+mp.events.add("playerCommand", (command) => {
+	const args = command.split(/[ ]+/);
+	const commandName = args[0];
+
+	args.shift();
+		
+	if (commandName === "cp") {
+        sceneryCamera.setCoord(152.3708 + parseFloat(args[1]), -1001.75 + parseFloat(args[2]), -98.45 + parseFloat(args[3]));
     }
+    if (commandName === "cr") {
+		sceneryCamera.setRot(-20.0 + parseFloat(args[1]), 0.0 + parseFloat(args[2]), 0.0 + parseFloat(args[3]), 90 + parseInt(args[4]));
+	}                                                                                // лево-право поворот камеры
+});
+
+mp.events.add('cameraPointTo', (posX, posY, posZ) => {
+    sceneryCamera.setCoord(152.3708 + posX, -1001.75 + posY, -98.45 + posZ); // position
+    
+});
+mp.events.add('cameraRangetTo', (posY) => {
+    sceneryCamera.setCoord(152.3708, -1001.75 + parseFloat(posY), -98.45); // position
+});
+mp.events.add('cameraHeightTo', (posZ) => {
+    sceneryCamera.setCoord(152.3708, -1001.75, -98.45 + parseFloat(posZ)); // position
+});
+mp.events.add('cameraRotationTo', (rotX, rotY, rotZ, p4) => {
+    sceneryCamera.setRot(-20.0 + rotX, 0.0 + rotY, 0.0 + rotZ, 90 + p4);                        // rotation
 });
 mp.events.add('cef_setGender', (sex) => {
     playerData.sex = sex;

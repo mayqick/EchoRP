@@ -75,8 +75,21 @@ h3{
 
     /* White */
 
-    background: #FFFFFF;
+    color: #484F5B;
     transform: rotate(-90deg);
+}
+.label-value-height{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+
+    align-items: center;
+    letter-spacing: 0.02em;
+
+    color: #484F5B;
 }
 .rotate-label-value{
     font-family: "Montserrat";
@@ -91,7 +104,7 @@ h3{
 
     /* White */
 
-    background: #FFFFFF;
+    color: #484F5B;
 }
 .label-for{
     font-family: "Montserrat";
