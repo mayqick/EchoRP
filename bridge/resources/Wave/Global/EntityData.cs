@@ -1,4 +1,4 @@
-﻿namespace Wave.Global
+﻿namespace Echo.Global
 {
     public class EntityData
     {

@@ -1,4 +1,4 @@
-﻿namespace Wave.Model
+﻿namespace Echo.Model
 {
     public class CharacterModel
     {

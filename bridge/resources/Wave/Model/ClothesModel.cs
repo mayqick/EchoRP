@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Wave.Model
+namespace Echo.Model
 {
     public class ClothesModel
     {

@@ -3,13 +3,12 @@ using System.Net;
 using System.Net.Mail;
 using GTANetworkAPI;
 using System.Threading.Tasks;
-namespace Wave.Global
+namespace Echo.Global
 {
     class Mail
     {
         private const string SenderAdrees = "noreply@echorp.com";
         private const string SenderPassword = "n!W]0xTYia!F";
-        /*private const string SenderName = "Echo Role Play";*/
         private const string SenderServer = "piter21.dns-rus.net";
 
         // Метод асинхронной отправки письма. Аргументы: почта игрока, имя отправителя (заголовок письма при просмотре),

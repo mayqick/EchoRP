@@ -1,12 +1,12 @@
 ﻿<meta>
-  <info name="Wave RolePlay" author="Oniel" type="script" />
-  <script src="compiled/netcoreapp2.2/Wave.dll"/>
+  <info name="Echo RolePlay" author="Oniel" type="script" />
+  <script src="compiled/netcoreapp2.2/Echo.dll"/>
   <!-- Настройки базы данных -->
   <settings>
     <setting name="host" value="localhost"/>
     <setting name="username" value="root"/>
     <setting name="password" value=""/>
-    <setting name="database" value="waverp"/>
+    <setting name="database" value="Echorp"/>
   </settings>
 
 </meta>

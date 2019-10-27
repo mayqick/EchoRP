@@ -1,7 +1,7 @@
 ﻿using System;
 using GTANetworkAPI;
 
-namespace Wave
+namespace Echo
 {
     public class Main : Script
     {

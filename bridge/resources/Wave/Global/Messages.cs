@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Wave.Global
+namespace Echo.Global
 {
     public class Messages
     {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using GTANetworkAPI;
 using Newtonsoft.Json;
-using Wave.Model;
-using Wave.Global;
-using Wave.Account;
-namespace Wave.Character
+using Echo.Model;
+using Echo.Global;
+using Echo.Account;
+namespace Echo.Character
 {
     class Customization : Script
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using GTANetworkAPI;
-using Wave.Model;
-using Wave.Global;
-namespace Wave.Character
+using Echo.Model;
+using Echo.Global;
+namespace Echo.Character
 {
     class Inventory : Script
     {

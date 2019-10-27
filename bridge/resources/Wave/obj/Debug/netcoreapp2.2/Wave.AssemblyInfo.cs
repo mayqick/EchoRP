@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Wave")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Echo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Wave")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Wave")]
+[assembly: System.Reflection.AssemblyProductAttribute("Echo")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Echo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.

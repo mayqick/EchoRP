@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Wave.Character;
+using Echo.Character;
 using GTANetworkAPI;
-using Wave.Model;
-using Wave.Global;
-namespace Wave.Account
+using Echo.Model;
+using Echo.Global;
+namespace Echo.Account
 {
     class Auth : Script
     {

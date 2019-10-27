@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using GTANetworkAPI;
-namespace Wave.Chat
+namespace Echo.Chat
 {
     class Voice : Script
     {

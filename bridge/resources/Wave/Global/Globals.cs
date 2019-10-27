@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using GTANetworkAPI;
-using Wave.Model;
-namespace Wave.Global
+using Echo.Model;
+namespace Echo.Global
 {       
     //NAPI.Task.Run(() =>
     //        {
@@ -109,8 +109,6 @@ namespace Wave.Global
                         id = player.GetData(EntityData.PLAYER_SQL_ID),
                         armor = player.GetData(EntityData.PLAYER_ARMOR),
                         health = player.GetData(EntityData.PLAYER_HEALTH),
-                        bank = player.GetSharedData(EntityData.PLAYER_BANK),
-                        money = player.GetSharedData(EntityData.PLAYER_MONEY),
                         posX = player.Position.X,
                         posY = player.Position.Y,
                         posZ = player.Position.Z,

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using GTANetworkAPI;
-using Wave.Global;
+using Echo.Global;
 
-namespace Wave.Commands
+namespace Echo.Commands
 {
     class Chat : Script
     { 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Wave.Global
+namespace Echo.Global
 {
     struct Constants
     {
@@ -56,7 +56,7 @@ namespace Wave.Global
         public const int SEX_FEMALE = 1;
 
         // connectionString for MySqlConnection
-        public const string connectionString = "Server=localhost; Database=waverp; Uid=root; Pwd=";
+        public const string connectionString = "Server=localhost; Database=Echorp; Uid=root; Pwd=";
 
         // Chat
         public const int CHAT_LENGTH = 85;

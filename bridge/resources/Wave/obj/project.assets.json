@@ -1685,9 +1685,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Oniel\\Documents\\GitHub\\EchoRP\\bridge\\resources\\Wave\\Wave.csproj",
-      "projectName": "Wave",
-      "projectPath": "C:\\Users\\Oniel\\Documents\\GitHub\\EchoRP\\bridge\\resources\\Wave\\Wave.csproj",
+      "projectUniqueName": "C:\\Users\\Oniel\\Documents\\GitHub\\EchoRP\\bridge\\resources\\Wave\\Echo.csproj",
+      "projectName": "Echo",
+      "projectPath": "C:\\Users\\Oniel\\Documents\\GitHub\\EchoRP\\bridge\\resources\\Wave\\Echo.csproj",
       "packagesPath": "C:\\Users\\Oniel\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Oniel\\Documents\\GitHub\\EchoRP\\bridge\\resources\\Wave\\obj\\",
       "projectStyle": "PackageReference",

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using GTANetworkAPI;
-namespace Wave.Model
+namespace Echo.Model
 {
     public class SkinModel : Script
     {

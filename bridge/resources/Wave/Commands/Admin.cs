@@ -1,7 +1,7 @@
 ﻿using GTANetworkAPI;
 using System;
-using Wave.Global;
-namespace Wave.Commands
+using Echo.Global;
+namespace Echo.Commands
 {
     class Admin : Script
     {

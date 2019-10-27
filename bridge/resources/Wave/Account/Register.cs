@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using GTANetworkAPI;
-namespace Wave.Account
+namespace Echo.Account
 {
     class Register : Script
     {

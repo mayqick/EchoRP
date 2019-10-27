@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wave", "Wave\Wave.csproj", "{340484AB-A8D2-4EEC-A17E-B0625A7B09A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Echo", "Wave\Echo.csproj", "{340484AB-A8D2-4EEC-A17E-B0625A7B09A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

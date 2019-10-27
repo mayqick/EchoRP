@@ -1,15 +1,15 @@
 ﻿using GTANetworkAPI;
-using Wave.Model;
+using Echo.Model;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Text;
 using System;
 
-namespace Wave.Database
+namespace Echo.Database
 {
     public class Database : Script
     {
-        private static string connectionString = Wave.Global.Constants.connectionString;
+        private static string connectionString = Echo.Global.Constants.connectionString;
 
         [ServerEvent(Event.ResourceStart)]
         public void OnResourceStart()

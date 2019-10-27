@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System;
 using GTANetworkAPI;
-using Wave.Global;
-namespace Wave.Chat
+using Echo.Global;
+namespace Echo.Chat
 {
     public class Chat : Script
     {
