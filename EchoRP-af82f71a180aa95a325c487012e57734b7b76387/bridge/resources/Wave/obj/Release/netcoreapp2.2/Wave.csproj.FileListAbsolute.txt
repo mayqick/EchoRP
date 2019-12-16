@@ -1,0 +1,16 @@
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\bin\Release\netcoreapp2.2\Wave.deps.json
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\bin\Release\netcoreapp2.2\Wave.dll
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\bin\Release\netcoreapp2.2\Wave.pdb
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\bin\Release\netcoreapp2.2\Bootstrapper.dll
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\bin\Release\netcoreapp2.2\LiteDB.dll
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\bin\Release\netcoreapp2.2\Newtonsoft.Json.dll
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\bin\Release\netcoreapp2.2\Colorful.Console.dll
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\bin\Release\netcoreapp2.2\Ben.Demystifier.dll
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\bin\Release\netcoreapp2.2\NeoSmart.Hashing.dll
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\bin\Release\netcoreapp2.2\xxHash.dll
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\obj\Release\netcoreapp2.2\Wave.csprojAssemblyReference.cache
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\obj\Release\netcoreapp2.2\Wave.AssemblyInfoInputs.cache
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\obj\Release\netcoreapp2.2\Wave.AssemblyInfo.cs
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\obj\Release\netcoreapp2.2\Wave.csproj.CopyComplete
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\obj\Release\netcoreapp2.2\Wave.dll
+C:\Users\Oniel\Documents\GitHub\EchoRP\bridge\resources\Wave\obj\Release\netcoreapp2.2\Wave.pdb

@@ -1,0 +1,460 @@
+@import url(../fonts/Panton/style.css);
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+body {
+  font-family: 'Panton';
+  font-size: 10px;
+  color: #fff;
+  background: #131313;
+  padding: 25px 70px;
+  height: calc(100% - 50px);
+}
+
+main {
+  width: 100%;
+  min-height: calc(100% - 105px);
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.inventory-conteiner {
+  width: 460px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.inventory-conteiner_right {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 100px;
+}
+#backpack_title{
+  visibility: hidden;
+}
+#backpack{
+  visibility: hidden;
+}
+#backpack_slider{
+  visibility: hidden;
+}
+.inventory-conteiner_main {
+  width: 350px;
+}
+
+.inventory-conteiner_bar {
+  width: 100%;
+  background: #373737;
+  border-radius: 4px;
+  height: 40px;
+  margin-top: 25px;
+}
+
+.inventory-conteiner_bar-fill {
+  width: 50%;
+  height: 40px;
+  background: -webkit-linear-gradient(10.68deg, #C02AD6 -12.31%, #254FDF 126.57%);
+  background: -o-linear-gradient(10.68deg, #C02AD6 -12.31%, #254FDF 126.57%);
+  background: linear-gradient(79.32deg, #C02AD6 -12.31%, #254FDF 126.57%);
+  -webkit-box-shadow: 0px 25px 40px rgba(192, 42, 214, 0.35);
+  box-shadow: 0px 25px 40px rgba(192, 42, 214, 0.35);
+  border-radius: 6px;
+  position: relative;
+}
+
+.inventory-conteiner_bar-fill p {
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.5em;
+}
+
+.inventory-conteiner_bar-fill p span {
+  font-family: 'Panton Bold';
+}
+
+.inventory-conteiner_header {
+  width: calc(100% - 10px);
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(196, 196, 196, 0.2);
+  padding-right: 10px;
+}
+
+.inventory-conteiner_header section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.inventory-conteiner_header section img {
+  width: 40px;
+  height: 40px;
+}
+
+.inventory-conteiner_header section p {
+  line-height: 40px;
+  margin-left: 15px;
+  font-size: 1.6em;
+}
+
+.inventory-conteiner_text p {
+  color: #fff;
+  font-size: 1.6em;
+}
+
+.inventory-conteiner_text[text-fch] {
+  margin-top: 15px;
+}
+
+.inventory-conteiner_title {
+  margin-top: 25px;
+}
+
+.inventory-conteiner_title section h1 {
+  font-size: 4em;
+  font-family: 'Panton Bold';
+}
+
+.inventory-conteiner_title section h2 {
+  font-size: 3em;
+  font-family: 'Panton Bold';
+}
+
+.inventory-conteiner_title[nth-bl] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.inventory-conteiner_title[nth-bl] section:last-child p {
+  font-family: 'Panton  ExtraLight';
+  font-size: 1.8em;
+  line-height: 25px;
+}
+
+.inventory-conteiner_title[nth-bl] section:last-child p span {
+  font-family: 'Panton';
+}
+
+.inventory-conteiner_title[nth-bl] section:last-child p:last-child {
+  font-weight: bold;
+}
+
+.inventory-conteiner_title[nth-bl] section:last-child[image] {
+  width: 85px;
+  height: 85px;
+  border: 1px solid #2A2A2A;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: -25px;
+}
+
+.inventory-conteiner_title[nth-bl] section:last-child img {
+  width: 55px;
+  height: 55px;
+}
+
+.inventory-conteiner_items {
+  width: 100%;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.inventory-conteiner_items-sliders {
+  width: 4px;
+  margin-left: 16px;
+  margin-top: 160px;
+}
+
+.inventory-conteiner_items-slider {
+  width: 4px;
+  height: 195px;
+  background: #212121;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.inventory-conteiner_items-slider:last-child {
+  margin-top: 140px;
+}
+
+.inventory-conteiner_item {
+  width: 75px;
+  height: 75px;
+  background: rgba(55, 55, 55, 0.5);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.inventory-conteiner_item:nth-child(6) {
+  width: 165px;
+}
+
+.inventory-conteiner_side {
+  width: 90px;
+  margin-top: 155px;
+}
+
+.inventory-conteiner_side-slider {
+  margin-top: 155px;
+  width: 4px;
+  height: 390px;
+  background: -webkit-linear-gradient(0.02deg, #C02AD6 -12.31%, #254FDF 126.57%);
+  background: -o-linear-gradient(0.02deg, #C02AD6 -12.31%, #254FDF 126.57%);
+  background: linear-gradient(89.98deg, #C02AD6 -12.31%, #254FDF 126.57%);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.inventory-conteiner_side-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: .2;
+}
+
+.inventory-conteiner_side-item[item-selected] {
+  opacity: 1;
+}
+
+.inventory-conteiner_side-item[item-selected]::before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  margin-left: 25px;
+  border-width: 0 10px 10px 0;
+  border-color: transparent #C02AD6 transparent transparent;
+}
+
+.item-content {
+  width: 75px;
+  height: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.item-content:nth-child(6) {
+  width: 165px;
+}
+
+.item-content img {
+  height: 80%;
+}
+
+.item-content span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #C02AD6;
+  position: absolute;
+  text-align: center;
+  line-height: 20px;
+  -webkit-box-shadow: 0px 25px 40px rgba(192, 42, 214, 0.35);
+  box-shadow: 0px 25px 40px rgba(192, 42, 214, 0.35);
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.guns {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.guns-item {
+  width: 190px;
+  height: 100px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.guns-item:first-child {
+  margin-left: 0;
+}
+
+.guns-item img {
+  height: 150%;
+  -webkit-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+.guns-item_hand {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.guns-item_hand img {
+  opacity: .2;
+  width: 40px;
+  height: 50px;
+}
+
+.guns-item_hand p {
+  color: #575757;
+  font-size: 1.8em;
+  font-family: 'Panton Bold';
+  margin-top: 5px;
+}
+
+.gun-info {
+  width: 390px;
+  height: 100%;
+  margin-top: 150px;
+  margin-left: -100px;
+}
+
+.gun-info_image {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.gun-info_image img {
+  -webkit-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+.gun-info_title section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.gun-info_title section h3 {
+  font-size: 3em;
+  font-family: 'Panton Bold';
+}
+
+.gun-info_title section p {
+  line-height: 40px;
+  font-size: 1.8em;
+  margin-left: 25px;
+}
+
+.gun-info_text {
+  margin-top: 10px;
+}
+
+.gun-info_text p {
+  font-size: 1.6em;
+  font-family: 'Panton  Light';
+}
+
+.gun-info_buttons {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.gun-info_buttons button {
+  width: 90px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.gun-info_buttons button:first-child {
+  width: 190px;
+}

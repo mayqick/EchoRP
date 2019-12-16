@@ -1,0 +1,1 @@
+require('Wave/index.js');

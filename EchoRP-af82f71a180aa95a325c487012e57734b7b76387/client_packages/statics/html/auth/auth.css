@@ -1,0 +1,230 @@
+.container{
+    max-width: 650px;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+.slide-fade-enter-active {
+    transition: all .7s ease;
+  }
+  .slide-fade-enter {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  .fade-enter-active {
+    transition: opacity 1.2s;
+  }
+  .fade-enter  {
+    opacity: 0;
+  }
+  .fade1-enter-active {
+    transition: opacity 1.2s;
+  }
+  .fade1-enter  {
+    opacity: 0;
+  }
+  .fade2-enter-active {
+    transition: opacity 1.5s;
+  }
+  .fade2-enter  {
+    opacity: 0;
+  }
+  .fade3-enter-active {
+    transition: opacity 1.8s;
+  }
+  .fade3-enter  {
+    opacity: 0;
+  }
+body{
+    background-color: #111520;
+}
+#name{
+  margin-left: 44px;
+  font-family: Montserrat;
+  position: absolute;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 38px;
+  color: #595961;
+}
+.typing{
+    position: fixed;
+    width: 275px;
+    height: 101px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 32px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    margin-top: 80px;
+    margin-left: 44px;
+}
+#message-box{
+    width: 338px;
+    height: 177px;
+    margin-top: 10%;
+    background: #161923;
+    border-radius: 15px;
+}
+#holder{
+    position: relative;
+    border: 20px solid transparent;	border-left: 20px solid #161923;
+    float: right;
+    left: 40px;
+    top: 20%;
+}
+.actor{
+    display: inline-flex;
+}
+hr{
+    margin: 0;
+    border: 1px solid #1D2026;
+    height: 0px;
+}
+.mail-enter{
+    margin-top: 140px;
+    display: flex;
+}
+#mail {
+    margin-right: 70px;
+}
+.main_button {
+    padding-left: 30px;
+    display: flex;
+    align-items:center;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    margin: auto;
+    border: none;
+    outline:none;
+    width: 174px;
+    height: 72px;
+    background: #5C6BFF;
+    border-radius: 100px;
+    cursor: pointer;
+}
+    
+.main_button svg {
+    padding-left: 20px;
+    width: 35px;
+    height: 35px;
+}
+    
+    .main_button:hover {background: none; padding-left: 30px; border: 2px solid #5C6BFF;
+    border-radius: 100px; transition: 0.2s ease;}
+    .main_button:active {background: rgba(255, 255, 255, 0.12);; padding-left: 30px; border: 2px solid #FFFFFF;
+    border-radius: 100px; transition: 0.4s ease;}
+    
+    /*  */
+#suspect-text{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.39);
+    margin-top: 40px;
+    margin-left: 50px;
+}
+#social-text{
+    width: 384px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.39);
+    margin-top: 30px;
+    float: right;
+}
+#social-logo{
+    margin-top: 30px;
+    float: left;
+    margin-right: 55px;
+}
+#ellipse{
+    width: 65px;
+    height: 65px;
+    margin-top: 10px;
+}
+#dialog{
+    max-width: 600px;
+    position: absolute;
+    bottom: 50%;
+    left: 40%;
+    display: inline-flex;
+}
+.message-dialog{
+    margin-left: 25px;
+    margin-bottom: 12px;
+    height: 65px;
+
+    background: #151920;
+    border-radius: 15px;
+}
+.left-arrow{
+    border: 20px solid transparent;	border-right: 20px solid #151920;
+    float: left;
+    position: relative;
+    right: 35px;
+    top: 12px;
+}
+.footer{
+    
+}
+#suspect-title{
+font-family: "Montserrat";
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 32px;
+
+letter-spacing: 0.02em;
+
+color: #FFFFFF;
+margin-top: 40px;
+margin-left: 50px;
+}
+.suspect{
+  background: rgba(211, 218, 255, 0.02);
+
+  border: 1px solid #1A1E26;
+  box-sizing: border-box;
+  
+  margin:0 auto;
+
+  height: 388px;
+  width: 477px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.number-input{
+  width: 80px !important; 
+  margin-right: 30px;
+}
+.dialog-ellipse-message{
+width: 573px;
+height: 31px;
+position: relative;
+right: 9px;
+top: 15px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 32px;
+
+color: #FFFFFF;
+}

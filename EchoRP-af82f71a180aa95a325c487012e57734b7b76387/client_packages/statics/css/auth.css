@@ -1,0 +1,216 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    overflow-y: hidden;
+    background-image: url("../images/background.jpg");
+}
+#bg__wave{
+    position: absolute; 
+    z-index: -1;
+    opacity: 0.9;
+}
+#bg__city{
+    position: absolute; 
+    z-index: -2;
+}
+#back_arrow{
+    position: relative;
+    top: 200px;
+    right: 50px;
+    box-shadow: 0px 25px 40px rgba(26, 227, 255, 0.2);
+    border-radius: 6px;
+}
+#auth_main{
+    float: left;
+    margin: auto;
+    width: 400px;
+    align-items: flex-end;
+    margin-top: 20%;
+    height: 665px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 6px 0px 0px 6px;
+}
+#center__items{
+    position: absolute;
+    left: 50%;
+    margin-left: -400px;
+}
+#reg_main{
+    width: 400px;
+    margin: auto;
+    margin-top: 20%;
+    height: 665px;
+    background: linear-gradient(91.92deg, #C02AD6 -39.65%, #254FDF 117.29%);
+    border-radius: 0px 6px 6px 0px;
+    content: '';
+    float: right;
+}
+#main_box{
+    width: max-content;
+}
+
+#waves{
+    position: absolute;
+}
+p {
+    margin: 0 0 10px;
+    padding: 15px 0;
+    color: #ccc;
+    background: none;
+    border: none;
+    width: 100%;
+    font-size: 26px;
+    line-height: 22px;
+    transition: 0.2s ease-in-out;
+}
+
+#project_name{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+
+    color: #6F2DB0;
+}
+
+#box-header{
+    padding-top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 2.5em;
+    line-height: 2.5em;
+    vertical-align: baseline;
+}
+#reg__info{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    width: 200px;
+    color: #FFFFFF;
+
+}
+#reg{
+    margin-top: 15%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 35px;
+    color: #FFFFFF;
+}
+#reg_mask_image{
+    z-index: 0;
+    position: relative;
+    bottom: 339px;
+}
+#reg_girl{
+    z-index: 1;
+    width: 250px;
+    height: 524px;
+    bottom: 109px;
+    position: relative;
+}
+#info{
+    padding: 10px 0;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 23px;
+    font-size: 16px;
+    color: #9758D6;
+}
+
+#error{
+    position: absolute;
+    visibility: hidden;
+    padding: 10px 0;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 23px;
+    font-size: 16px;
+    color: #FF0000;
+}
+
+
+.i_mail{
+    padding: 15px 0;
+    color:white;
+    background: none;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    line-height: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: 0.2s ease-in-out;
+}
+
+.i_mail:focus{
+    color:white;
+    background: none;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    line-height: 22px;
+    border-bottom: 3px solid #254FDF;
+}
+
+#i_rules{
+    padding: 20px 0;
+    color: #9758D6;
+    background: none;
+    width: 100%;
+    font-size: 16px;
+    line-height: 16px;
+}
+#reg_btn{
+    width: 160px;
+    height: 60px;
+
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 25px 40px rgba(26, 227, 255, 0.2);
+    border-radius: 6px;
+    background: none;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+
+    right: 190px;
+    top: 160px;
+    position: relative;
+
+    color: #FFFFFF;
+}
+#reg_btn:hover{
+    color: black;
+    background: #FFFFFF
+}
+#auth_btn{
+    margin-top: 40px;
+    width: 100%;
+    height: 60px;
+    
+    background: linear-gradient(81.55deg, #C02AD6 -45.32%, #254FDF 112.83%);
+    box-shadow: 0px 25px 40px rgba(192, 42, 214, 0.35);
+    border: 0;
+    border-radius: 6px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #FFFFFF;
+
+}
+
+#recovery{
+    padding-top: 20px;
+    color: white;
+}
+#login::after{
+    content: 'хуй';
+}

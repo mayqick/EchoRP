@@ -1,0 +1,47 @@
+* { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif }
+
+body { 
+  font-size: 14px;
+  margin-top: 40vh;
+  margin-left: 15px;
+ }
+
+#scope-bar {
+  display: table;
+  table-layout: fixed;
+  width: 400px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#scope-bar li {
+  display: table-cell;
+  width: 100%;
+  overflow: hidden;
+}
+#scope-bar li input[type=radio] {
+  display: none;
+}
+#scope-bar li label {
+  display: block;
+  cursor: pointer;
+  margin-left: -1px;
+  padding: 5px 0;
+  width: auto;
+  border: 1px solid rgba(79, 123, 171, 0.33);
+  font-size: 12px;
+  text-align: center;
+  color: rgb(0,122,255);
+  background:#FFF;
+}
+#scope-bar li:first-of-type label {
+  margin-left: 0;
+  border-radius: 3px 0 0 3px;
+}
+#scope-bar li:last-of-type label {
+  border-radius: 0 3px 3px 0;
+}
+#scope-bar input[type=radio]:checked + label {
+  background: linear-gradient(81.34deg, #C02AD6 -12.31%, #254FDF 126.57%);
+  color: #FFF;
+}
