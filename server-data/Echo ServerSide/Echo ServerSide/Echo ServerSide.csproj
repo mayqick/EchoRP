@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Auth.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="Mail.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

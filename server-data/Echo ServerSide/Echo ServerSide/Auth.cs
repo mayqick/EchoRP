@@ -20,12 +20,18 @@ namespace Echo_ServerSide
         private async void OnPlayerRegistration([FromSource]Player player, string mail)
         {
             await Delay(0);
-            if(await Database.CheckPlayerMailAsync(mail))
+
+            Random random = new Random();
+            string code = random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString();
+            
+            if (await Database.CheckPlayerMailAsync(mail))
             {
                 // todo: license не совпадает, но введенный mail есть в базе
+                Mail.SendEmailAsync(mail, "Echo Role Play", "Echo Role Play - код подтверждения", $"Ваш код подтверждения входа в аккаунт: {code}");
             }
             else
             {
+                Mail.SendEmailAsync(mail, "Echo Role Play", "Echo Role Play - код подтверждения", $"Ваш код подтверждения регистрации аккаунта: {code}");
                 Database.RegisterAccountAsync(player.Identifiers["license"], mail, player.EndPoint);
             }
         }
@@ -36,6 +42,8 @@ namespace Echo_ServerSide
             if (await Database.CheckRegistrationAsync(licenseIdentifier))
             {
                 // todo: если аккаунт в базе
+                // успешная авторизация, выбор персонажей
+
             }
             else
             {
