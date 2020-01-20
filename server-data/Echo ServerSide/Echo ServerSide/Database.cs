@@ -11,14 +11,21 @@ namespace Echo_ServerSide
 
     public class Database : BaseScript
     {
+        public Database()
+        {
+            ConnectionOpen();
+        }
         private static string connectionString = "Server=localhost; Database=echorp; Uid=root; Pwd=";
         private static MySqlConnection connection = new MySqlConnection(connectionString);
-
+        private static async void ConnectionOpen()
+        {
+            await connection.OpenAsync();
+        }
+        #region playercheck
         public static async Task<bool> CheckRegistrationAsync(string license)
         {
             try
             {
-                await connection.OpenAsync();
                 MySqlCommand command = connection.CreateCommand();
                 command.CommandText = "SELECT EXISTS(SELECT 1 FROM `accounts` WHERE `license` = @license LIMIT 1)";
                 command.Parameters.AddWithValue("@license", license);
@@ -29,9 +36,7 @@ namespace Echo_ServerSide
                     {
                         while (await reader.ReadAsync())
                         {
-                            if (reader.GetInt16(0) == 0)
-                                return false;
-                            return true;
+                            return Convert.ToBoolean(reader.GetInt16(0));
                         }
                     }
                     else
@@ -48,26 +53,56 @@ namespace Echo_ServerSide
             }
             return false;
         }
-        public static async Task RegisterAccountAsync(string socialName, string token, string hwid, string regIp, string mail)
+        public static async Task<bool> CheckPlayerMailAsync(string mail)
         {
             try
             {
-                await connection.OpenAsync();
                 MySqlCommand command = connection.CreateCommand();
-                command.CommandText = "INSERT INTO `accounts` (`socialName` , `token`, `serial`, `regIp`, `mail`) VALUES(@socialName, @token, @serial, @regIp, @mail)";
-                command.Parameters.AddWithValue("@socialName", socialName);
-                command.Parameters.AddWithValue("@token", token);
-                command.Parameters.AddWithValue("@serial", hwid);
-                command.Parameters.AddWithValue("@regIp", regIp);
+                command.CommandText = "SELECT EXISTS(SELECT 1 FROM `accounts` WHERE `mail` = @mail LIMIT 1)";
                 command.Parameters.AddWithValue("@mail", mail);
+
+                using (var reader = await command.ExecuteReaderAsync())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            return Convert.ToBoolean(reader.GetInt16(0));
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Debug.WriteLine("[EXCEPTION CheckPlayerMail] " + ex.Message);
+                Debug.WriteLine("[EXCEPTION CheckPlayerMail] " + ex.StackTrace);
+            }
+            return false;
+        }
+        #endregion
+        public static async void RegisterAccountAsync(string license, string mail, string regIp)
+        {
+
+            try
+            {
+                MySqlCommand command = connection.CreateCommand();
+                command.CommandText = "INSERT INTO `accounts` (`license`, `mail`, `regIp`) VALUES(@license, @mail, @regIp)";
+                command.Parameters.AddWithValue("@license", license);
+                command.Parameters.AddWithValue("@mail", mail);
+                command.Parameters.AddWithValue("@regIp", regIp);
                 await command.ExecuteNonQueryAsync();
-                await connection.CloseAsync();
             }
             catch (Exception ex)
             {
                 Debug.WriteLine("[EXCEPTION RegisterAccount] " + ex.Message);
                 Debug.WriteLine("[EXCEPTION RegisterAccount] " + ex.StackTrace);
             }
+
         }
 
     }

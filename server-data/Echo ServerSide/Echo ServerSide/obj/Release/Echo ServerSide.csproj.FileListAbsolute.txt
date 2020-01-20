@@ -20,3 +20,8 @@ C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\resources\echo\EchoServer.
 C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\resources\echo\EchoServer.net.pdb
 C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\obj\Release\EchoServer.net.dll
 C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\obj\Release\EchoServer.net.pdb
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\resources\echo\EchoServer.net.dll
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\resources\echo\EchoServer.net.pdb
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\Echo ServerSide\Echo ServerSide\obj\Release\Echo ServerSide.csprojAssemblyReference.cache
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\Echo ServerSide\Echo ServerSide\obj\Release\EchoServer.net.dll
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\Echo ServerSide\Echo ServerSide\obj\Release\EchoServer.net.pdb

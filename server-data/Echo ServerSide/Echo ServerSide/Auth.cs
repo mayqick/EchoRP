@@ -20,8 +20,14 @@ namespace Echo_ServerSide
         private async void OnPlayerRegistration([FromSource]Player player, string mail)
         {
             await Delay(0);
-            Debug.WriteLine("true!");
-            Debug.WriteLine(mail);
+            if(await Database.CheckPlayerMailAsync(mail))
+            {
+                // todo: license не совпадает, но введенный mail есть в базе
+            }
+            else
+            {
+                Database.RegisterAccountAsync(player.Identifiers["license"], mail, player.EndPoint);
+            }
         }
         private async void OnPlayerSpawned([FromSource]Player player)
         {
