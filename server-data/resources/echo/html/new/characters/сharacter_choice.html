@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="сharacter_choice.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <title>Characters</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="head">
+            <h2 id="title">Мои персонажи</h1>
+                <h1 id="character_name">Thomas Anderson
+            </h2>
+            <button id="create_new">Создать персонажа <svg id="svg_plus" width="12" height="12" viewBox="0 0 12 12"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.25 6.75V12H6.75V6.75H12V5.25H6.75V0H5.25V5.25H0V6.75H5.25Z" fill="white" />
+                </svg>
+            </button>
+
+        </div>
+        <div class="character_info">
+
+            <div id="info_left">
+                <div id="level">
+                    <h3 class="character_info_titles">Уровень</h3>
+                    <h2 id="level_info">10</h3>
+                </div>
+                <div id="xp">
+                    <h3 class="character_info_titles">Опыт</h3>
+                    <h2 id="xp_info">4/10</h3>
+                </div>
+            </div>
+            <div id="info_right">
+                <div id="job">
+                    <h3 class="character_info_titles">Карьера</h3>
+                    <h2 id="job_info">Фермер</h2>
+                </div>
+                <div id="money">
+                    <h3 class="character_info_titles">Наличка</h3>
+                    <h2 id="money_info">$120524</h3>
+                </div>
+            </div>
+        </div>
+        <div class="button_left">
+            <h3 class="button_text">Влево</h3>
+            <hr class="button_line">
+            <button class="echo-control-big-circle-arrow">
+                <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 1L1.5 7L7.5 13" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M15 7L3 7" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+        <div class="button_right">
+
+            <button class="echo-control-big-circle-arrow">
+                <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.50006 13L14.5001 7L8.50006 1" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M1.00006 7H13.0001" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <hr class="button_line">
+            <h3 class="button_text">Вправо</h3>
+        </div>
+        <div class="control_buttons">
+            <div id="echo_button_border">
+                <button class="echo-button">Играть
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0)">
+                            <path d="M1.71436 0.857178L9.79599 6.00003L1.71436 11.1429V0.857178Z" fill="white"
+                                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0">
+                                <path d="M0 0H12V12H0V0Z" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+            </div>
+            <button id="delete_character">Удалить персонажа <svg id="svg_delete" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2L2 10" stroke="#484F5B" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M2 2L10 10" stroke="#484F5B" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+                
+        </button>
+        </div>
+    </div>
+</body>
+
+</html>
