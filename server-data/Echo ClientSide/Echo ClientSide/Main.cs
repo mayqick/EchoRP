@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CitizenFX.Core.Native;
+using static CitizenFX.Core.Native.API;
 using CitizenFX.Core;
 using Newtonsoft.Json;
 using System.Dynamic;
@@ -15,62 +16,79 @@ namespace Echo_ClientSide
 
         public Main()
         {
+            Tick += OnTick;
 
             EventHandlers["onResourceStart"] += new Action<string>(OnResourceStart);
+            EventHandlers["onResourceStop"] += new Action<string>(OnResourceStop);
             EventHandlers["playerSpawned"] += new Action(OnPlayerSpawned);
-            EventHandlers.Add("onPlayerStartRegistation", new Action(OnPlayerStartRegistation));
-
-
-            RegisterNUICallback("SendMailToRegistration", OnSendMailToRegistration);
+           
         }
-        private CallbackDelegate OnSendMailToRegistration(IDictionary<string, object> data, CallbackDelegate result)
-        {
+        public enum GamePhase { WAITING, READY, STARTING, STARTED, RESET, DEAD };
+        public static GamePhase currentPhase = GamePhase.WAITING;
+        private bool firstTick = true; // Первый тик для проверки на присоединение.
 
-            if (data.TryGetValue("mail", out var mail))
-            {
-                result("ok");
-                TriggerServerEvent("onPlayerRegistration",  mail.ToString());
-            }
-/*            TriggerServerEvent("onPlayerRegistration", mail.ToString());*/
-            return result;
-        }
-        private async void OnPlayerStartRegistation()
-        {
-            await Delay(0);
-            API.SetNuiFocus(true, true);
-
-            API.SendNuiMessage(JsonConvert.SerializeObject(new
-            {
-                type = "render"
-            }));
-
-        }
         private async void OnPlayerSpawned()
         {
             await Delay(0);
-            Game.Player.CanControlCharacter = false;
-            Game.PlayerPed.IsVisible = false;
-            Game.PlayerPed.IsInvincible = true;
-            Game.PlayerPed.CanRagdoll = false;
+            /*          Game.Player.CanControlCharacter = false;
+                      Game.PlayerPed.IsVisible = false;
+                      Game.PlayerPed.IsInvincible = true;
+                      Game.PlayerPed.CanRagdoll = false;
 
-            API.NetworkSetEntityInvisibleToNetwork(Game.PlayerPed.Handle, true);
+                      API.NetworkSetEntityInvisibleToNetwork(Game.PlayerPed.Handle, true);*/
 
+
+            uint model = (uint)API.GetHashKey("mp_m_freemode_01");
+            API.RequestModel(model);
+            if (API.IsModelInCdimage(model))
+            {
+                while (!API.HasModelLoaded(model))
+                {
+                    await Delay(0);
+                }
+                API.SetPlayerModel(API.PlayerId(), model);
+                API.SetModelAsNoLongerNeeded(model);
+                API.SetPedDefaultComponentVariation(API.PlayerPedId());
+            }
             TriggerServerEvent("onPlayerSpawned");
 
+        }
+        private async void OnResourceStop(string resourceName)
+        {
+            await Delay(0);
+            if (API.GetCurrentResourceName() != resourceName) return;
+            API.NetworkSessionKickPlayer(Game.Player.Handle);
         }
         private async void OnResourceStart(string resourceName)
         {
             await Delay(0);
             if (API.GetCurrentResourceName() != resourceName) return;
 
-         
-            Exports["spawnmanager"].setAutoSpawn(false);
+
             Debug.WriteLine($"The resource {resourceName} has been started.");
 
+ 
         }
-        private void RegisterNUICallback(string msg, Func<IDictionary<string, object>, CallbackDelegate, CallbackDelegate> callback)
+        private async Task OnTick()
         {
-            API.RegisterNuiCallbackType(msg);
+            await Delay(50);
+            // Если это первый тик, то триггерим ивент OnPlayerConnected
+            if (firstTick)
+            {
+                firstTick = false;
+                AddEventOnPlayerConnected();
+            }
+        }
+        private static async void AddEventOnPlayerConnected()
+        {
+            await Delay(0);
+            TriggerServerEvent("onPlayerConnected");
+            TriggerEvent("onPlayerConnected");
+
+        }
+        public void RegisterNUICallback(string msg, Func<IDictionary<string, object>, CallbackDelegate, CallbackDelegate> callback)
+        {
+            RegisterNuiCallbackType(msg);
 
             EventHandlers[$"__cfx_nui:{msg}"] += new Action<ExpandoObject, CallbackDelegate>((body, resultCallback) =>
             {

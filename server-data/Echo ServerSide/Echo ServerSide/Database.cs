@@ -84,6 +84,62 @@ namespace Echo_ServerSide
             }
             return false;
         }
+        public static async Task<bool> CheckPlayerCharactersAsync(int accountId)
+        {
+            try
+            {
+                MySqlCommand command = connection.CreateCommand();
+                command.CommandText = "SELECT EXISTS(SELECT 1 FROM `character_list` WHERE `accountId` = @accountId LIMIT 1)";
+                command.Parameters.AddWithValue("@accountId", accountId);
+
+                using (var reader = await command.ExecuteReaderAsync())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            return Convert.ToBoolean(reader.GetInt16(0));
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Debug.WriteLine("[EXCEPTION CheckPlayerCharactersAsync] " + ex.Message);
+                Debug.WriteLine("[EXCEPTION CheckPlayerCharactersAsync] " + ex.StackTrace);
+            }
+            return false;
+        }
+        public static async Task<int> GetAccountIdByLicenseAsync(string license)
+        {
+            try
+            {
+                MySqlCommand command = connection.CreateCommand();
+                command.CommandText = "SELECT `id` FROM `accounts` WHERE `license` = @license LIMIT 1";
+                command.Parameters.AddWithValue("@license", license);
+
+                using (var reader = await command.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        return reader.GetInt32(0);
+                    }
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Debug.WriteLine("[EXCEPTION GetAccountIdByLicenseAsync] " + ex.Message);
+                Debug.WriteLine("[EXCEPTION GetAccountIdByLicenseAsync] " + ex.StackTrace);
+            }
+            return -1;
+        }
         #endregion
         public static async void RegisterAccountAsync(string license, string mail, string regIp)
         {
