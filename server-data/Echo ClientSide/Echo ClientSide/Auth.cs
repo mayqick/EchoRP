@@ -34,19 +34,24 @@ namespace Echo_ClientSide
         private async void OnPlayerCharacterCreating()
         {
             SetEntityHealth(PlayerPedId(), 200);
-            SetEntityCoordsNoOffset(PlayerPedId(), 0f, 0f, 500f, false, false, false);
+            SetEntityCoordsNoOffset(PlayerPedId(), 152.3851f, -1000.384f, -99f, false, false, false);
 
-            NetworkResurrectLocalPlayer(0f, 0f, 500f, 0f, true, false);
+            NetworkResurrectLocalPlayer(152.3851f, -1000.384f, -99f, 180.3265f, true, false);
+
+            var spawnedCamera = CreateCam("DEFAULT_SCRIPTED_CAMERA", true);
+            SetCamCoord(spawnedCamera, 152.3708f, -1001.75f, -98.45f);
+            SetCamRot(spawnedCamera, -20.0f, 0.0f, 0.0f, 1);
+            RenderScriptCams(true, false, 0, true, true);
+
             ClearPedTasksImmediately(PlayerPedId());
             SetEntityHealth(PlayerPedId(), 300);
             RemoveAllPedWeapons(PlayerPedId(), true);
             ClearPlayerWantedLevel(PlayerId());
-            SetEntityCoordsNoOffset(PlayerPedId(), 0f, 0f, 500f, false, false, false);
 
-            FreezeEntityPosition(PlayerPedId(), true);
+            /*           FreezeEntityPosition(PlayerPedId(), true);*/
             ShutdownLoadingScreen();
-            SetEntityVisible(PlayerPedId(), false, false);
-
+            /*         SetEntityVisible(PlayerPedId(), false, false);
+         */
             await Delay(1000);
             DoScreenFadeIn(1000);
             EnableAllControlActions(0);

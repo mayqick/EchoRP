@@ -21,7 +21,16 @@ namespace Echo_ClientSide
             EventHandlers["onResourceStart"] += new Action<string>(OnResourceStart);
             EventHandlers["onResourceStop"] += new Action<string>(OnResourceStop);
             EventHandlers["playerSpawned"] += new Action(OnPlayerSpawned);
-           
+
+            RegisterCommand("cords", new Action<int>((source) =>
+            {
+                
+                TriggerEvent("chat:addMessage", new
+                {
+                    color = new[] { 255, 0, 0 },
+                    args = new[] { "[Координаты]", $"{GetEntityCoords(GetPlayerPed(-1), true)} {GetEntityHeading(GetPlayerPed(-1))}" } //152.4227 -1001.112 -99
+                });
+            }), false);
         }
         public enum GamePhase { WAITING, READY, STARTING, STARTED, RESET, DEAD };
         public static GamePhase currentPhase = GamePhase.WAITING;
