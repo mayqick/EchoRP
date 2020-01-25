@@ -1,0 +1,5 @@
+C:\Users\Oniel\source\repos\Echo ServerSide\Echo ServerSide\bin\Debug\Echo ServerSide.dll
+C:\Users\Oniel\source\repos\Echo ServerSide\Echo ServerSide\bin\Debug\Echo ServerSide.pdb
+C:\Users\Oniel\source\repos\Echo ServerSide\Echo ServerSide\obj\Debug\Echo ServerSide.csprojAssemblyReference.cache
+C:\Users\Oniel\source\repos\Echo ServerSide\Echo ServerSide\obj\Debug\Echo ServerSide.dll
+C:\Users\Oniel\source\repos\Echo ServerSide\Echo ServerSide\obj\Debug\Echo ServerSide.pdb

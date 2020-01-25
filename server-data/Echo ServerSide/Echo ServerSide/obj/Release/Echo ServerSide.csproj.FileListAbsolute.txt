@@ -1,0 +1,27 @@
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\Echo ServerSide.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\Echo ServerSide.pdb
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\CitizenFX.Core.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\MySqlConnector.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\System.Buffers.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\System.Memory.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\MsgPack.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\CitizenFX.Core.pdb
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\CitizenFX.Core.xml
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\MySqlConnector.xml
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\System.Buffers.xml
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\System.Memory.xml
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\bin\Release\MsgPack.xml
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\obj\Release\Echo ServerSide.csprojAssemblyReference.cache
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\resources\echo\EchoServer.net.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\resources\echo\EchoServer.net.pdb
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\obj\Release\EchoServer.net.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ServerSide\Echo ServerSide\obj\Release\EchoServer.net.pdb
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\resources\echo\EchoServer.net.dll
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\resources\echo\EchoServer.net.pdb
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\Echo ServerSide\Echo ServerSide\obj\Release\Echo ServerSide.csprojAssemblyReference.cache
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\Echo ServerSide\Echo ServerSide\obj\Release\EchoServer.net.dll
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\Echo ServerSide\Echo ServerSide\obj\Release\EchoServer.net.pdb

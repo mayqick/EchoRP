@@ -1,0 +1,15 @@
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Debug\Echo ClientSide.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Debug\Echo ClientSide.pdb
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Debug\CitizenFX.Core.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Debug\System.Reflection.Metadata.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Debug\MsgPack.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Debug\CitizenFX.Core.pdb
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Debug\CitizenFX.Core.xml
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Debug\MsgPack.xml
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\obj\Debug\Echo ClientSide.csprojAssemblyReference.cache
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\obj\Debug\Echo ClientSide.csproj.CopyComplete
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\resources\echo\EchoClient.net.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\resources\echo\EchoClient.net.pdb
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\obj\Debug\EchoClient.net.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\obj\Debug\EchoClient.net.pdb

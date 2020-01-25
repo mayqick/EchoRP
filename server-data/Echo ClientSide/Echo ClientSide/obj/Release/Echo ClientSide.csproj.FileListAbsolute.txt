@@ -1,0 +1,18 @@
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Release\EchoClient.net.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Release\EchoClient.net.pdb
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Release\CitizenFX.Core.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Release\System.Reflection.Metadata.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Release\System.Collections.Immutable.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Release\MsgPack.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Release\CitizenFX.Core.pdb
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Release\CitizenFX.Core.xml
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\bin\Release\MsgPack.xml
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\obj\Release\Echo ClientSide.csprojAssemblyReference.cache
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\obj\Release\EchoClient.net.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\Echo ClientSide\Echo ClientSide\obj\Release\EchoClient.net.pdb
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\resources\echo\EchoClient.net.dll
+C:\Users\Oniel\Documents\GitHub\FiveMEcho\server-data\resources\echo\EchoClient.net.pdb
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\resources\echo\EchoClient.net.dll
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\resources\echo\EchoClient.net.pdb
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\Echo ClientSide\Echo ClientSide\obj\Release\EchoClient.net.dll
+C:\Users\Oniel\Documents\GitHub\fivem_echo\server-data\Echo ClientSide\Echo ClientSide\obj\Release\EchoClient.net.pdb
