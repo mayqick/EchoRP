@@ -47,18 +47,6 @@ namespace Echo_ClientSide
                       API.NetworkSetEntityInvisibleToNetwork(Game.PlayerPed.Handle, true);*/
 
 
-            uint model = (uint)API.GetHashKey("mp_m_freemode_01");
-            API.RequestModel(model);
-            if (API.IsModelInCdimage(model))
-            {
-                while (!API.HasModelLoaded(model))
-                {
-                    await Delay(0);
-                }
-                API.SetPlayerModel(API.PlayerId(), model);
-                API.SetModelAsNoLongerNeeded(model);
-                API.SetPedDefaultComponentVariation(API.PlayerPedId());
-            }
             TriggerServerEvent("onPlayerSpawned");
 
         }
@@ -94,15 +82,6 @@ namespace Echo_ClientSide
             TriggerServerEvent("onPlayerConnected");
             TriggerEvent("onPlayerConnected");
 
-        }
-        public void RegisterNUICallback(string msg, Func<IDictionary<string, object>, CallbackDelegate, CallbackDelegate> callback)
-        {
-            RegisterNuiCallbackType(msg);
-
-            EventHandlers[$"__cfx_nui:{msg}"] += new Action<ExpandoObject, CallbackDelegate>((body, resultCallback) =>
-            {
-                CallbackDelegate err = callback.Invoke(body, resultCallback);
-            });
         }
     }
 }

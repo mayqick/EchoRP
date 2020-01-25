@@ -14,10 +14,14 @@ namespace Echo_ServerSide
         {
             EventHandlers["playerConnecting"] += new Action<Player, string, dynamic, dynamic>(OnPlayerConnecting);
             EventHandlers.Add("onPlayerSpawned", new Action<Player>(OnPlayerSpawned));
-            EventHandlers.Add("onPlayerRegistration", new Action<Player, string>(OnPlayerRegistration));
+            EventHandlers["onPlayerRegistration"] += new Action<Player, string>(OnPlayerRegistration);
+            EventHandlers["test"] += new Action<Player, string>(test);
             EventHandlers.Add("onPlayerConnected", new Action<Player>(OnPlayerConnected));
         }
-
+        private async void test([FromSource]Player player, string mail)
+        {
+            Debug.WriteLine(mail);
+        }
         private async void OnPlayerRegistration([FromSource]Player player, string mail)
         {
             await Delay(0);
@@ -44,7 +48,7 @@ namespace Echo_ServerSide
             {
 
                 int accountId = await Database.GetAccountIdByLicenseAsync(licenseIdentifier);
-                if(await Database.CheckPlayerCharactersAsync(accountId))
+                if (await Database.CheckPlayerCharactersAsync(accountId))
                 {
                     // todo: если у аккаунта есть персонажи, то открываем их выбор
                 }
@@ -53,18 +57,19 @@ namespace Echo_ServerSide
                     TriggerClientEvent("onPlayerCharacterCreating");
                     // todo: у аккаунта нет ни одного персонажа. Открываем окно создания персонажа.
                 }
-              
+
 
             }
             else
             {
+                Debug.WriteLine("onPlayerStartRegistation!!!");
                 // Аккаунта с данным license идентефикатором нет. Открываем страницу регистрации (ввод mail)
                 TriggerClientEvent("onPlayerStartRegistation");
             }
         }
         private async void OnPlayerSpawned([FromSource]Player player)
         {
-         
+
         }
         private async void OnPlayerConnecting([FromSource]Player player, string playerName, dynamic setKickReason, dynamic deferrals)
         {

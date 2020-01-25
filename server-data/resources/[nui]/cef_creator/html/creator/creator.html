@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="creator.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <title>Creator</title>
+</head>
+
+<body>
+    <div class="content" id="content">
+        
+        <div class="creator-block">
+
+            <div class="creator_tabs">
+                <label class="tab">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M23.3334 24.5V22.1667C23.3334 20.929 22.8417 19.742 21.9666 18.8668C21.0914 17.9917 19.9044 17.5 18.6667 17.5H9.33341C8.09574 17.5 6.90875 17.9917 6.03358 18.8668C5.15841 19.742 4.66675 20.929 4.66675 22.1667V24.5"
+                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M13.9999 12.8333C16.5772 12.8333 18.6666 10.744 18.6666 8.16667C18.6666 5.58934 16.5772 3.5 13.9999 3.5C11.4226 3.5 9.33325 5.58934 9.33325 8.16667C9.33325 10.744 11.4226 12.8333 13.9999 12.8333Z"
+                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+
+
+                    <input id="creator_tab_1" type="radio" name="tabs" value="character" v-model="tab">
+                    </input>
+                    <label for="creator_tab_1" title="Персонаж">Персонаж</label>
+                </label>
+
+
+                <label class="tab">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.0009 3.52949C22.0009 1.58351 20.417 0 18.4707 0C17.4596 0 16.4948 0.434982 15.8241 1.19352L8.19608 9.83686C6.30992 9.32216 4.22703 9.77718 2.71666 11.2497C1.04961 12.8748 1.26647 14.5617 1.45716 16.0499C1.6579 17.6113 1.83111 18.9599 0.208379 20.542C0.0378634 20.7085 -0.0346485 20.9508 0.0176862 21.1837C0.0693903 21.416 0.237879 21.6053 0.462801 21.6832C1.03213 21.8812 1.85458 22 2.81133 22C5.22026 22 8.48185 21.2442 10.7008 19.0806C11.781 18.0274 12.3759 16.6379 12.3759 15.1678C12.3759 14.6951 12.2935 14.2376 12.1748 13.7902L20.8071 6.17496C21.5658 5.50501 22.0009 4.54042 22.0009 3.52949ZM10 18.5C7.68574 20.7554 3.45512 21.1752 1.5 21C2.72392 19.2789 2.67385 16.8546 2.5 15.5C2.32075 14.1065 2.32373 13.1465 3.5 12C5.19993 10.342 8.30002 10.3433 10 12C10.8124 12.7921 11.4193 13.9999 11.4201 15.1678C11.4202 16.264 10.8131 17.7072 10 18.5ZM20 5.5L12 12.5C11.7481 12.0697 11.0713 11.6107 10.7008 11.2498C10.3448 10.9025 9.91008 10.2368 9.5 10L16.5 2C16.9095 1.53682 17.8823 1 18.5 1C20 1 21 2.06877 21 3.5C21 4.11757 20.4625 5.09123 20 5.5Z"
+                            fill="#F2F2F2" />
+                    </svg>
+
+
+                    <input id="creator_tab_2" type="radio" name="tabs" value="visual" v-model="tab">
+                    <label for="creator_tab_2" title="Внешность">Внешность</label>
+                </label>
+                <label class="tab">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.9999 25.6666C20.4432 25.6666 25.6666 20.4432 25.6666 13.9999C25.6666 7.5566 20.4432 2.33325 13.9999 2.33325C7.5566 2.33325 2.33325 7.5566 2.33325 13.9999C2.33325 20.4432 7.5566 25.6666 13.9999 25.6666Z"
+                            stroke="#F2F2F2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M9.33325 16.3333C9.33325 16.3333 11.0833 18.6666 13.9999 18.6666C16.9166 18.6666 18.6666 16.3333 18.6666 16.3333"
+                            stroke="#F2F2F2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.5 10.5H10.5117" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M17.5 10.5H17.5117" stroke="#F2F2F2" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+
+
+                    <input id="creator_tab_3" type="radio" name="tabs" value="face" v-model="tab">
+                    <label for="creator_tab_3" title="Лицо">Лицо</label>
+                </label>
+                <label class="tab">
+                    <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M23.8705 5.82384C23.865 5.81801 23.8593 5.8123 23.8534 5.80677L18.8992 1.40353C18.854 1.36232 18.8012 1.33036 18.7438 1.30934L15.16 0.0284014C14.9155 -0.0603698 14.6454 0.0658996 14.5566 0.310374C14.5406 0.354465 14.5313 0.400675 14.5289 0.447533C14.5289 0.551139 14.3735 2.93878 11.9859 2.97645C9.5841 2.93878 9.43341 0.551139 9.4287 0.447533C9.4148 0.187813 9.19299 -0.0114514 8.93327 0.00244113C8.88865 0.00485467 8.84456 0.013567 8.80235 0.0284014L5.22325 1.32347C5.1658 1.34449 5.11305 1.37645 5.06784 1.41766L0.146572 5.80677C-0.0419781 5.9859 -0.0496308 6.284 0.129501 6.47255C0.135034 6.47838 0.140745 6.48409 0.146572 6.48963L4.06475 10.4502V21.2817C4.06475 21.5418 4.27561 21.7526 4.53568 21.7526H19.4643C19.7244 21.7526 19.9353 21.5418 19.9353 21.2817V10.4502L23.8534 6.48963C24.042 6.31049 24.0496 6.01245 23.8705 5.82384ZM19.9211 9.10802V6.92289C19.9211 6.66281 19.7103 6.45195 19.4502 6.45195C19.1901 6.45195 18.9793 6.66281 18.9793 6.92289V20.7872H4.98778V6.92289C4.98778 6.66281 4.77692 6.45195 4.51685 6.45195C4.25677 6.45195 4.04591 6.66281 4.04591 6.92289V9.11273L1.14966 6.17881L5.63296 2.16645L8.58101 1.10213C8.94622 2.98387 10.7677 4.2133 12.6495 3.84809C14.0391 3.57837 15.1257 2.4918 15.3954 1.10213L18.3435 2.16645L22.8127 6.17881L19.9211 9.10802Z"
+                            fill="#F2F2F2" />
+                    </svg>
+
+
+
+                    <input id="creator_tab_4" type="radio" name="tabs" value="clothes" v-model="tab">
+                    <label for="creator_tab_4" title="Одежда">Одежда</label>
+                </label>
+            </div>
+            <div class="character_settings" v-if="tab == 'character'">
+                <div class="main_settings">
+                    <div class="gender">
+                        <h3 class="main_title">Пол</h3>
+                        <button id="male" @click="changeGender(0)"><svg width="28" height="28" viewBox="0 0 28 28"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0)" opacity="1">
+                                    <path id="svg_male"
+                                        d="M22.9903 5.65332C22.9821 5.58868 22.9678 5.52643 22.9442 5.46802C22.9434 5.46655 22.9434 5.46454 22.9431 5.46271C22.9431 5.46234 22.9427 5.46198 22.9423 5.46161C22.9163 5.40009 22.8808 5.34424 22.8407 5.29242C22.8308 5.28015 22.8211 5.26807 22.8107 5.25653C22.7678 5.20819 22.7213 5.16351 22.6673 5.12708C22.6658 5.12598 22.664 5.12561 22.6625 5.12451C22.6104 5.09009 22.5527 5.06409 22.4922 5.04358C22.4772 5.03827 22.4626 5.03369 22.4472 5.02966C22.3839 5.01245 22.3187 5 22.25 5H17C16.586 5 16.25 5.336 16.25 5.75C16.25 6.164 16.586 6.5 17 6.5H20.4391L15.9627 10.9764C14.769 10.0217 13.2994 9.5 11.75 9.5C8.0282 9.5 5 12.5282 5 16.25C5 19.9718 8.0282 23 11.75 23C15.4718 23 18.5 19.9718 18.5 16.25C18.5 14.7013 17.9787 13.2321 17.0233 12.0373L21.5 7.56055V11C21.5 11.414 21.836 11.75 22.25 11.75C22.664 11.75 23 11.414 23 11V5.75C23 5.73425 22.9963 5.71924 22.9954 5.70386C22.9943 5.68665 22.9925 5.67017 22.9903 5.65332ZM11.75 21.5C8.85492 21.5 6.5 19.1451 6.5 16.25C6.5 13.3549 8.85492 11 11.75 11C13.1517 11 14.4713 11.5457 15.4636 12.5344C16.4543 13.5287 17 14.8483 17 16.25C17 19.1451 14.6451 21.5 11.75 21.5Z"
+                                        fill="black" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0">
+                                        <rect x="5" y="5" width="18" height="18" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                        <button id="female" @click="changeGender(1)"><svg width="28" height="28" viewBox="0 0 28 28"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g opacity="1">
+                                    <path id="svg_female"
+                                        d="M20.375 11.375C20.375 7.85974 17.5153 5 14 5C10.4847 5 7.625 7.85974 7.625 11.375C7.625 14.6359 10.0876 17.3289 13.25 17.702V19.25H11.75C11.336 19.25 11 19.586 11 20C11 20.414 11.336 20.75 11.75 20.75H13.25V22.25C13.25 22.664 13.586 23 14 23C14.414 23 14.75 22.664 14.75 22.25V20.75H16.25C16.664 20.75 17 20.414 17 20C17 19.586 16.664 19.25 16.25 19.25H14.75V17.702C17.9124 17.3289 20.375 14.6359 20.375 11.375ZM9.125 11.375C9.125 8.68701 11.312 6.5 14 6.5C16.688 6.5 18.875 8.68701 18.875 11.375C18.875 14.063 16.688 16.25 14 16.25C11.312 16.25 9.125 14.063 9.125 11.375Z"
+                                        fill="white" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="nick">
+                        <h3 class="main_title" style="margin-left: 42px;">Имя и фамилия</h3>
+                        <div class="echo-input-block" style="margin-left: 42px;">
+
+                            <input type="text" class="echo-input" placeholder="Пример: Thomas" v-model="name">
+                        </div>
+                        
+                        <div class="echo-input-block" style="margin-left: 42px; margin-top: 18px;">
+
+                            <input type="text" class="echo-input" placeholder="Пример: Anderson" v-model="surname">
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="faces">
+                    <h2 class="main_title" style="margin-left: 11px; margin-bottom: 0px;">Отец</h2>
+                    <div class="male">
+
+                        <label>
+                            <input type="radio" name="male_faces" value="small" checked>
+                            <img class="face_img" src="male/Face-0.jpg" @click="app.faceSelect(0, 0)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-1.jpg" @click="app.faceSelect(0, 1)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-2.jpg" @click="app.faceSelect(0, 2)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-3.jpg" @click="app.faceSelect(0, 3)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-4.jpg" @click="app.faceSelect(0, 4)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-5.jpg" @click="app.faceSelect(0, 5)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-6.jpg" @click="app.faceSelect(0, 6)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-7.jpg" @click="app.faceSelect(0, 7)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-8.jpg" @click="app.faceSelect(0, 8)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-9.jpg" @click="app.faceSelect(0, 9)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-10.jpg" @click="app.faceSelect(0, 10)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-11.jpg" @click="app.faceSelect(0, 11)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-12.jpg" @click="app.faceSelect(0, 12)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-13.jpg" @click="app.faceSelect(0, 13)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-14.jpg" @click="app.faceSelect(0, 14)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-15.jpg" @click="app.faceSelect(0, 15)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-16.jpg" @click="app.faceSelect(0, 16)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-17.jpg" @click="app.faceSelect(0, 17)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-18.jpg" @click="app.faceSelect(0, 18)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-19.jpg" @click="app.faceSelect(0, 19)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-20.jpg" @click="app.faceSelect(0, 20)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-42.jpg" @click="app.faceSelect(0, 42)"> 
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-43.jpg" @click="app.faceSelect(0, 43)">
+                        </label>
+                        <label>
+                            <input type="radio" name="male_faces" value="small">
+                            <img class="face_img" src="male/Face-44.jpg" @click="app.faceSelect(0, 44)">
+                        </label>
+                    </div>
+                    <h2 class="main_title" style="margin-left: 11px; margin-bottom: 0px;">Мать</h2>
+                    <div class="female">
+
+                        <label >
+                            <input type="radio" name="female_faces" value="small" checked>
+                            <img class="face_img" src="Female/Face-21.jpg" @click="app.faceSelect(1, 21)">
+                        </label>
+                        <label >
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="Female/Face-22.jpg" @click="app.faceSelect(1, 22)">
+                        </label>
+                        <label >
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="Female/Face-23.jpg" @click="app.faceSelect(1, 23)">
+                        </label>
+                        <label >
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="Female/Face-24.jpg" @click="app.faceSelect(1, 24)">
+                        </label>
+                        <label >
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-25.jpg" @click="app.faceSelect(1, 25)">
+                        </label>
+                        <label > 
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-26.jpg" @click="app.faceSelect(1, 26)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-27.jpg" @click="app.faceSelect(1, 27)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-28.jpg" @click="app.faceSelect(1, 28)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-29.jpg" @click="app.faceSelect(1, 29)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-30.jpg" @click="app.faceSelect(1, 30)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-31.jpg" @click="app.faceSelect(1, 31)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-32.jpg" @click="app.faceSelect(1, 32)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-33.jpg" @click="app.faceSelect(1, 33)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-34.jpg" @click="app.faceSelect(1, 34)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-35.jpg" @click="app.faceSelect(1, 35)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-36.jpg" @click="app.faceSelect(1, 36)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-37.jpg" @click="app.faceSelect(1, 37)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-38.jpg" @click="app.faceSelect(1, 38)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-39.jpg" @click="app.faceSelect(1, 39)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-40.jpg" @click="app.faceSelect(1, 40)">
+                        </label>
+                        <label>
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-41.jpg" @click="app.faceSelect(1, 41)">
+                        </label>
+                        <label> 
+                            <input type="radio" name="female_faces" value="small">
+                            <img class="face_img" src="female/Face-45.jpg" @click="app.faceSelect(1, 45)">
+                        </label>
+                    </div>
+                </div>
+                <button class="echo-button-centered" style="display: inline;" v-if="tab == 'character'" @click="createCharacter"><span
+                    style="position: relative; top: -13px;">Начать игру</span><svg id="next_arrow" class="next_arrow"
+                    viewBox="0 0 35 35">
+
+                    <path d="M17.5001 23.3333L23.3334 17.5L17.5001 11.6666" stroke="white" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                    <path d="M11.6667 17.5H23.3334" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" fill="none" />
+                </svg>
+            </button>
+            </div>
+            <div class="visual_settings" v-if="tab == 'visual'">
+                <div class="slider">
+                    <h2 class="settings_title">Форма</h2>
+                    <span class="settings_value">{{headMix}}</span><span class="settings_info">Схожесть</span>
+                    <input class="echo-range-slider" v-model="headMix" type="range"
+                    v-on:input="this.app.updateTrueFace()" max="1.0" min="0.0" step="0.1">
+                </div>
+                <h2 class="settings_title">Кожа</h2>
+                <div class="slider">
+                    <span class="settings_value">{{blemishesModel}}</span><span class="settings_info">Акне</span>
+                    <input class="echo-range-slider" v-model="blemishesModel" type="range"
+                    v-on:input="this.app.updateTrueFace()"  max="23" min="0">
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{ageingModel}}</span><span class="settings_info">Морщины</span>
+                    <input class="echo-range-slider" v-model="ageingModel" type="range"
+                    v-on:input="this.app.updateTrueFace()" max="14" min="0">
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{ageingOpacity}}</span><span class="settings_info">Интенсивность морщин</span>
+                    <input class="echo-range-slider" v-model="ageingOpacity" type="range"
+                    v-on:input="this.app.updateTrueFace()" max="10" min="0">
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{frecklesModel}}</span><span class="settings_info">Веснушки</span>
+                    <input class="echo-range-slider" v-model="frecklesModel" type="range"
+                    v-on:input="this.app.updateTrueFace()" max="17" min="0">
+                </div>
+
+            </div>
+            <div class="face_setting" v-if="tab == 'face'">
+                <h2 class="settings_title">Глаза</h2>
+                <div class="eye_settings">
+                    <span class="settings_value">{{ currentEyeColor }}</span><span class="settings_info">Цвет
+                        глаз</span>
+                    <div class="colors">
+                        <div class="eye_color" id="eye_0" style="background-color: rgb(82, 94, 55);"
+                            v-bind:class="[ currentEyeColor == 0 ? eye_selected : '' ]" @click="selectEyeColor(0)">
+                        </div>
+                        <div class="eye_color" id="eye_1" style="background-color: rgb(38, 52, 25);"
+                            v-bind:class="[ currentEyeColor == 1 ? eye_selected : '' ]" @click="selectEyeColor(1)">
+                        </div>
+                        <div class="eye_color" id="eye_2" style="background-color: rgb(131, 183, 213);"
+                            v-bind:class="[ currentEyeColor == 2 ? eye_selected : '' ]" @click="selectEyeColor(2)">
+                        </div>
+                        <div class="eye_color" id="eye_3" style="background-color: rgb(62, 102, 163);"
+                            v-bind:class="[ currentEyeColor == 3 ? eye_selected : '' ]" @click="selectEyeColor(3)">
+                        </div>
+                        <div class="eye_color" id="eye_4" style="background-color: rgb(141, 104, 51);"
+                            v-bind:class="[ currentEyeColor == 4 ? eye_selected : '' ]" @click="selectEyeColor(4)">
+                        </div>
+                        <div class="eye_color" id="eye_5" style="background-color: rgb(82, 55, 17);"
+                            v-bind:class="[ currentEyeColor == 5 ? eye_selected : '' ]" @click="selectEyeColor(5)">
+                        </div>
+                        <div class="eye_color" id="eye_6" style="background-color: rgb(208, 132, 24);"
+                            v-bind:class="[ currentEyeColor == 6 ? eye_selected : '' ]" @click="selectEyeColor(6)">
+                        </div>
+                        <div class="eye_color" id="eye_7" style="background-color: rgb(190, 190, 190);"
+                            v-bind:class="[ currentEyeColor == 7 ? eye_selected : '' ]" @click="selectEyeColor(7)">
+                        </div>
+                        <div class="eye_color" id="eye_8" style="background-color: rgb(13, 13, 12);"
+                            v-bind:class="[ currentEyeColor == 8 ? eye_selected : '' ]" @click="selectEyeColor(8)">
+                        </div>
+                    </div>
+                </div>
+                <h2 class="settings_title">{{hairStyle}}</h2>
+                <div class="slider">
+                    <span class="settings_value">0</span><span class="settings_info">Прическа</span>
+                    <input class="echo-range-slider" v-model="hairStyle" type="range"
+                    v-on:input="this.app.updateHair()" max="74" min="0">
+                </div>
+                <div style="display: grid; margin-top: 20px;">
+                    <div>
+                        <span class="settings_value">{{currentHairColor}}</span><span class="settings_info">Цвет волос</span>
+                    </div>
+                    <div class="hair_colors">
+
+                        <span class="color" data-color="#1D1D1A" style="background-color: rgb(29, 29, 26);"
+                            v-bind:class="[ currentHairColor == 0 ? eye_selected : '' ]"
+                            @click="selectHairColor(0)"></span>
+
+                        <span class="color" data-color="#4B392D" style="background-color: rgb(75, 57, 45);"
+                            v-bind:class="[ currentHairColor == 1 ? eye_selected : '' ]"
+                            @click="selectHairColor(1)"></span>
+
+                        <span class="color" data-color="#7A3B1F" style="background-color: rgb(122, 59, 31);"
+                            v-bind:class="[ currentHairColor == 2 ? eye_selected : '' ]"
+                            @click="selectHairColor(2)"></span>
+
+                        <span class="color" data-color="#A35631" style="background-color: rgb(163, 86, 49);"
+                            v-bind:class="[ currentHairColor == 3 ? eye_selected : '' ]"
+                            @click="selectHairColor(3)"></span>
+
+                        <span class="color" data-color="#A96F49" style="background-color: rgb(169, 111, 73);"
+                            v-bind:class="[ currentHairColor == 4 ? eye_selected : '' ]"
+                            @click="selectHairColor(4)"></span>
+
+                        <span class="color" data-color="#BD8D5E" style="background-color: rgb(189, 141, 94);"
+                            v-bind:class="[ currentHairColor == 5 ? eye_selected : '' ]"
+                            @click="selectHairColor(5)"></span>
+
+                        <span class="color" data-color="#CBA66F" style="background-color: rgb(203, 166, 111);"
+                            v-bind:class="[ currentHairColor == 6 ? eye_selected : '' ]"
+                            @click="selectHairColor(6)"></span>
+
+                        <span class="color" data-color="#E8BE78" style="background-color: rgb(232, 190, 120);"
+                            v-bind:class="[ currentHairColor == 7 ? eye_selected : '' ]"
+                            @click="selectHairColor(7)"></span>
+
+                        <span class="color" data-color="#D09E6A" style="background-color: rgb(208, 158, 106);"
+                            v-bind:class="[ currentHairColor == 8 ? eye_selected : '' ]"
+                            @click="selectHairColor(8)"></span>
+
+                        <span class="color" data-color="#993524" style="background-color: rgb(153, 53, 36);"
+                            v-bind:class="[ currentHairColor == 9 ? eye_selected : '' ]"
+                            @click="selectHairColor(9)"></span>
+
+                        <span class="color" data-color="#9C1611" style="background-color: rgb(156, 22, 17);"
+                            v-bind:class="[ currentHairColor == 10 ? eye_selected : '' ]"
+                            @click="selectHairColor(10)"></span>
+
+                        <span class="color" data-color="#D1381E" style="background-color: rgb(209, 56, 30);"
+                            v-bind:class="[ currentHairColor == 11 ? eye_selected : '' ]"
+                            @click="selectHairColor(11)"></span>
+
+                        <span class="color" data-color="#C85831" style="background-color: rgb(200, 88, 49);"
+                            v-bind:class="[ currentHairColor == 12 ? eye_selected : '' ]"
+                            @click="selectHairColor(12)"></span>
+
+                        <span class="color" data-color="#947A67" style="background-color: rgb(148, 122, 103);"
+                            v-bind:class="[ currentHairColor == 13 ? eye_selected : '' ]"
+                            @click="selectHairColor(13)"></span>
+
+                        <span class="color" data-color="#D8C1AC" style="background-color: rgb(216, 193, 172);"
+                            v-bind:class="[ currentHairColor == 14 ? eye_selected : '' ]"
+                            @click="selectHairColor(14)"></span>
+
+                        <span class="color" data-color="#734F61" style="background-color: rgb(115, 79, 97);"
+                            v-bind:class="[ currentHairColor == 15 ? eye_selected : '' ]"
+                            @click="selectHairColor(15)"></span>
+
+                        <span class="color" data-color="#AD476A" style="background-color: rgb(173, 71, 106);"
+                            v-bind:class="[ currentHairColor == 16 ? eye_selected : '' ]"
+                            @click="selectHairColor(16)"></span>
+
+                        <span class="color" data-color="#FFAEBC" style="background-color: rgb(255, 174, 188);"
+                            v-bind:class="[ currentHairColor == 17 ? eye_selected : '' ]"
+                            @click="selectHairColor(17)"></span>
+
+                        <span class="color" data-color="#089A8D" style="background-color: rgb(8, 154, 141);"
+                            v-bind:class="[ currentHairColor == 18 ? eye_selected : '' ]"
+                            @click="selectHairColor(18)"></span>
+
+                        <span class="color" data-color="#309060" style="background-color: rgb(48, 144, 96);"
+                            v-bind:class="[ currentHairColor == 19 ? eye_selected : '' ]"
+                            @click="selectHairColor(19)"></span>
+
+                        <span class="color" data-color="#A3C015" style="background-color: rgb(163, 192, 21);"
+                            v-bind:class="[ currentHairColor == 20 ? eye_selected : '' ]"
+                            @click="selectHairColor(20)"></span>
+
+                        <span class="color" data-color="#EEC85C" style="background-color: rgb(238, 200, 92);"
+                            v-bind:class="[ currentHairColor == 21 ? eye_selected : '' ]"
+                            @click="selectHairColor(21)"></span>
+
+                        <span class="color" data-color="#FE8B10" style="background-color: rgb(254, 139, 16);"
+                            v-bind:class="[ currentHairColor == 22 ? eye_selected : '' ]"
+                            @click="selectHairColor(22)"></span>
+
+                        <span class="color" data-color="#D40B0E" style="background-color: rgb(212, 11, 14);"
+                            v-bind:class="[ currentHairColor == 23 ? eye_selected : '' ]"
+                            @click="selectHairColor(23)"></span>
+                    </div>
+                </div>
+                <div style="display: grid; margin-top: 20px;">
+                    <h2 class="settings_title">Борода</h2>
+                    <div class="slider">
+                        <span class="settings_value">{{beardModel}}</span><span class="settings_info">Тип бороды</span>
+                        <input class="echo-range-slider" v-model="beardModel" type="range"
+                        v-on:input="this.app.updateHair()" max="28" min="0">
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <span class="settings_value">{{currentBeardColor}}</span><span class="settings_info">Цвет волос</span>
+                    </div>
+                    <div class="hair_colors">
+                        <span class="color" data-color="#1D1D1A" style="background-color: rgb(29, 29, 26);" v-bind:class="[ currentBeardColor == 0 ? eye_selected : '' ]"
+                        @click="selectBeardColor(0)"></span>
+
+                        <span class="color" data-color="#4B392D" style="background-color: rgb(75, 57, 45);" v-bind:class="[ currentBeardColor == 1 ? eye_selected : '' ]"
+                        @click="selectBeardColor(1)"></span>
+
+                        <span class="color" data-color="#7A3B1F" style="background-color: rgb(122, 59, 31);" v-bind:class="[ currentBeardColor == 2 ? eye_selected : '' ]"
+                        @click="selectBeardColor(2)"></span>
+
+                        <span class="color" data-color="#A35631" style="background-color: rgb(163, 86, 49);" v-bind:class="[ currentBeardColor == 3 ? eye_selected : '' ]"
+                        @click="selectBeardColor(3)"></span>
+
+                        <span class="color" data-color="#A96F49" style="background-color: rgb(169, 111, 73);" v-bind:class="[ currentBeardColor == 4 ? eye_selected : '' ]"
+                        @click="selectBeardColor(4)"></span>
+
+                        <span class="color" data-color="#BD8D5E" style="background-color: rgb(189, 141, 94);" v-bind:class="[ currentBeardColor == 5 ? eye_selected : '' ]"
+                        @click="selectBeardColor(5)"></span>
+
+                        <span class="color" data-color="#CBA66F" style="background-color: rgb(203, 166, 111);" v-bind:class="[ currentBeardColor == 6 ? eye_selected : '' ]"
+                        @click="selectBeardColor(6)"></span>
+
+                        <span class="color" data-color="#E8BE78" style="background-color: rgb(232, 190, 120);" v-bind:class="[ currentBeardColor == 7 ? eye_selected : '' ]"
+                        @click="selectBeardColor(7)"></span>
+
+                        <span class="color" data-color="#D09E6A" style="background-color: rgb(208, 158, 106);" v-bind:class="[ currentBeardColor == 8 ? eye_selected : '' ]"
+                        @click="selectBeardColor(8)"></span>
+
+                        <span class="color" data-color="#C85831" style="background-color: rgb(200, 88, 49);" v-bind:class="[ currentBeardColor == 9 ? eye_selected : '' ]"
+                        @click="selectBeardColor(9)"></span>
+
+                        <span class="color" data-color="#947A67" style="background-color: rgb(148, 122, 103);" v-bind:class="[ currentBeardColor == 10 ? eye_selected : '' ]"
+                        @click="selectBeardColor(10)"></span>
+
+                        <span class="color" data-color="#D8C1AC" style="background-color: rgb(216, 193, 172);" v-bind:class="[ currentBeardColor == 11 ? eye_selected : '' ]"
+                        @click="selectBeardColor(11)"></span>
+                    </div>
+                    <div class="slider">
+                        <span class="settings_value">{{beardOpacity}}</span><span class="settings_info">Толщина бороды</span>
+                        <input class="echo-range-slider" v-model="beardOpacity" type="range"
+                        v-on:input="this.app.updateTrueFace()" min='0' max='10' step='1'>
+                    </div>
+                </div>
+                <h2 class="settings_title">Брови</h2>
+                <div class="slider">
+                    <span class="settings_value">{{browHeight}}</span><span class="settings_info">Высота бровей</span>
+                    <input class="echo-range-slider" v-model="browHeight" type="range"
+                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{browWidth}}</span><span class="settings_info">Толщина бровей</span>
+                    <input class="echo-range-slider" v-model="browWidth" type="range"
+                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                </div>
+                <h2 class="settings_title">Нос</h2>
+                <div class="slider">
+                    <span class="settings_value">{{noseWidth}}</span><span class="settings_info">Шинира носа</span>
+                    <input class="echo-range-slider" v-model="noseWidth" type="range"
+                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{noseHeight}}</span><span class="settings_info">Высота носа</span>
+                    <input class="echo-range-slider" v-model="noseHeight" type="range"
+                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{noseLength}}</span><span class="settings_info">Длина носа</span>
+                    <input class="echo-range-slider" v-model="noseLength" type="range"
+                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{noseTip}}</span><span class="settings_info">Высота кончика носа</span>
+                    <input class="echo-range-slider" v-model="noseTip" type="range"
+                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{noseBridge}}</span><span class="settings_info">Сдвиг переносицы вверх и вниз</span>
+                    <input class="echo-range-slider" v-model="noseBridge" type="range"
+                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step="0.1">
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{noseShift}}</span><span class="settings_info">Сдвиг переносицы</span>
+                    <input class="echo-range-slider" v-model="noseShift" type="range"
+                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step="0.1">
+                </div>
+                
+                <h2 class="settings_title">Губы</h2>
+                <div class="slider">
+                    <span class="settings_value">{{lips}}</span><span class="settings_info">Толщина губ</span>
+                    <input class="echo-range-slider" v-model="lips" type="range"
+                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1"> 
+                </div>
+                <h2 class="settings_title">Скулы</h2>
+                <div class="slider">
+                    <span class="settings_value">{{cheekboneHeight}}</span><span class="settings_info">Высота скул</span>
+                    <input class="echo-range-slider" v-model="cheekboneHeight" type="range"
+                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{cheekboneWidth}}</span><span class="settings_info">Ширина скул</span>
+                    <input class="echo-range-slider" v-model="cheekboneWidth" type="range"
+                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1"> 
+                </div>
+                <h2 class="settings_title">Челюсть</h2>
+                <div class="slider">
+                    <span class="settings_value">{{jawWidth}}</span><span class="settings_info">Ширина челюсти</span>
+                    <input class="echo-range-slider" v-model="jawWidth" type="range"
+                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{jawHeight}}</span><span class="settings_info">Высота челюсти</span>
+                    <input class="echo-range-slider" v-model="jawHeight" type="range"
+                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
+                </div>
+                
+                <h2 class="settings_title">Подбородок</h2>
+                <div class="slider">
+                    <span class="settings_value">{{chinLength}}</span><span class="settings_info">Длина подбородка</span>
+                    <input class="echo-range-slider" v-model="chinLength" type="range"
+                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{chinPosition}}</span><span class="settings_info">Положение подбородка</span>
+                    <input class="echo-range-slider" v-model="chinPosition" type="range"
+                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{chinWidth}}</span><span class="settings_info">Ширина подбородка</span>
+                    <input class="echo-range-slider" type="range" max="1.0" min="-1.0" step="0.1" v-on:input="this.app.updateTrueFace()" v-model="chinWidth">
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{chinShape}}</span><span class="settings_info">Форма подбородка</span>
+                    <input class="echo-range-slider" type="range" max="1.0" min="-1.0" step="0.1" v-on:input="this.app.updateTrueFace()" v-model="chinShape">
+                </div>
+                <h2 class="settings_title">Шея</h2>
+                <div class="slider">
+                    <span class="settings_value">{{neckWidth}}</span><span class="settings_info">Ширина шеи</span>
+                    <input class="echo-range-slider" v-model="neckWidth" v-on:input="app.updateTrueFace()" type="range" max="1.0" min="-1.0" step="0.1">
+                </div>
+            </div>
+            
+        </div>
+        <h3 class="echo-input-error" v-if="nameError" style="position: absolute; margin-left: 50px;">
+            Неверное имя персонажа!</h3>
+<h3 class="echo-input-error" v-if="surnameError" style="position: absolute; margin-left: 50px;">
+            Неверная фамилия персонажа!</h3>
+    </div>
+</body>
+<script src="creator.js"></script>
+
+</html>

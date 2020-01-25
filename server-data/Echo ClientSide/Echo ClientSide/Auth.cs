@@ -17,26 +17,18 @@ namespace Echo_ClientSide
         {
             EventHandlers.Add("onPlayerStartRegistation", new Action(OnPlayerStartRegistation));
             EventHandlers.Add("onPlayerCharacterCreating", new Action(OnPlayerCharacterCreating));
-            RegisterNUICallback("SendMailToRegistration", OnSendMailToRegistration);
+            EventHandlers["onCharacterCreatorChangeSettings"] += new Action<IDictionary<string, object>>(OnCharacterCreatorChangeSettings);
         }
 
         // Получение mail из окна регистрации
-        private CallbackDelegate OnSendMailToRegistration(IDictionary<string, object> data, CallbackDelegate result)
-        {
-            if (data.TryGetValue("mail", out var mail))
-            {
-                result("ok");
-                // отправка mail на сервер и начало регистрации
-                TriggerServerEvent("onPlayerRegistration", mail.ToString());
-            }
-            return result;
-        }
+
         private async void OnPlayerCharacterCreating()
         {
+            ChangePlayerFreemode(true);
             SetEntityHealth(PlayerPedId(), 200);
-            SetEntityCoordsNoOffset(PlayerPedId(), 152.3851f, -1000.384f, -99f, false, false, false);
+            /*            SetEntityCoordsNoOffset(PlayerPedId(), 152.3851f, -1000.384f, -99f, false, false, false);*/
 
-            NetworkResurrectLocalPlayer(152.3851f, -1000.384f, -99f, 180.3265f, true, false);
+            NetworkResurrectLocalPlayer(152.3851f, -1000.384f, -100f, 180.3265f, true, false);
 
             var spawnedCamera = CreateCam("DEFAULT_SCRIPTED_CAMERA", true);
             SetCamCoord(spawnedCamera, 152.3708f, -1001.75f, -98.45f);
@@ -48,34 +40,55 @@ namespace Echo_ClientSide
             RemoveAllPedWeapons(PlayerPedId(), true);
             ClearPlayerWantedLevel(PlayerId());
 
-            /*           FreezeEntityPosition(PlayerPedId(), true);*/
+            SetPedDefaultComponentVariation(Game.PlayerPed.Handle);
+            ClearAllPedProps(Game.PlayerPed.Handle);
+            ClearPedDecorations(Game.PlayerPed.Handle);
+            ClearPedFacialDecorations(Game.PlayerPed.Handle);
+
+
+            FreezeEntityPosition(PlayerPedId(), true);
             ShutdownLoadingScreen();
-            /*         SetEntityVisible(PlayerPedId(), false, false);
-         */
+            Game.Player.CanControlCharacter = false;
+
+            Exports["cef_creator"].focusCreatorCef();
+            /*         Exports["cef_creator"].renderCreatorCef();*/
+
             await Delay(1000);
             DoScreenFadeIn(1000);
             EnableAllControlActions(0);
+        }
+        private async void OnCharacterCreatorChangeSettings(IDictionary<string, object> data)
+        {
+            data.TryGetValue("firstHeadShape", out var firstHeadShape);
+            data.TryGetValue("secondHeadShape", out var secondHeadShape);
+            SetPedHeadBlendData(Game.PlayerPed.Handle, (int)firstHeadShape, (int)secondHeadShape, 0, 0, 0, 0, 0.5f, 0.5f, 0f, false);
+            /*TriggerServerEvent("test", itemIdObj);*/
         }
         private async void OnPlayerStartRegistation()
         {
             await Delay(0);
             // Включение курсора и фокус на окне регистрации
-            API.SetNuiFocus(true, true);
+            Exports["cef_auth"].focusAuthCef();
+
             // Показ окна регистрации
-            API.SendNuiMessage(JsonConvert.SerializeObject(new
-            {
-                type = "render"
-            }));
+            Exports["cef_auth"].renderAuthCef();
 
         }
-        public void RegisterNUICallback(string msg, Func<IDictionary<string, object>, CallbackDelegate, CallbackDelegate> callback)
+        private static async void ChangePlayerFreemode(bool isMale)
         {
-            RegisterNuiCallbackType(msg);
-
-            EventHandlers[$"__cfx_nui:{msg}"] += new Action<ExpandoObject, CallbackDelegate>((body, resultCallback) =>
+            await Delay(0);
+            uint model = isMale ? (uint)API.GetHashKey("mp_m_freemode_01") : (uint)API.GetHashKey("mp_f_freemode_01");
+            API.RequestModel(model);
+            if (API.IsModelInCdimage(model))
             {
-                CallbackDelegate err = callback.Invoke(body, resultCallback);
-            });
+                while (!API.HasModelLoaded(model))
+                {
+                    await Delay(0);
+                }
+                API.SetPlayerModel(API.PlayerId(), model);
+                API.SetModelAsNoLongerNeeded(model);
+                API.SetPedDefaultComponentVariation(API.PlayerPedId());
+            }
         }
     }
 }
