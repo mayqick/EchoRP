@@ -15,12 +15,13 @@ namespace Echo_ServerSide
             EventHandlers["playerConnecting"] += new Action<Player, string, dynamic, dynamic>(OnPlayerConnecting);
             EventHandlers.Add("onPlayerSpawned", new Action<Player>(OnPlayerSpawned));
             EventHandlers["onPlayerRegistration"] += new Action<Player, string>(OnPlayerRegistration);
-            EventHandlers["test"] += new Action<Player, string>(test);
+            EventHandlers["onPlayerSaveCharacterInformation"] += new Action<Player, Models.SkinModel>(OnPlayerSaveCharacterInformation);
             EventHandlers.Add("onPlayerConnected", new Action<Player>(OnPlayerConnected));
         }
-        private async void test([FromSource]Player player, string mail)
+        private async void OnPlayerSaveCharacterInformation([FromSource]Player player, Models.SkinModel skinModel)
         {
-            Debug.WriteLine(mail);
+            int accountId = await Database.GetAccountIdByLicenseAsync(player.Identifiers["license"]);
+
         }
         private async void OnPlayerRegistration([FromSource]Player player, string mail)
         {

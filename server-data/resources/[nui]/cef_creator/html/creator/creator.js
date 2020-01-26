@@ -7,9 +7,8 @@ var app = new Vue({
     nameError: false,
     surnameError: false,
     gender: 'male',
-    shapeMix: 0,
     firstHeadShape: 0,
-    secondHeadShape: 0,
+    secondHeadShape: 21,
     firstSkinTone: 0,
     secondSkinTone: 0,
     headMix: 0.5,
@@ -43,6 +42,8 @@ var app = new Vue({
     noseShift: 0.0,
     browHeight: 0.0,
     browWidth: 0.0,
+    browModel: 0,
+    browOpacity: 0,
     cheekboneHeight: 0.0,
     cheekboneWidth: 0.0,
     eyes: 0.0,
@@ -65,36 +66,52 @@ var app = new Vue({
     currentHairColor: 0,
     currentBeardColor: 0,
     eye_selected: "eye_selected",
-    beardOpacity: 10,
+    beardOpacity: 0,
     skinProblem: 0,
-    ageingOpacity: 10
+    ageingOpacity: 10,
+    currentSkinColor: 0
   },
   methods: {
+
     changeGender(sex) {
       if (sex == 0) {
         this.gender = 'male';
-        document.getElementById("male").style.background = "#FFE55C";
-        document.getElementById("female").style.background = "rgba(255, 255, 255, 0.07)";
-        document.getElementById("svg_female").style.fill = "white"
-        document.getElementById("svg_male").style.fill = "black"
+        post('http://cef_creator/SendCharacterGender', JSON.stringify({
+          isMale: true
+        })
+        );
+
+     
       }
       else {
         this.gender = 'female';
-        document.getElementById("male").style.background = "rgba(255, 255, 255, 0.07)";
-        document.getElementById("female").style.background = "#FFE55C";
-        document.getElementById("svg_female").style.fill = "black"
-        document.getElementById("svg_male").style.fill = "white"
+
+        post('http://cef_creator/SendCharacterGender', JSON.stringify({
+          isMale: false
+        })
+        );
+
       }
+      setTimeout(function(){
+        app.updateTrueFace();
+    }, 1000);
+      
     },
     selectEyeColor(color) {
       this.currentEyeColor = color;
-
+      app.updateTrueFace();
     },
     selectHairColor(color) {
       this.currentHairColor = color;
+      app.updateTrueFace();
     },
     selectBeardColor(color) {
       this.currentBeardColor = color;
+      app.updateTrueFace();
+    },
+    selectSkinColor (color){
+      this.currentSkinColor = color;
+      app.updateTrueFace();
     },
     createCharacter() {
       let name_check = /[A-Z]{1}[a-z]{1,10}/;
@@ -110,6 +127,45 @@ var app = new Vue({
       } else {
         this.surnameError = false;
       }
+      post('http://cef_creator/SaveCharacter', JSON.stringify({
+        name: this.name,
+        surname: this.surname,
+        firstHeadShape: this.firstHeadShape,
+        secondHeadShape: this.secondHeadShape,
+        shapeMix: this.headMix,
+        blemishesModel: this.blemishesModel,
+        ageingModel: this.ageingModel,
+        ageingOpacity: this.ageingOpacity,
+        frecklesModel: this.frecklesModel,
+        currentEyeColor: this.currentEyeColor,
+        currentHairColor: this.currentHairColor,
+        currentBeardColor: this.currentBeardColor,
+        currentSkinColor: this.currentSkinColor,
+        hairStyle: this.hairStyle,
+        beardModel: this.beardModel,
+        beardOpacity: this.beardOpacity,
+        browModel: this.browModel,
+        browOpacity: this.browOpacity,
+        browHeight: this.browHeight,
+        browWidth: this.browWidth,
+        noseWidth: this.noseWidth,
+        noseHeight: this.noseHeight,
+        noseLength: this.noseLength,
+        noseTip: this.noseTip,
+        noseBridge: this.noseBridge,
+        noseShift: this.noseShift,
+        lips: this.lips,
+        cheekboneHeight: this.cheekboneHeight,
+        cheekboneWidth: this.cheekboneWidth,
+        jawHeight: this.jawHeight,
+        jawWidth: this.jawWidth,
+        chinLength: this.chinLength,
+        chinPosition: this.chinPosition,
+        chinWidth: this.chinWidth,
+        chinShape: this.chinShape,
+        neckWidth: this.neckWidth
+      })
+      );
     },
     faceSelect(shape, id) {
       if (shape == 0) this.firstHeadShape = id;
@@ -119,9 +175,41 @@ var app = new Vue({
     updateTrueFace() {
       post('http://cef_creator/SendCharacterSettings', JSON.stringify({
         firstHeadShape: this.firstHeadShape,
-        secondHeadShape: this.secondHeadShape
-    })
-    );
+        secondHeadShape: this.secondHeadShape,
+        shapeMix: this.headMix,
+        blemishesModel: this.blemishesModel,
+        ageingModel: this.ageingModel,
+        ageingOpacity: this.ageingOpacity,
+        frecklesModel: this.frecklesModel,
+        currentEyeColor: this.currentEyeColor,
+        currentHairColor: this.currentHairColor,
+        currentBeardColor: this.currentBeardColor,
+        currentSkinColor: this.currentSkinColor,
+        hairStyle: this.hairStyle,
+        beardModel: this.beardModel,
+        beardOpacity: this.beardOpacity,
+        browModel: this.browModel,
+        browOpacity: this.browOpacity,
+        browHeight: this.browHeight,
+        browWidth: this.browWidth,
+        noseWidth: this.noseWidth,
+        noseHeight: this.noseHeight,
+        noseLength: this.noseLength,
+        noseTip: this.noseTip,
+        noseBridge: this.noseBridge,
+        noseShift: this.noseShift,
+        lips: this.lips,
+        cheekboneHeight: this.cheekboneHeight,
+        cheekboneWidth: this.cheekboneWidth,
+        jawHeight: this.jawHeight,
+        jawWidth: this.jawWidth,
+        chinLength: this.chinLength,
+        chinPosition: this.chinPosition,
+        chinWidth: this.chinWidth,
+        chinShape: this.chinShape,
+        neckWidth: this.neckWidth
+      })
+      );
     }
   }
 })

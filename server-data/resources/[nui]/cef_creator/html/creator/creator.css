@@ -2,6 +2,18 @@ body{
     overflow-y: hidden;
     margin: 0px;
 }
+.gender_selected{
+    background: #FFE55C;
+}
+.gender_unselected{
+    background: rgba(255, 255, 255, 0.07) !important;
+}
+.svg_gender_selected{
+    fill: black;
+}
+.svg_gender_unselected{
+    fill: white;
+}
 .content{
     margin-top: 0px;
     margin-bottom: 0px;
@@ -82,7 +94,7 @@ svg{
 #male{
     width: 50px;
     height: 50px;
-    background: #FFE55C;
+    
     border-radius: 5px;
     border: none;
 }
@@ -90,7 +102,6 @@ svg{
     margin-top: 18px;
     width: 50px;
     height: 50px;
-    background: rgba(255, 255, 255, 0.07);
     border-radius: 5px;
     border: none;
 }
@@ -197,6 +208,7 @@ svg{
       color: #fff;
     }
     .echo-button-centered{
+        margin-bottom: 15px;
         margin-top: 15px;
         margin-left: 71px;
         padding-left: 30px;

@@ -13,7 +13,7 @@
 
 <body>
     <div class="content" id="content">
-        
+
         <div class="creator-block">
 
             <div class="creator_tabs">
@@ -81,26 +81,30 @@
                 <div class="main_settings">
                     <div class="gender">
                         <h3 class="main_title">Пол</h3>
-                        <button id="male" @click="changeGender(0)"><svg width="28" height="28" viewBox="0 0 28 28"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button id="male" @click="changeGender(0)" v-bind:class="[ gender == 'male' ? 'gender_selected' : 'gender_unselected' ]"><svg
+                                 width="28"
+                                height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0)" opacity="1">
                                     <path id="svg_male"
+                                        v-bind:class="[ gender == 'male' ? 'svg_gender_selected' : 'svg_gender_unselected' ]"
                                         d="M22.9903 5.65332C22.9821 5.58868 22.9678 5.52643 22.9442 5.46802C22.9434 5.46655 22.9434 5.46454 22.9431 5.46271C22.9431 5.46234 22.9427 5.46198 22.9423 5.46161C22.9163 5.40009 22.8808 5.34424 22.8407 5.29242C22.8308 5.28015 22.8211 5.26807 22.8107 5.25653C22.7678 5.20819 22.7213 5.16351 22.6673 5.12708C22.6658 5.12598 22.664 5.12561 22.6625 5.12451C22.6104 5.09009 22.5527 5.06409 22.4922 5.04358C22.4772 5.03827 22.4626 5.03369 22.4472 5.02966C22.3839 5.01245 22.3187 5 22.25 5H17C16.586 5 16.25 5.336 16.25 5.75C16.25 6.164 16.586 6.5 17 6.5H20.4391L15.9627 10.9764C14.769 10.0217 13.2994 9.5 11.75 9.5C8.0282 9.5 5 12.5282 5 16.25C5 19.9718 8.0282 23 11.75 23C15.4718 23 18.5 19.9718 18.5 16.25C18.5 14.7013 17.9787 13.2321 17.0233 12.0373L21.5 7.56055V11C21.5 11.414 21.836 11.75 22.25 11.75C22.664 11.75 23 11.414 23 11V5.75C23 5.73425 22.9963 5.71924 22.9954 5.70386C22.9943 5.68665 22.9925 5.67017 22.9903 5.65332ZM11.75 21.5C8.85492 21.5 6.5 19.1451 6.5 16.25C6.5 13.3549 8.85492 11 11.75 11C13.1517 11 14.4713 11.5457 15.4636 12.5344C16.4543 13.5287 17 14.8483 17 16.25C17 19.1451 14.6451 21.5 11.75 21.5Z"
-                                        fill="black" />
+                                         />
                                 </g>
                                 <defs>
-                                    <clipPath id="clip0">
+                                    <clipPath id="clip0">s
                                         <rect x="5" y="5" width="18" height="18" fill="white" />
                                     </clipPath>
                                 </defs>
                             </svg>
                         </button>
-                        <button id="female" @click="changeGender(1)"><svg width="28" height="28" viewBox="0 0 28 28"
+                        <button id="female" @click="changeGender(1)" v-bind:class="[ gender == 'female' ? 'gender_selected' : 'gender_unselected' ]"><svg width="28" height="28" viewBox="0 0 28 28" 
+                                
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g opacity="1">
                                     <path id="svg_female"
+                                        v-bind:class="[ gender == 'female' ? 'svg_gender_selected' : 'svg_gender_unselected' ]"
                                         d="M20.375 11.375C20.375 7.85974 17.5153 5 14 5C10.4847 5 7.625 7.85974 7.625 11.375C7.625 14.6359 10.0876 17.3289 13.25 17.702V19.25H11.75C11.336 19.25 11 19.586 11 20C11 20.414 11.336 20.75 11.75 20.75H13.25V22.25C13.25 22.664 13.586 23 14 23C14.414 23 14.75 22.664 14.75 22.25V20.75H16.25C16.664 20.75 17 20.414 17 20C17 19.586 16.664 19.25 16.25 19.25H14.75V17.702C17.9124 17.3289 20.375 14.6359 20.375 11.375ZM9.125 11.375C9.125 8.68701 11.312 6.5 14 6.5C16.688 6.5 18.875 8.68701 18.875 11.375C18.875 14.063 16.688 16.25 14 16.25C11.312 16.25 9.125 14.063 9.125 11.375Z"
-                                        fill="white" />
+                                         />
                                 </g>
                             </svg>
                         </button>
@@ -111,12 +115,12 @@
 
                             <input type="text" class="echo-input" placeholder="Пример: Thomas" v-model="name">
                         </div>
-                        
+
                         <div class="echo-input-block" style="margin-left: 42px; margin-top: 18px;">
 
                             <input type="text" class="echo-input" placeholder="Пример: Anderson" v-model="surname">
                         </div>
-                        
+
                     </div>
 
                 </div>
@@ -125,235 +129,254 @@
                     <div class="male">
 
                         <label>
-                            <input type="radio" name="male_faces" value="small" checked>
+                            <input type="radio" name="male_faces" value="0" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-0.jpg" @click="app.faceSelect(0, 0)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="1" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-1.jpg" @click="app.faceSelect(0, 1)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="2" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-2.jpg" @click="app.faceSelect(0, 2)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="3" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-3.jpg" @click="app.faceSelect(0, 3)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="4" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-4.jpg" @click="app.faceSelect(0, 4)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="5" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-5.jpg" @click="app.faceSelect(0, 5)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="6" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-6.jpg" @click="app.faceSelect(0, 6)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="7" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-7.jpg" @click="app.faceSelect(0, 7)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="8" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-8.jpg" @click="app.faceSelect(0, 8)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="9" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-9.jpg" @click="app.faceSelect(0, 9)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="10" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-10.jpg" @click="app.faceSelect(0, 10)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="11" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-11.jpg" @click="app.faceSelect(0, 11)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="12" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-12.jpg" @click="app.faceSelect(0, 12)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="13" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-13.jpg" @click="app.faceSelect(0, 13)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="14" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-14.jpg" @click="app.faceSelect(0, 14)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="15" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-15.jpg" @click="app.faceSelect(0, 15)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="16" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-16.jpg" @click="app.faceSelect(0, 16)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="17" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-17.jpg" @click="app.faceSelect(0, 17)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="18" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-18.jpg" @click="app.faceSelect(0, 18)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="19" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-19.jpg" @click="app.faceSelect(0, 19)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="20" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-20.jpg" @click="app.faceSelect(0, 20)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
-                            <img class="face_img" src="male/Face-42.jpg" @click="app.faceSelect(0, 42)"> 
+                            <input type="radio" name="male_faces" value="42" v-model="firstHeadShape">
+                            <img class="face_img" src="male/Face-42.jpg" @click="app.faceSelect(0, 42)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="43" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-43.jpg" @click="app.faceSelect(0, 43)">
                         </label>
                         <label>
-                            <input type="radio" name="male_faces" value="small">
+                            <input type="radio" name="male_faces" value="44" v-model="firstHeadShape">
                             <img class="face_img" src="male/Face-44.jpg" @click="app.faceSelect(0, 44)">
                         </label>
                     </div>
                     <h2 class="main_title" style="margin-left: 11px; margin-bottom: 0px;">Мать</h2>
                     <div class="female">
 
-                        <label >
-                            <input type="radio" name="female_faces" value="small" checked>
+                        <label>
+                            <input type="radio" name="female_faces" value="21" v-model="secondHeadShape">
                             <img class="face_img" src="Female/Face-21.jpg" @click="app.faceSelect(1, 21)">
                         </label>
-                        <label >
-                            <input type="radio" name="female_faces" value="small">
+                        <label>
+                            <input type="radio" name="female_faces" value="22" v-model="secondHeadShape">
                             <img class="face_img" src="Female/Face-22.jpg" @click="app.faceSelect(1, 22)">
                         </label>
-                        <label >
-                            <input type="radio" name="female_faces" value="small">
+                        <label>
+                            <input type="radio" name="female_faces" value="23" v-model="secondHeadShape">
                             <img class="face_img" src="Female/Face-23.jpg" @click="app.faceSelect(1, 23)">
                         </label>
-                        <label >
-                            <input type="radio" name="female_faces" value="small">
+                        <label>
+                            <input type="radio" name="female_faces" value="24" v-model="secondHeadShape">
                             <img class="face_img" src="Female/Face-24.jpg" @click="app.faceSelect(1, 24)">
                         </label>
-                        <label >
-                            <input type="radio" name="female_faces" value="small">
+                        <label>
+                            <input type="radio" name="female_faces" value="25" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-25.jpg" @click="app.faceSelect(1, 25)">
                         </label>
-                        <label > 
-                            <input type="radio" name="female_faces" value="small">
+                        <label>
+                            <input type="radio" name="female_faces" value="26" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-26.jpg" @click="app.faceSelect(1, 26)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="27" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-27.jpg" @click="app.faceSelect(1, 27)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="28" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-28.jpg" @click="app.faceSelect(1, 28)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="29" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-29.jpg" @click="app.faceSelect(1, 29)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="30" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-30.jpg" @click="app.faceSelect(1, 30)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="31" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-31.jpg" @click="app.faceSelect(1, 31)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="32" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-32.jpg" @click="app.faceSelect(1, 32)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="33" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-33.jpg" @click="app.faceSelect(1, 33)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="34" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-34.jpg" @click="app.faceSelect(1, 34)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="35" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-35.jpg" @click="app.faceSelect(1, 35)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="36" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-36.jpg" @click="app.faceSelect(1, 36)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="37" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-37.jpg" @click="app.faceSelect(1, 37)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="38" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-38.jpg" @click="app.faceSelect(1, 38)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="39" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-39.jpg" @click="app.faceSelect(1, 39)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="40" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-40.jpg" @click="app.faceSelect(1, 40)">
                         </label>
                         <label>
-                            <input type="radio" name="female_faces" value="small">
+                            <input type="radio" name="female_faces" value="41" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-41.jpg" @click="app.faceSelect(1, 41)">
                         </label>
-                        <label> 
-                            <input type="radio" name="female_faces" value="small">
+                        <label>
+                            <input type="radio" name="female_faces" value="45" v-model="secondHeadShape">
                             <img class="face_img" src="female/Face-45.jpg" @click="app.faceSelect(1, 45)">
                         </label>
                     </div>
                 </div>
-                <button class="echo-button-centered" style="display: inline;" v-if="tab == 'character'" @click="createCharacter"><span
-                    style="position: relative; top: -13px;">Начать игру</span><svg id="next_arrow" class="next_arrow"
-                    viewBox="0 0 35 35">
+                <button class="echo-button-centered" style="display: inline;" v-if="tab == 'character'"
+                    @click="createCharacter"><span style="position: relative; top: -13px;">Начать игру</span><svg
+                        id="next_arrow" class="next_arrow" viewBox="0 0 35 35">
 
-                    <path d="M17.5001 23.3333L23.3334 17.5L17.5001 11.6666" stroke="white" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" fill="none" />
-                    <path d="M11.6667 17.5H23.3334" stroke="white" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" fill="none" />
-                </svg>
-            </button>
+                        <path d="M17.5001 23.3333L23.3334 17.5L17.5001 11.6666" stroke="white" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        <path d="M11.6667 17.5H23.3334" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" fill="none" />
+                    </svg>
+                </button>
             </div>
             <div class="visual_settings" v-if="tab == 'visual'">
                 <div class="slider">
                     <h2 class="settings_title">Форма</h2>
                     <span class="settings_value">{{headMix}}</span><span class="settings_info">Схожесть</span>
                     <input class="echo-range-slider" v-model="headMix" type="range"
-                    v-on:input="this.app.updateTrueFace()" max="1.0" min="0.0" step="0.1">
+                        v-on:input="this.app.updateTrueFace()" max="1.0" min="0.0" step="0.1">
                 </div>
                 <h2 class="settings_title">Кожа</h2>
                 <div class="slider">
-                    <span class="settings_value">{{blemishesModel}}</span><span class="settings_info">Акне</span>
+                    <span class="settings_value">{{blemishesModel}}</span><span class="settings_info">Дефекты</span>
                     <input class="echo-range-slider" v-model="blemishesModel" type="range"
-                    v-on:input="this.app.updateTrueFace()"  max="23" min="0">
+                        v-on:input="this.app.updateTrueFace()" max="23" min="0">
                 </div>
                 <div class="slider">
                     <span class="settings_value">{{ageingModel}}</span><span class="settings_info">Морщины</span>
                     <input class="echo-range-slider" v-model="ageingModel" type="range"
-                    v-on:input="this.app.updateTrueFace()" max="14" min="0">
+                        v-on:input="this.app.updateTrueFace()" max="14" min="0">
                 </div>
                 <div class="slider">
-                    <span class="settings_value">{{ageingOpacity}}</span><span class="settings_info">Интенсивность морщин</span>
+                    <span class="settings_value">{{ageingOpacity}}</span><span class="settings_info">Интенсивность
+                        морщин</span>
                     <input class="echo-range-slider" v-model="ageingOpacity" type="range"
-                    v-on:input="this.app.updateTrueFace()" max="10" min="0">
+                        v-on:input="this.app.updateTrueFace()" max="10" min="0">
                 </div>
                 <div class="slider">
                     <span class="settings_value">{{frecklesModel}}</span><span class="settings_info">Веснушки</span>
                     <input class="echo-range-slider" v-model="frecklesModel" type="range"
-                    v-on:input="this.app.updateTrueFace()" max="17" min="0">
+                        v-on:input="this.app.updateTrueFace()" max="17" min="0">
                 </div>
+                <div class="eye_settings" style="margin-top: 20px;">
+                    <span class="settings_value">{{ currentSkinColor }}</span><span class="settings_info">Цвет
+                        кожи</span>
+                    <div class="colors">
+                        <div class="eye_color" id="eye_0" style="background-color: rgb(236, 200, 174);"
+                            v-bind:class="[ currentSkinColor == 12 ? eye_selected : '' ]" @click="selectSkinColor(12)">
+                        </div>
+                        <div class="eye_color" id="eye_1" style="background-color: rgb(206, 152, 116);"
+                            v-bind:class="[ currentSkinColor == 25 ? eye_selected : '' ]" @click="selectSkinColor(25)">
+                        </div>
+                        <div class="eye_color" id="eye_2" style="background-color: rgb(146, 90, 65);"
+                            v-bind:class="[ currentSkinColor == 19 ? eye_selected : '' ]" @click="selectSkinColor(19)">
+                        </div>
+                        <div class="eye_color" id="eye_3" style="background-color: rgb(78, 58, 38);"
+                            v-bind:class="[ currentSkinColor == 14 ? eye_selected : '' ]" @click="selectSkinColor(14)">
+                        </div>
 
+                    </div>
+                </div>
             </div>
             <div class="face_setting" v-if="tab == 'face'">
                 <h2 class="settings_title">Глаза</h2>
@@ -383,22 +406,23 @@
                             v-bind:class="[ currentEyeColor == 6 ? eye_selected : '' ]" @click="selectEyeColor(6)">
                         </div>
                         <div class="eye_color" id="eye_7" style="background-color: rgb(190, 190, 190);"
-                            v-bind:class="[ currentEyeColor == 7 ? eye_selected : '' ]" @click="selectEyeColor(7)">
+                            v-bind:class="[ currentEyeColor == 8 ? eye_selected : '' ]" @click="selectEyeColor(8)">
                         </div>
                         <div class="eye_color" id="eye_8" style="background-color: rgb(13, 13, 12);"
-                            v-bind:class="[ currentEyeColor == 8 ? eye_selected : '' ]" @click="selectEyeColor(8)">
+                            v-bind:class="[ currentEyeColor == 12 ? eye_selected : '' ]" @click="selectEyeColor(12)">
                         </div>
                     </div>
                 </div>
-                <h2 class="settings_title">{{hairStyle}}</h2>
+                <h2 class="settings_title">Волосы</h2>
                 <div class="slider">
-                    <span class="settings_value">0</span><span class="settings_info">Прическа</span>
+                    <span class="settings_value">{{hairStyle}}</span><span class="settings_info">Прическа</span>
                     <input class="echo-range-slider" v-model="hairStyle" type="range"
-                    v-on:input="this.app.updateHair()" max="74" min="0">
+                        v-on:input="this.app.updateTrueFace()" max="74" min="0">
                 </div>
                 <div style="display: grid; margin-top: 20px;">
                     <div>
-                        <span class="settings_value">{{currentHairColor}}</span><span class="settings_info">Цвет волос</span>
+                        <span class="settings_value">{{currentHairColor}}</span><span class="settings_info">Цвет
+                            волос</span>
                     </div>
                     <div class="hair_colors">
 
@@ -407,96 +431,96 @@
                             @click="selectHairColor(0)"></span>
 
                         <span class="color" data-color="#4B392D" style="background-color: rgb(75, 57, 45);"
-                            v-bind:class="[ currentHairColor == 1 ? eye_selected : '' ]"
-                            @click="selectHairColor(1)"></span>
-
-                        <span class="color" data-color="#7A3B1F" style="background-color: rgb(122, 59, 31);"
                             v-bind:class="[ currentHairColor == 2 ? eye_selected : '' ]"
                             @click="selectHairColor(2)"></span>
 
-                        <span class="color" data-color="#A35631" style="background-color: rgb(163, 86, 49);"
-                            v-bind:class="[ currentHairColor == 3 ? eye_selected : '' ]"
-                            @click="selectHairColor(3)"></span>
-
-                        <span class="color" data-color="#A96F49" style="background-color: rgb(169, 111, 73);"
+                        <span class="color" data-color="#7A3B1F" style="background-color: rgb(122, 59, 31);"
                             v-bind:class="[ currentHairColor == 4 ? eye_selected : '' ]"
                             @click="selectHairColor(4)"></span>
 
-                        <span class="color" data-color="#BD8D5E" style="background-color: rgb(189, 141, 94);"
-                            v-bind:class="[ currentHairColor == 5 ? eye_selected : '' ]"
-                            @click="selectHairColor(5)"></span>
-
-                        <span class="color" data-color="#CBA66F" style="background-color: rgb(203, 166, 111);"
+                        <span class="color" data-color="#A35631" style="background-color: rgb(163, 86, 49);"
                             v-bind:class="[ currentHairColor == 6 ? eye_selected : '' ]"
                             @click="selectHairColor(6)"></span>
 
-                        <span class="color" data-color="#E8BE78" style="background-color: rgb(232, 190, 120);"
-                            v-bind:class="[ currentHairColor == 7 ? eye_selected : '' ]"
-                            @click="selectHairColor(7)"></span>
-
-                        <span class="color" data-color="#D09E6A" style="background-color: rgb(208, 158, 106);"
+                        <span class="color" data-color="#A96F49" style="background-color: rgb(169, 111, 73);"
                             v-bind:class="[ currentHairColor == 8 ? eye_selected : '' ]"
                             @click="selectHairColor(8)"></span>
 
-                        <span class="color" data-color="#993524" style="background-color: rgb(153, 53, 36);"
-                            v-bind:class="[ currentHairColor == 9 ? eye_selected : '' ]"
-                            @click="selectHairColor(9)"></span>
-
-                        <span class="color" data-color="#9C1611" style="background-color: rgb(156, 22, 17);"
+                        <span class="color" data-color="#BD8D5E" style="background-color: rgb(189, 141, 94);"
                             v-bind:class="[ currentHairColor == 10 ? eye_selected : '' ]"
                             @click="selectHairColor(10)"></span>
 
-                        <span class="color" data-color="#D1381E" style="background-color: rgb(209, 56, 30);"
-                            v-bind:class="[ currentHairColor == 11 ? eye_selected : '' ]"
-                            @click="selectHairColor(11)"></span>
-
-                        <span class="color" data-color="#C85831" style="background-color: rgb(200, 88, 49);"
+                        <span class="color" data-color="#CBA66F" style="background-color: rgb(203, 166, 111);"
                             v-bind:class="[ currentHairColor == 12 ? eye_selected : '' ]"
                             @click="selectHairColor(12)"></span>
 
-                        <span class="color" data-color="#947A67" style="background-color: rgb(148, 122, 103);"
-                            v-bind:class="[ currentHairColor == 13 ? eye_selected : '' ]"
-                            @click="selectHairColor(13)"></span>
-
-                        <span class="color" data-color="#D8C1AC" style="background-color: rgb(216, 193, 172);"
+                        <span class="color" data-color="#E8BE78" style="background-color: rgb(232, 190, 120);"
                             v-bind:class="[ currentHairColor == 14 ? eye_selected : '' ]"
                             @click="selectHairColor(14)"></span>
 
-                        <span class="color" data-color="#734F61" style="background-color: rgb(115, 79, 97);"
-                            v-bind:class="[ currentHairColor == 15 ? eye_selected : '' ]"
-                            @click="selectHairColor(15)"></span>
-
-                        <span class="color" data-color="#AD476A" style="background-color: rgb(173, 71, 106);"
+                        <span class="color" data-color="#D09E6A" style="background-color: rgb(208, 158, 106);"
                             v-bind:class="[ currentHairColor == 16 ? eye_selected : '' ]"
                             @click="selectHairColor(16)"></span>
 
-                        <span class="color" data-color="#FFAEBC" style="background-color: rgb(255, 174, 188);"
-                            v-bind:class="[ currentHairColor == 17 ? eye_selected : '' ]"
-                            @click="selectHairColor(17)"></span>
-
-                        <span class="color" data-color="#089A8D" style="background-color: rgb(8, 154, 141);"
+                        <span class="color" data-color="#993524" style="background-color: rgb(153, 53, 36);"
                             v-bind:class="[ currentHairColor == 18 ? eye_selected : '' ]"
                             @click="selectHairColor(18)"></span>
 
-                        <span class="color" data-color="#309060" style="background-color: rgb(48, 144, 96);"
-                            v-bind:class="[ currentHairColor == 19 ? eye_selected : '' ]"
-                            @click="selectHairColor(19)"></span>
-
-                        <span class="color" data-color="#A3C015" style="background-color: rgb(163, 192, 21);"
+                        <span class="color" data-color="#9C1611" style="background-color: rgb(156, 22, 17);"
                             v-bind:class="[ currentHairColor == 20 ? eye_selected : '' ]"
                             @click="selectHairColor(20)"></span>
 
-                        <span class="color" data-color="#EEC85C" style="background-color: rgb(238, 200, 92);"
-                            v-bind:class="[ currentHairColor == 21 ? eye_selected : '' ]"
-                            @click="selectHairColor(21)"></span>
-
-                        <span class="color" data-color="#FE8B10" style="background-color: rgb(254, 139, 16);"
+                        <span class="color" data-color="#D1381E" style="background-color: rgb(209, 56, 30);"
                             v-bind:class="[ currentHairColor == 22 ? eye_selected : '' ]"
                             @click="selectHairColor(22)"></span>
 
+                        <span class="color" data-color="#C85831" style="background-color: rgb(200, 88, 49);"
+                            v-bind:class="[ currentHairColor == 24 ? eye_selected : '' ]"
+                            @click="selectHairColor(24)"></span>
+
+                        <span class="color" data-color="#947A67" style="background-color: rgb(148, 122, 103);"
+                            v-bind:class="[ currentHairColor == 26 ? eye_selected : '' ]"
+                            @click="selectHairColor(26)"></span>
+
+                        <span class="color" data-color="#D8C1AC" style="background-color: rgb(216, 193, 172);"
+                            v-bind:class="[ currentHairColor == 28 ? eye_selected : '' ]"
+                            @click="selectHairColor(28)"></span>
+
+                        <span class="color" data-color="#734F61" style="background-color: rgb(115, 79, 97);"
+                            v-bind:class="[ currentHairColor == 30 ? eye_selected : '' ]"
+                            @click="selectHairColor(30)"></span>
+
+                        <span class="color" data-color="#AD476A" style="background-color: rgb(173, 71, 106);"
+                            v-bind:class="[ currentHairColor == 32 ? eye_selected : '' ]"
+                            @click="selectHairColor(32)"></span>
+
+                        <span class="color" data-color="#FFAEBC" style="background-color: rgb(255, 174, 188);"
+                            v-bind:class="[ currentHairColor == 35 ? eye_selected : '' ]"
+                            @click="selectHairColor(35)"></span>
+
+                        <span class="color" data-color="#089A8D" style="background-color: rgb(8, 154, 141);"
+                            v-bind:class="[ currentHairColor == 36 ? eye_selected : '' ]"
+                            @click="selectHairColor(36)"></span>
+
+                        <span class="color" data-color="#309060" style="background-color: rgb(48, 144, 96);"
+                            v-bind:class="[ currentHairColor == 40 ? eye_selected : '' ]"
+                            @click="selectHairColor(40)"></span>
+
+                        <span class="color" data-color="#A3C015" style="background-color: rgb(163, 192, 21);"
+                            v-bind:class="[ currentHairColor == 43 ? eye_selected : '' ]"
+                            @click="selectHairColor(43)"></span>
+
+                        <span class="color" data-color="#EEC85C" style="background-color: rgb(238, 200, 92);"
+                            v-bind:class="[ currentHairColor == 45 ? eye_selected : '' ]"
+                            @click="selectHairColor(45)"></span>
+
+                        <span class="color" data-color="#FE8B10" style="background-color: rgb(254, 139, 16);"
+                            v-bind:class="[ currentHairColor == 48 ? eye_selected : '' ]"
+                            @click="selectHairColor(48)"></span>
+
                         <span class="color" data-color="#D40B0E" style="background-color: rgb(212, 11, 14);"
-                            v-bind:class="[ currentHairColor == 23 ? eye_selected : '' ]"
-                            @click="selectHairColor(23)"></span>
+                            v-bind:class="[ currentHairColor == 53 ? eye_selected : '' ]"
+                            @click="selectHairColor(53)"></span>
                     </div>
                 </div>
                 <div style="display: grid; margin-top: 20px;">
@@ -504,156 +528,191 @@
                     <div class="slider">
                         <span class="settings_value">{{beardModel}}</span><span class="settings_info">Тип бороды</span>
                         <input class="echo-range-slider" v-model="beardModel" type="range"
-                        v-on:input="this.app.updateHair()" max="28" min="0">
+                            v-on:input="this.app.updateTrueFace()" max="28" min="0">
                     </div>
                     <div style="margin-top: 20px;">
-                        <span class="settings_value">{{currentBeardColor}}</span><span class="settings_info">Цвет волос</span>
+                        <span class="settings_value">{{currentBeardColor}}</span><span class="settings_info">Цвет
+                            бороды</span>
                     </div>
                     <div class="hair_colors">
-                        <span class="color" data-color="#1D1D1A" style="background-color: rgb(29, 29, 26);" v-bind:class="[ currentBeardColor == 0 ? eye_selected : '' ]"
-                        @click="selectBeardColor(0)"></span>
+                        <span class="color" data-color="#1D1D1A" style="background-color: rgb(29, 29, 26);"
+                            v-bind:class="[ currentBeardColor == 0 ? eye_selected : '' ]"
+                            @click="selectBeardColor(0)"></span>
 
-                        <span class="color" data-color="#4B392D" style="background-color: rgb(75, 57, 45);" v-bind:class="[ currentBeardColor == 1 ? eye_selected : '' ]"
-                        @click="selectBeardColor(1)"></span>
+                        <span class="color" data-color="#4B392D" style="background-color: rgb(75, 57, 45);"
+                            v-bind:class="[ currentBeardColor == 2 ? eye_selected : '' ]"
+                            @click="selectBeardColor(2)"></span>
 
-                        <span class="color" data-color="#7A3B1F" style="background-color: rgb(122, 59, 31);" v-bind:class="[ currentBeardColor == 2 ? eye_selected : '' ]"
-                        @click="selectBeardColor(2)"></span>
+                        <span class="color" data-color="#7A3B1F" style="background-color: rgb(122, 59, 31);"
+                            v-bind:class="[ currentBeardColor == 4 ? eye_selected : '' ]"
+                            @click="selectBeardColor(4)"></span>
 
-                        <span class="color" data-color="#A35631" style="background-color: rgb(163, 86, 49);" v-bind:class="[ currentBeardColor == 3 ? eye_selected : '' ]"
-                        @click="selectBeardColor(3)"></span>
+                        <span class="color" data-color="#A35631" style="background-color: rgb(163, 86, 49);"
+                            v-bind:class="[ currentBeardColor == 6 ? eye_selected : '' ]"
+                            @click="selectBeardColor(6)"></span>
 
-                        <span class="color" data-color="#A96F49" style="background-color: rgb(169, 111, 73);" v-bind:class="[ currentBeardColor == 4 ? eye_selected : '' ]"
-                        @click="selectBeardColor(4)"></span>
+                        <span class="color" data-color="#A96F49" style="background-color: rgb(169, 111, 73);"
+                            v-bind:class="[ currentBeardColor == 8 ? eye_selected : '' ]"
+                            @click="selectBeardColor(8)"></span>
 
-                        <span class="color" data-color="#BD8D5E" style="background-color: rgb(189, 141, 94);" v-bind:class="[ currentBeardColor == 5 ? eye_selected : '' ]"
-                        @click="selectBeardColor(5)"></span>
+                        <span class="color" data-color="#BD8D5E" style="background-color: rgb(189, 141, 94);"
+                            v-bind:class="[ currentBeardColor == 10 ? eye_selected : '' ]"
+                            @click="selectBeardColor(10)"></span>
 
-                        <span class="color" data-color="#CBA66F" style="background-color: rgb(203, 166, 111);" v-bind:class="[ currentBeardColor == 6 ? eye_selected : '' ]"
-                        @click="selectBeardColor(6)"></span>
+                        <span class="color" data-color="#CBA66F" style="background-color: rgb(203, 166, 111);"
+                            v-bind:class="[ currentBeardColor == 12 ? eye_selected : '' ]"
+                            @click="selectBeardColor(12)"></span>
 
-                        <span class="color" data-color="#E8BE78" style="background-color: rgb(232, 190, 120);" v-bind:class="[ currentBeardColor == 7 ? eye_selected : '' ]"
-                        @click="selectBeardColor(7)"></span>
+                        <span class="color" data-color="#E8BE78" style="background-color: rgb(232, 190, 120);"
+                            v-bind:class="[ currentBeardColor == 14 ? eye_selected : '' ]"
+                            @click="selectBeardColor(14)"></span>
 
-                        <span class="color" data-color="#D09E6A" style="background-color: rgb(208, 158, 106);" v-bind:class="[ currentBeardColor == 8 ? eye_selected : '' ]"
-                        @click="selectBeardColor(8)"></span>
+                        <span class="color" data-color="#D09E6A" style="background-color: rgb(208, 158, 106);"
+                            v-bind:class="[ currentBeardColor == 16 ? eye_selected : '' ]"
+                            @click="selectBeardColor(16)"></span>
 
-                        <span class="color" data-color="#C85831" style="background-color: rgb(200, 88, 49);" v-bind:class="[ currentBeardColor == 9 ? eye_selected : '' ]"
-                        @click="selectBeardColor(9)"></span>
+                        <span class="color" data-color="#C85831" style="background-color: rgb(200, 88, 49);"
+                            v-bind:class="[ currentBeardColor == 24 ? eye_selected : '' ]"
+                            @click="selectBeardColor(24)"></span>
 
-                        <span class="color" data-color="#947A67" style="background-color: rgb(148, 122, 103);" v-bind:class="[ currentBeardColor == 10 ? eye_selected : '' ]"
-                        @click="selectBeardColor(10)"></span>
+                        <span class="color" data-color="#947A67" style="background-color: rgb(148, 122, 103);"
+                            v-bind:class="[ currentBeardColor == 26 ? eye_selected : '' ]"
+                            @click="selectBeardColor(26)"></span>
 
-                        <span class="color" data-color="#D8C1AC" style="background-color: rgb(216, 193, 172);" v-bind:class="[ currentBeardColor == 11 ? eye_selected : '' ]"
-                        @click="selectBeardColor(11)"></span>
+                        <span class="color" data-color="#D8C1AC" style="background-color: rgb(216, 193, 172);"
+                            v-bind:class="[ currentBeardColor == 28 ? eye_selected : '' ]"
+                            @click="selectBeardColor(28)"></span>
                     </div>
                     <div class="slider">
-                        <span class="settings_value">{{beardOpacity}}</span><span class="settings_info">Толщина бороды</span>
+                        <span class="settings_value">{{beardOpacity}}</span><span class="settings_info">Толщина
+                            бороды</span>
                         <input class="echo-range-slider" v-model="beardOpacity" type="range"
-                        v-on:input="this.app.updateTrueFace()" min='0' max='10' step='1'>
+                            v-on:input="this.app.updateTrueFace()" min='0' max='10' step='1'>
                     </div>
                 </div>
                 <h2 class="settings_title">Брови</h2>
                 <div class="slider">
+                    <span class="settings_value">{{browModel}}</span><span class="settings_info">Брови</span>
+                    <input class="echo-range-slider" v-model="browModel" type="range"
+                        v-on:input="this.app.updateTrueFace()" min='0' max='23' step='1'>
+                </div>
+                <div class="slider">
+                    <span class="settings_value">{{browOpacity}}</span><span class="settings_info">Интенсивность
+                        бровей</span>
+                    <input class="echo-range-slider" v-model="browOpacity" type="range"
+                        v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                </div>
+                <div class="slider">
                     <span class="settings_value">{{browHeight}}</span><span class="settings_info">Высота бровей</span>
                     <input class="echo-range-slider" v-model="browHeight" type="range"
-                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                        v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
                 </div>
                 <div class="slider">
                     <span class="settings_value">{{browWidth}}</span><span class="settings_info">Толщина бровей</span>
                     <input class="echo-range-slider" v-model="browWidth" type="range"
-                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                        v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
                 </div>
                 <h2 class="settings_title">Нос</h2>
                 <div class="slider">
                     <span class="settings_value">{{noseWidth}}</span><span class="settings_info">Шинира носа</span>
                     <input class="echo-range-slider" v-model="noseWidth" type="range"
-                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                        v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
                 </div>
                 <div class="slider">
                     <span class="settings_value">{{noseHeight}}</span><span class="settings_info">Высота носа</span>
                     <input class="echo-range-slider" v-model="noseHeight" type="range"
-                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                        v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
                 </div>
                 <div class="slider">
                     <span class="settings_value">{{noseLength}}</span><span class="settings_info">Длина носа</span>
                     <input class="echo-range-slider" v-model="noseLength" type="range"
-                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                        v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
                 </div>
                 <div class="slider">
-                    <span class="settings_value">{{noseTip}}</span><span class="settings_info">Высота кончика носа</span>
+                    <span class="settings_value">{{noseTip}}</span><span class="settings_info">Высота кончика
+                        носа</span>
                     <input class="echo-range-slider" v-model="noseTip" type="range"
-                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                        v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
                 </div>
                 <div class="slider">
-                    <span class="settings_value">{{noseBridge}}</span><span class="settings_info">Сдвиг переносицы вверх и вниз</span>
+                    <span class="settings_value">{{noseBridge}}</span><span class="settings_info">Сдвиг переносицы вверх
+                        и вниз</span>
                     <input class="echo-range-slider" v-model="noseBridge" type="range"
-                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step="0.1">
+                        v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step="0.1">
                 </div>
                 <div class="slider">
-                    <span class="settings_value">{{noseShift}}</span><span class="settings_info">Сдвиг переносицы</span>
+                    <span class="settings_value">{{noseShift}}</span><span class="settings_info">Сдвиг переносицы влево
+                        и вправо</span>
                     <input class="echo-range-slider" v-model="noseShift" type="range"
-                    v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step="0.1">
+                        v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step="0.1">
                 </div>
-                
+
                 <h2 class="settings_title">Губы</h2>
                 <div class="slider">
                     <span class="settings_value">{{lips}}</span><span class="settings_info">Толщина губ</span>
-                    <input class="echo-range-slider" v-model="lips" type="range"
-                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1"> 
+                    <input class="echo-range-slider" v-model="lips" type="range" v-on:input="this.app.updateTrueFace()"
+                        max="1.0" min="-1.0" step="0.1">
                 </div>
                 <h2 class="settings_title">Скулы</h2>
                 <div class="slider">
-                    <span class="settings_value">{{cheekboneHeight}}</span><span class="settings_info">Высота скул</span>
+                    <span class="settings_value">{{cheekboneHeight}}</span><span class="settings_info">Высота
+                        скул</span>
                     <input class="echo-range-slider" v-model="cheekboneHeight" type="range"
-                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
+                        v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
                 </div>
                 <div class="slider">
                     <span class="settings_value">{{cheekboneWidth}}</span><span class="settings_info">Ширина скул</span>
                     <input class="echo-range-slider" v-model="cheekboneWidth" type="range"
-                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1"> 
+                        v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
                 </div>
                 <h2 class="settings_title">Челюсть</h2>
                 <div class="slider">
                     <span class="settings_value">{{jawWidth}}</span><span class="settings_info">Ширина челюсти</span>
                     <input class="echo-range-slider" v-model="jawWidth" type="range"
-                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
+                        v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
                 </div>
                 <div class="slider">
                     <span class="settings_value">{{jawHeight}}</span><span class="settings_info">Высота челюсти</span>
                     <input class="echo-range-slider" v-model="jawHeight" type="range"
-                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
+                        v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
                 </div>
-                
+
                 <h2 class="settings_title">Подбородок</h2>
                 <div class="slider">
-                    <span class="settings_value">{{chinLength}}</span><span class="settings_info">Длина подбородка</span>
+                    <span class="settings_value">{{chinLength}}</span><span class="settings_info">Длина
+                        подбородка</span>
                     <input class="echo-range-slider" v-model="chinLength" type="range"
-                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
+                        v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
                 </div>
                 <div class="slider">
-                    <span class="settings_value">{{chinPosition}}</span><span class="settings_info">Положение подбородка</span>
+                    <span class="settings_value">{{chinPosition}}</span><span class="settings_info">Положение
+                        подбородка</span>
                     <input class="echo-range-slider" v-model="chinPosition" type="range"
-                    v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
+                        v-on:input="this.app.updateTrueFace()" max="1.0" min="-1.0" step="0.1">
                 </div>
                 <div class="slider">
-                    <span class="settings_value">{{chinWidth}}</span><span class="settings_info">Ширина подбородка</span>
-                    <input class="echo-range-slider" type="range" max="1.0" min="-1.0" step="0.1" v-on:input="this.app.updateTrueFace()" v-model="chinWidth">
+                    <span class="settings_value">{{chinWidth}}</span><span class="settings_info">Ширина
+                        подбородка</span>
+                    <input class="echo-range-slider" type="range" max="1.0" min="-1.0" step="0.1"
+                        v-on:input="this.app.updateTrueFace()" v-model="chinWidth">
                 </div>
                 <div class="slider">
                     <span class="settings_value">{{chinShape}}</span><span class="settings_info">Форма подбородка</span>
-                    <input class="echo-range-slider" type="range" max="1.0" min="-1.0" step="0.1" v-on:input="this.app.updateTrueFace()" v-model="chinShape">
+                    <input class="echo-range-slider" type="range" max="1.0" min="-1.0" step="0.1"
+                        v-on:input="this.app.updateTrueFace()" v-model="chinShape">
                 </div>
                 <h2 class="settings_title">Шея</h2>
                 <div class="slider">
                     <span class="settings_value">{{neckWidth}}</span><span class="settings_info">Ширина шеи</span>
-                    <input class="echo-range-slider" v-model="neckWidth" v-on:input="app.updateTrueFace()" type="range" max="1.0" min="-1.0" step="0.1">
+                    <input class="echo-range-slider" v-model="neckWidth" v-on:input="app.updateTrueFace()" type="range"
+                        max="1.0" min="-1.0" step="0.1">
                 </div>
             </div>
-            
+
         </div>
         <h3 class="echo-input-error" v-if="nameError" style="position: absolute; margin-left: 50px;">
             Неверное имя персонажа!</h3>
-<h3 class="echo-input-error" v-if="surnameError" style="position: absolute; margin-left: 50px;">
+        <h3 class="echo-input-error" v-if="surnameError" style="position: absolute; margin-left: 50px;">
             Неверная фамилия персонажа!</h3>
     </div>
 </body>

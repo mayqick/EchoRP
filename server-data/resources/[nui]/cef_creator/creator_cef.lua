@@ -8,8 +8,19 @@ function focusCreatorCef()
 end
 RegisterNUICallback('SendCharacterSettings', function(data, cb)
 
-    print(data)
     TriggerEvent("onCharacterCreatorChangeSettings", data)
+  
+    cb('ok')
+  end)
+RegisterNUICallback('SaveCharacter', function(data, cb)
+
+    TriggerEvent("onSavePlayerCharacter", data)
+  
+    cb('ok')
+  end)
+RegisterNUICallback('SendCharacterGender', function(data, cb)
+
+    TriggerEvent("changePlayerFreemode", data)
   
     cb('ok')
   end)
