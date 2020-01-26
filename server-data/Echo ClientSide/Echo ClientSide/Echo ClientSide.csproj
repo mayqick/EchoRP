@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="Auth.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\CharacterModel.cs" />
     <Compile Include="Models\SkinModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

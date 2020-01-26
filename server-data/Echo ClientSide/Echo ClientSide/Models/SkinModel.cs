@@ -8,9 +8,6 @@ namespace Echo_ClientSide.Models
 {
    public class SkinModel
     {
-        public string name { get; set; }
-        public string surname { get; set; }
-
         public int firstHeadShape { get; set; }
         public int secondHeadShape { get; set; }
         public int firstSkinTone { get; set; }
@@ -57,6 +54,7 @@ namespace Echo_ClientSide.Models
         public int eyebrowsModel { get; set; }
         public int eyebrowsColor { get; set; }
         public int eyebrowsOpacity { get; set; }
+
         public int makeupModel { get; set; }
         public int blushModel { get; set; }
         public int blushColor { get; set; }

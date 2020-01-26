@@ -130,6 +130,7 @@ var app = new Vue({
       post('http://cef_creator/SaveCharacter', JSON.stringify({
         name: this.name,
         surname: this.surname,
+        gender: this.gender,
         firstHeadShape: this.firstHeadShape,
         secondHeadShape: this.secondHeadShape,
         shapeMix: this.headMix,

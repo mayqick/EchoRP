@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using CitizenFX.Core.Native;
 using CitizenFX.Core;
+using Newtonsoft.Json;
 namespace Echo_ServerSide
 {
     class Auth : BaseScript
@@ -15,14 +16,29 @@ namespace Echo_ServerSide
             EventHandlers["playerConnecting"] += new Action<Player, string, dynamic, dynamic>(OnPlayerConnecting);
             EventHandlers.Add("onPlayerSpawned", new Action<Player>(OnPlayerSpawned));
             EventHandlers["onPlayerRegistration"] += new Action<Player, string>(OnPlayerRegistration);
-            EventHandlers["onPlayerSaveCharacterInformation"] += new Action<Player, Models.SkinModel>(OnPlayerSaveCharacterInformation);
+            EventHandlers.Add("onPlayerSaveCharacterInformation", new Action<Player, string, string>(OnPlayerSaveCharacterInformation));
             EventHandlers.Add("onPlayerConnected", new Action<Player>(OnPlayerConnected));
         }
-        private async void OnPlayerSaveCharacterInformation([FromSource]Player player, Models.SkinModel skinModel)
+
+        // Получаем данные кастомизации, сохраняем скин и создаем нового персонада
+        private async void OnPlayerSaveCharacterInformation([FromSource]Player player, string skin, string character)
         {
+            // Преобразуем JSON к типам. А чо, звучит хайпово
+            var skinModel = JsonConvert.DeserializeObject<Models.SkinModel>(skin);
+            var characterModel = JsonConvert.DeserializeObject<Models.CharacterModel>(character);
+
+            // получаем ИД аккаунта в БД чтобы создать персонажа с привязкой по этому ИД.
             int accountId = await Database.GetAccountIdByLicenseAsync(player.Identifiers["license"]);
 
+
+            // Создаем персонажа и получаем его ИД
+            int characterId = await Database.CreateCharacterAsync(characterModel, accountId);
+
+            // Сохраняем настройки кастомизации игрока
+            await Database.SetCharacterSkinAsync(skinModel, characterId);
+
         }
+        // 
         private async void OnPlayerRegistration([FromSource]Player player, string mail)
         {
             await Delay(0);

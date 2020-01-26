@@ -26,9 +26,10 @@ namespace Echo_ClientSide
         {
             await Delay(0);
             OnCharacterCreatorChangeSettings(data);
-            Models.SkinModel skinModel = new Models.SkinModel();
+            
             data.TryGetValue("name", out var name);
             data.TryGetValue("surname", out var surname);
+            data.TryGetValue("gender", out var gender);
             data.TryGetValue("firstHeadShape", out var firstHeadShape);
             data.TryGetValue("secondHeadShape", out var secondHeadShape);
             data.TryGetValue("shapeMix", out var shapeMix);
@@ -66,8 +67,11 @@ namespace Echo_ClientSide
             data.TryGetValue("chinShape", out var chinShape);
             data.TryGetValue("neckWidth", out var neckWidth);
 
-            skinModel.name = Convert.ToString(name);
-            skinModel.surname = Convert.ToString(surname);
+            Models.SkinModel skinModel = new Models.SkinModel();
+            Models.CharacterModel characterModel = new Models.CharacterModel();
+
+            characterModel.characterName = Convert.ToString(name) + "_" + Convert.ToString(surname);
+            characterModel.isMale = Convert.ToString(gender) == "male" ? true : false;
 
             skinModel.firstHeadShape = Convert.ToInt16(firstHeadShape);
             skinModel.secondHeadShape = Convert.ToInt16(secondHeadShape);
@@ -109,16 +113,22 @@ namespace Echo_ClientSide
             skinModel.chinLength = Convert.ToSingle(chinLength);
             skinModel.chinShape = Convert.ToSingle(chinShape);
             skinModel.neckWidth = Convert.ToSingle(neckWidth);
+
+            // преобразуем в JSON наши данные чтобы потом на стороне сервера преобразовать их к классовым типам. Гениально 
+            string skin = JsonConvert.SerializeObject(skinModel);
+            string characrer = JsonConvert.SerializeObject(characterModel);
+            // Ивент сохранения скина и создания персонажа
+            TriggerServerEvent("onPlayerSaveCharacterInformation", skin, characrer);
         }
 
 
 
-            // Отправка игрока на кастомизацю
-        private async void OnPlayerCharacterCreating()
+
+        private async void OnPlayerCharacterCreating() // Отправка игрока на кастомизацю
         {
             ChangePlayerFreemode(true);
             SetEntityHealth(PlayerPedId(), 200);
-            /*            SetEntityCoordsNoOffset(PlayerPedId(), 152.3851f, -1000.384f, -99f, false, false, false);*/
+            /*SetEntityCoordsNoOffset(PlayerPedId(), 152.3851f, -1000.384f, -99f, false, false, false); */ // Вроде бы в этом нет необходимости
 
             NetworkResurrectLocalPlayer(152.3851f, -1000.384f, -100f, 180.3265f, true, false);
 
@@ -151,7 +161,8 @@ namespace Echo_ClientSide
             DoScreenFadeIn(1000);
             EnableAllControlActions(0);
         }
-        private async void OnCharacterCreatorChangeSettings(IDictionary<string, object> data)
+        // Вызывается при любой смене параметров перса на кастомизации
+        private async void OnCharacterCreatorChangeSettings(IDictionary<string, object> data) 
         {
             await Delay(0);
 
