@@ -13,9 +13,30 @@
 
 <body>
     <div class="content" id="content" style="display: none;">
-
+        <div class=height-block style="position: absolute; top: 435px; left: -178px; transform: rotate(-90deg);">
+            <span class="label_for_cam" style="margin-right: 30px;">Высота</span>
+            <input class="echo-big-range-slider" id="rotate" type="range" v-model="height"  step="0.1" max="0.4" min="-0.6" @input="app.updateHeight()">
+        </div>
+        <!-- <div class=rotate-block style="position: absolute; top: 33px;">
+            <span class="label_for_cam" style="margin-right: 30px;">Поворот</span>
+            <input class="echo-big-range-slider" id="rotate" type="range" v-model="rotate"  step="1" max="360" min="0" @input="app.updateRotate()"> 
+            <span class="label_for_cam" style="margin-left: 30px;">{{rotate}}°</span>
+        </div> -->
+        <div class="range_buttons">
+            <span class="label_for_cam" style="mask-repeat: 30px;">Дальность</span>
+            <button class="echo-control-circle" @click="app.updateRange('plus')">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7 9V16H9V9H16V7H9V0H7V7H0V9H7Z" fill="#FFEF63" />
+                </svg>
+            </button>
+            <button class="echo-control-circle" @click="app.updateRange('minus')">
+                <svg width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="padding-bottom: 3px;">
+                    <path d="M0.16 0.127999H9.592V2.36H0.16V0.127999Z" fill="#FFEF63" />
+                </svg>
+            </button>
+        </div>
         <div class="creator-block">
-
             <div class="creator_tabs">
                 <label class="tab">
                     <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,14 +102,14 @@
                 <div class="main_settings">
                     <div class="gender">
                         <h3 class="main_title">Пол</h3>
-                        <button id="male" @click="changeGender(0)" v-bind:class="[ gender == 'male' ? 'gender_selected' : 'gender_unselected' ]"><svg
-                                 width="28"
-                                height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button id="male" @click="changeGender(0)"
+                            v-bind:class="[ gender == 'male' ? 'gender_selected' : 'gender_unselected' ]"><svg
+                                width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0)" opacity="1">
                                     <path id="svg_male"
                                         v-bind:class="[ gender == 'male' ? 'svg_gender_selected' : 'svg_gender_unselected' ]"
-                                        d="M22.9903 5.65332C22.9821 5.58868 22.9678 5.52643 22.9442 5.46802C22.9434 5.46655 22.9434 5.46454 22.9431 5.46271C22.9431 5.46234 22.9427 5.46198 22.9423 5.46161C22.9163 5.40009 22.8808 5.34424 22.8407 5.29242C22.8308 5.28015 22.8211 5.26807 22.8107 5.25653C22.7678 5.20819 22.7213 5.16351 22.6673 5.12708C22.6658 5.12598 22.664 5.12561 22.6625 5.12451C22.6104 5.09009 22.5527 5.06409 22.4922 5.04358C22.4772 5.03827 22.4626 5.03369 22.4472 5.02966C22.3839 5.01245 22.3187 5 22.25 5H17C16.586 5 16.25 5.336 16.25 5.75C16.25 6.164 16.586 6.5 17 6.5H20.4391L15.9627 10.9764C14.769 10.0217 13.2994 9.5 11.75 9.5C8.0282 9.5 5 12.5282 5 16.25C5 19.9718 8.0282 23 11.75 23C15.4718 23 18.5 19.9718 18.5 16.25C18.5 14.7013 17.9787 13.2321 17.0233 12.0373L21.5 7.56055V11C21.5 11.414 21.836 11.75 22.25 11.75C22.664 11.75 23 11.414 23 11V5.75C23 5.73425 22.9963 5.71924 22.9954 5.70386C22.9943 5.68665 22.9925 5.67017 22.9903 5.65332ZM11.75 21.5C8.85492 21.5 6.5 19.1451 6.5 16.25C6.5 13.3549 8.85492 11 11.75 11C13.1517 11 14.4713 11.5457 15.4636 12.5344C16.4543 13.5287 17 14.8483 17 16.25C17 19.1451 14.6451 21.5 11.75 21.5Z"
-                                         />
+                                        d="M22.9903 5.65332C22.9821 5.58868 22.9678 5.52643 22.9442 5.46802C22.9434 5.46655 22.9434 5.46454 22.9431 5.46271C22.9431 5.46234 22.9427 5.46198 22.9423 5.46161C22.9163 5.40009 22.8808 5.34424 22.8407 5.29242C22.8308 5.28015 22.8211 5.26807 22.8107 5.25653C22.7678 5.20819 22.7213 5.16351 22.6673 5.12708C22.6658 5.12598 22.664 5.12561 22.6625 5.12451C22.6104 5.09009 22.5527 5.06409 22.4922 5.04358C22.4772 5.03827 22.4626 5.03369 22.4472 5.02966C22.3839 5.01245 22.3187 5 22.25 5H17C16.586 5 16.25 5.336 16.25 5.75C16.25 6.164 16.586 6.5 17 6.5H20.4391L15.9627 10.9764C14.769 10.0217 13.2994 9.5 11.75 9.5C8.0282 9.5 5 12.5282 5 16.25C5 19.9718 8.0282 23 11.75 23C15.4718 23 18.5 19.9718 18.5 16.25C18.5 14.7013 17.9787 13.2321 17.0233 12.0373L21.5 7.56055V11C21.5 11.414 21.836 11.75 22.25 11.75C22.664 11.75 23 11.414 23 11V5.75C23 5.73425 22.9963 5.71924 22.9954 5.70386C22.9943 5.68665 22.9925 5.67017 22.9903 5.65332ZM11.75 21.5C8.85492 21.5 6.5 19.1451 6.5 16.25C6.5 13.3549 8.85492 11 11.75 11C13.1517 11 14.4713 11.5457 15.4636 12.5344C16.4543 13.5287 17 14.8483 17 16.25C17 19.1451 14.6451 21.5 11.75 21.5Z" />
                                 </g>
                                 <defs>
                                     <clipPath id="clip0">s
@@ -97,14 +118,14 @@
                                 </defs>
                             </svg>
                         </button>
-                        <button id="female" @click="changeGender(1)" v-bind:class="[ gender == 'female' ? 'gender_selected' : 'gender_unselected' ]"><svg width="28" height="28" viewBox="0 0 28 28" 
-                                
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button id="female" @click="changeGender(1)"
+                            v-bind:class="[ gender == 'female' ? 'gender_selected' : 'gender_unselected' ]"><svg
+                                width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <g opacity="1">
                                     <path id="svg_female"
                                         v-bind:class="[ gender == 'female' ? 'svg_gender_selected' : 'svg_gender_unselected' ]"
-                                        d="M20.375 11.375C20.375 7.85974 17.5153 5 14 5C10.4847 5 7.625 7.85974 7.625 11.375C7.625 14.6359 10.0876 17.3289 13.25 17.702V19.25H11.75C11.336 19.25 11 19.586 11 20C11 20.414 11.336 20.75 11.75 20.75H13.25V22.25C13.25 22.664 13.586 23 14 23C14.414 23 14.75 22.664 14.75 22.25V20.75H16.25C16.664 20.75 17 20.414 17 20C17 19.586 16.664 19.25 16.25 19.25H14.75V17.702C17.9124 17.3289 20.375 14.6359 20.375 11.375ZM9.125 11.375C9.125 8.68701 11.312 6.5 14 6.5C16.688 6.5 18.875 8.68701 18.875 11.375C18.875 14.063 16.688 16.25 14 16.25C11.312 16.25 9.125 14.063 9.125 11.375Z"
-                                         />
+                                        d="M20.375 11.375C20.375 7.85974 17.5153 5 14 5C10.4847 5 7.625 7.85974 7.625 11.375C7.625 14.6359 10.0876 17.3289 13.25 17.702V19.25H11.75C11.336 19.25 11 19.586 11 20C11 20.414 11.336 20.75 11.75 20.75H13.25V22.25C13.25 22.664 13.586 23 14 23C14.414 23 14.75 22.664 14.75 22.25V20.75H16.25C16.664 20.75 17 20.414 17 20C17 19.586 16.664 19.25 16.25 19.25H14.75V17.702C17.9124 17.3289 20.375 14.6359 20.375 11.375ZM9.125 11.375C9.125 8.68701 11.312 6.5 14 6.5C16.688 6.5 18.875 8.68701 18.875 11.375C18.875 14.063 16.688 16.25 14 16.25C11.312 16.25 9.125 14.063 9.125 11.375Z" />
                                 </g>
                             </svg>
                         </button>
@@ -600,7 +621,7 @@
                     <span class="settings_value">{{browOpacity}}</span><span class="settings_info">Интенсивность
                         бровей</span>
                     <input class="echo-range-slider" v-model="browOpacity" type="range"
-                        v-on:input="this.app.updateTrueFace()" min='-1.0' max='1.0' step='0.1'>
+                        v-on:input="this.app.updateTrueFace()" min='0' max='10' step='1'>
                 </div>
                 <div class="slider">
                     <span class="settings_value">{{browHeight}}</span><span class="settings_info">Высота бровей</span>

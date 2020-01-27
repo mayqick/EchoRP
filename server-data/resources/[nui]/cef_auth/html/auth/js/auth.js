@@ -41,14 +41,17 @@ var app = new Vue({
             return re.test(email);
         },
         checkMailCode(){
-            var code = this.code_num1 + this.code_num2 + this.code_num3 + this.code_num4;
-        
+            var mCode = this.code_num1 + this.code_num2 + this.code_num3 + this.code_num4;
+            post('http://cef_auth/sendMailCode', JSON.stringify({
+                code: mCode
+            })
+            );
             // mp.trigger('checkCode', code);
         },
         register(){
             if (this.mailTest(this.email)) {
                 this.show = 2;
-                post('http://cef_creator/sendMail', JSON.stringify({
+                post('http://cef_auth/sendMail', JSON.stringify({
                     mail: this.email
                 })
                 );

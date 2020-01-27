@@ -15,7 +15,7 @@ namespace Echo_ServerSide
         {
             EventHandlers["playerConnecting"] += new Action<Player, string, dynamic, dynamic>(OnPlayerConnecting);
             EventHandlers.Add("onPlayerSpawned", new Action<Player>(OnPlayerSpawned));
-            EventHandlers["onPlayerRegistration"] += new Action<Player, string>(OnPlayerRegistration);
+            EventHandlers.Add("onPlayerRegistration", new Action<Player, string>(OnPlayerRegistration));
             EventHandlers.Add("onPlayerSaveCharacterInformation", new Action<Player, string, string>(OnPlayerSaveCharacterInformation));
             EventHandlers.Add("onPlayerConnected", new Action<Player>(OnPlayerConnected));
         }
@@ -43,10 +43,10 @@ namespace Echo_ServerSide
         private async void OnPlayerRegistration([FromSource]Player player, string mail)
         {
             await Delay(0);
-
+     
             Random random = new Random();
             string code = random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString();
-
+            Debug.WriteLine(mail);
             if (await Database.CheckPlayerMailAsync(mail))
             {
                 // todo: license не совпадает, но введенный mail есть в базе
@@ -54,6 +54,7 @@ namespace Echo_ServerSide
             }
             else
             {
+                TriggerClientEvent("setPlayerRegisterMailCode", code);
                 Mail.SendEmailAsync(mail, "Echo Role Play", "Echo Role Play - код подтверждения", $"Ваш код подтверждения регистрации аккаунта: {code}");
                 Database.RegisterAccountAsync(player.Identifiers["license"], mail, player.EndPoint);
             }

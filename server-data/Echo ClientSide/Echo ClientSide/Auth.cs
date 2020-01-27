@@ -21,6 +21,26 @@ namespace Echo_ClientSide
             EventHandlers["changePlayerFreemode"] += new Action<IDictionary<string, object>>(OnPlayerChangeFreemodeGender);
             EventHandlers["onSavePlayerCharacter"] += new Action<IDictionary<string, object>>(OnSavePlayerCharacter);
             EventHandlers["onPlayerFinishedCharacterCustomizing"] += new Action(OnPlayerFinishedCharacterCustomizing);
+            EventHandlers["onUpdateCusomizationCamSettings"] += new Action<IDictionary<string, object>>(OnUpdateCusomizationCamSettings);
+            EventHandlers["setPlayerRegisterMailCode"] += new Action<string>(SetPlayerRegisterMailCode);
+        }
+        private int customizationCameraHandle;
+        private string registerCode;
+
+        private async void SetPlayerRegisterMailCode(string code)
+        {
+            await Delay(0);
+            registerCode = code;
+            Debug.WriteLine(code);
+        }
+        private async void OnUpdateCusomizationCamSettings(IDictionary<string, object> data)
+        {
+            await Delay(0);
+            data.TryGetValue("height", out var height);
+            data.TryGetValue("range", out var range);
+/*            data.TryGetValue("rotate", out var rotate);*/
+            SetCamCoord(customizationCameraHandle, 152.3708f, -1001.75f + Convert.ToSingle(range), -98.45f + Convert.ToSingle(height));
+/*            SetCamRot(customizationCameraHandle, -20.0f, 0.0f, 0.0f + Convert.ToSingle(rotate), 1);*/
         }
         private async void OnPlayerFinishedCharacterCustomizing()
         {
@@ -40,6 +60,7 @@ namespace Echo_ClientSide
         // Ивент вызывается при сохранении персонажа
         private async void OnSavePlayerCharacter(IDictionary<string, object> data)
         {
+            // TODO: СДЕЛАТЬ ПРОВЕРКУ НА НАЛИЧИЕ ПОВТОРЕНИЯ ЛОГИНА В БД!!!!
             await Delay(0);
             // На всякий пожарный еще раз обновляем внешний вид
             OnCharacterCreatorChangeSettings(data);
@@ -152,9 +173,9 @@ namespace Echo_ClientSide
 
             NetworkResurrectLocalPlayer(152.3851f, -1000.384f, -100f, 180.3265f, true, false);
 
-            var spawnedCamera = CreateCam("DEFAULT_SCRIPTED_CAMERA", true);
-            SetCamCoord(spawnedCamera, 152.3708f, -1001.75f, -98.45f);
-            SetCamRot(spawnedCamera, -20.0f, 0.0f, 0.0f, 1);
+            customizationCameraHandle = CreateCam("DEFAULT_SCRIPTED_CAMERA", true);
+            SetCamCoord(customizationCameraHandle, 152.3708f, -1001.75f, -98.45f);
+            SetCamRot(customizationCameraHandle, -20.0f, 0.0f, 0.0f, 1);
             RenderScriptCams(true, false, 0, true, true);
 
             DisplayRadar(false);

@@ -413,3 +413,96 @@ svg{
     padding: 20px;
     border-radius: 20px;
 }
+.echo-control-circle{
+    width: 72px;
+    height: 72px;
+    border: 1px solid rgba(211, 218, 255, 0.11);
+  }
+  .echo-control-circle-arrow{
+    height: 50px;
+    width: 50px;
+    border: 2px solid rgba(211, 218, 255, 0.11);
+  }
+  .echo-control-big-circle-arrow{
+    border: 2px solid #FFFFFF;
+    height: 72px;
+    width: 72px;
+  }
+   .echo-control-circle{
+    background: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 100px;
+  }
+  .range_buttons{
+    position: absolute;
+    float: right;
+    top: 9px;
+    right: 710px;
+  }
+  .label_for_cam{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 32px;
+    /* identical to box height, or 320% */
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+  }
+  .echo-big-range-slider {
+    width: 405px;
+    -webkit-appearance: none;
+    outline: none;
+    background: rgba(211, 218, 255, 0.11);
+  }
+    .echo-big-range-slider::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 1px;
+        cursor: pointer;
+        box-shadow: none;
+        background: rgba(211, 218, 255, 0.11);
+        border-radius: 0px;
+        border: 0px solid #010101;
+    }
+    .echo-big-range-slider::-moz-range-track {
+        width: 100%;
+        height: 1px;
+        cursor: pointer;
+        box-shadow: none;
+        background: rgba(211, 218, 255, 0.11);
+        border-radius: 0px;
+        border: 0px solid #010101;
+    }
+  
+    .echo-big-range-slider::-webkit-slider-thumb {
+        background: #FFE55C;
+        border-radius: 50px;
+        background-repeat: no-repeat;
+        height: 32px;
+        width: 32px;
+        background-size: 100%;
+  
+      
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -17px;
+    }
+  .echo-big-range-slider::-moz-range-thumb{
+
+        background: #FFE55C;
+        height: 32px;
+        width: 32px;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -10px;
+  
+  }
+  
+  .echo-big-range-slider::-moz-focus-outer {
+    border: 0;
+    }
+  

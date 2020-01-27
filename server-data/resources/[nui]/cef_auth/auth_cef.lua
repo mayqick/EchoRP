@@ -8,8 +8,14 @@ function focusAuthCef()
 end
 
 RegisterNUICallback('sendMail', function(data, cb)
-    local mail = data.mail
-    TriggerServerEvent("onPlayerRegistration", mail)
+
+    TriggerServerEvent("onPlayerRegistration", data.mail)
+  
+    cb('ok')
+end)
+
+  RegisterNUICallback('sendMailCode', function(data, cb)
+    TriggerEvent("checkPlayerRegisterCode", data.code)
   
     cb('ok')
   end)

@@ -24,6 +24,12 @@ RegisterNUICallback('SendCharacterSettings', function(data, cb)
   
     cb('ok')
   end)
+RegisterNUICallback('UpdateCustomizationCamSettings', function(data, cb)
+
+    TriggerEvent("onUpdateCusomizationCamSettings", data)
+  
+    cb('ok')
+end)
 RegisterNUICallback('SaveCharacter', function(data, cb)
 
     TriggerEvent("onSavePlayerCharacter", data)

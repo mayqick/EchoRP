@@ -4,6 +4,9 @@ var app = new Vue({
     name: '',
     surname: '',
     tab: 'character',
+    range: 0,
+    height: 0,
+    rotate: 0,
     nameError: false,
     surnameError: false,
     gender: 'male',
@@ -70,7 +73,8 @@ var app = new Vue({
     skinProblem: 0,
     ageingOpacity: 10,
     currentSkinColor: 0,
-    render: false
+    render: false,
+    heightModel: 0
   },
   methods: {
 
@@ -82,7 +86,7 @@ var app = new Vue({
         })
         );
 
-     
+
       }
       else {
         this.gender = 'female';
@@ -93,10 +97,10 @@ var app = new Vue({
         );
 
       }
-      setTimeout(function(){
+      setTimeout(function () {
         app.updateTrueFace();
-    }, 1000);
-      
+      }, 1000);
+
     },
     selectEyeColor(color) {
       this.currentEyeColor = color;
@@ -110,7 +114,7 @@ var app = new Vue({
       this.currentBeardColor = color;
       app.updateTrueFace();
     },
-    selectSkinColor (color){
+    selectSkinColor(color) {
       this.currentSkinColor = color;
       app.updateTrueFace();
     },
@@ -169,13 +173,42 @@ var app = new Vue({
       })
       );
     },
+    updateHeight() {
+      post('http://cef_creator/UpdateCustomizationCamSettings', JSON.stringify({
+        range: this.range,
+        height: this.height
+      })
+      );
+    },
+    updateRotate() {
+      post('http://cef_creator/UpdateCustomizationCamSettings', JSON.stringify({
+        range: this.range,
+        height: this.height
+      })
+      );
+    },
+    updateRange(type) {
+
+      if (type == 'plus') {
+        if (this.range < 1) this.range += 1;
+      }
+
+      else {
+        if (this.range > -1) this.range -= 1;
+      }
+      post('http://cef_creator/UpdateCustomizationCamSettings', JSON.stringify({
+        range: this.range,
+        height: this.height
+      })
+      );
+    },
     faceSelect(shape, id) {
       if (shape == 0) this.firstHeadShape = id;
       else this.secondHeadShape = id;
       app.updateTrueFace();
     },
     renderCreatorCef(isRender) {
-      if(isRender) document.getElementById('content').style.display = "block";
+      if (isRender) document.getElementById('content').style.display = "block";
       else document.getElementById('content').style.display = "none";
     },
     updateTrueFace() {
@@ -221,11 +254,11 @@ var app = new Vue({
 })
 window.addEventListener('message', (event) => {
   if (event.data.type === 'render') {
-      app.renderCreatorCef(true);
+    app.renderCreatorCef(true);
   }
   else if (event.data.type === 'unrender') {
     app.renderCreatorCef(false);
-}
+  }
 });
 window.post = (url, data) => {
   var request = new XMLHttpRequest();
