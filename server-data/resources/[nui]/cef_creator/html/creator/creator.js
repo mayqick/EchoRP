@@ -69,7 +69,8 @@ var app = new Vue({
     beardOpacity: 0,
     skinProblem: 0,
     ageingOpacity: 10,
-    currentSkinColor: 0
+    currentSkinColor: 0,
+    render: false
   },
   methods: {
 
@@ -173,6 +174,10 @@ var app = new Vue({
       else this.secondHeadShape = id;
       app.updateTrueFace();
     },
+    renderCreatorCef(isRender) {
+      if(isRender) document.getElementById('content').style.display = "block";
+      else document.getElementById('content').style.display = "none";
+    },
     updateTrueFace() {
       post('http://cef_creator/SendCharacterSettings', JSON.stringify({
         firstHeadShape: this.firstHeadShape,
@@ -214,6 +219,14 @@ var app = new Vue({
     }
   }
 })
+window.addEventListener('message', (event) => {
+  if (event.data.type === 'render') {
+      app.renderCreatorCef(true);
+  }
+  else if (event.data.type === 'unrender') {
+    app.renderCreatorCef(false);
+}
+});
 window.post = (url, data) => {
   var request = new XMLHttpRequest();
   request.open('POST', url, true);

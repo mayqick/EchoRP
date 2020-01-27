@@ -4,6 +4,7 @@ games { 'gta5' }
 client_script 'creator_cef.lua'
 
 export 'focusCreatorCef'
+export 'renderCreatorCef'
 
 ui_page 'html/creator/creator.html'
 

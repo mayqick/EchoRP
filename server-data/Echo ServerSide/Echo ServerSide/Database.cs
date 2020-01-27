@@ -141,7 +141,7 @@ namespace Echo_ServerSide
             return -1;
         }
         #endregion
-        public static async Task RegisterAccountAsync(string license, string mail, string regIp)
+        public static async void RegisterAccountAsync(string license, string mail, string regIp)
         {
 
             try
@@ -160,7 +160,7 @@ namespace Echo_ServerSide
             }
 
         }
-        public static async Task SetCharacterSkinAsync(Models.SkinModel skin, int characterId)
+        public static async void SetCharacterSkinAsync(Models.SkinModel skin, int characterId)
         {
             await Delay(0);
             try

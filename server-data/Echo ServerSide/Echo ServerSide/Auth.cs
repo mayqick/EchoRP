@@ -35,8 +35,9 @@ namespace Echo_ServerSide
             int characterId = await Database.CreateCharacterAsync(characterModel, accountId);
 
             // Сохраняем настройки кастомизации игрока
-            await Database.SetCharacterSkinAsync(skinModel, characterId);
+            Database.SetCharacterSkinAsync(skinModel, characterId);
 
+            TriggerClientEvent("onPlayerFinishedCharacterCustomizing");
         }
         // 
         private async void OnPlayerRegistration([FromSource]Player player, string mail)
@@ -79,7 +80,6 @@ namespace Echo_ServerSide
             }
             else
             {
-                Debug.WriteLine("onPlayerStartRegistation!!!");
                 // Аккаунта с данным license идентефикатором нет. Открываем страницу регистрации (ввод mail)
                 TriggerClientEvent("onPlayerStartRegistation");
             }
@@ -88,6 +88,7 @@ namespace Echo_ServerSide
         {
 
         }
+        // Ивент вызывается при присоединении к серверу (до загрузки, в самом клиенте FiveM)
         private async void OnPlayerConnecting([FromSource]Player player, string playerName, dynamic setKickReason, dynamic deferrals)
         {
             deferrals.defer();

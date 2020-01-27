@@ -1,11 +1,23 @@
-function renderCreatorCef()
+function renderCreatorCef(render)
+  if render then
     SendNUIMessage({
         type = 'render'
     })
+  else 
+    SendNUIMessage({
+      type = 'unrender'
+  })
+  end
 end
-function focusCreatorCef()
+
+function focusCreatorCef(focus)
+  if focus then
     SetNuiFocus(true, true)
+  else
+    SetNuiFocus(false, false)
+  end
 end
+
 RegisterNUICallback('SendCharacterSettings', function(data, cb)
 
     TriggerEvent("onCharacterCreatorChangeSettings", data)

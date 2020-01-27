@@ -20,13 +20,31 @@ namespace Echo_ClientSide
             EventHandlers["onCharacterCreatorChangeSettings"] += new Action<IDictionary<string, object>>(OnCharacterCreatorChangeSettings);
             EventHandlers["changePlayerFreemode"] += new Action<IDictionary<string, object>>(OnPlayerChangeFreemodeGender);
             EventHandlers["onSavePlayerCharacter"] += new Action<IDictionary<string, object>>(OnSavePlayerCharacter);
+            EventHandlers["onPlayerFinishedCharacterCustomizing"] += new Action(OnPlayerFinishedCharacterCustomizing);
         }
+        private async void OnPlayerFinishedCharacterCustomizing()
+        {
+            await Delay(0);
+            Exports["cef_creator"].focusCreatorCef(false);
+            Exports["cef_creator"].renderCreatorCef(false);
+            /* SetEntityCoordsNoOffset(PlayerPedId(), -802.311f, 175.056f, 72.8446f, false, false, false); // Вроде бы в этом нет необходимости*/
+            /* NetworkResurrectLocalPlayer(-802.311f, 175.056f, 72.8446f, 180.3265f, true, false);*/
 
+            // Возвращаем контроль персонажа
+            FreezeEntityPosition(PlayerPedId(), false);
+            EnableAllControlActions(0);
+            Game.Player.CanControlCharacter = true;
+            RenderScriptCams(false, false, 0, true, true);
+            DisplayRadar(true);
+        }
+        // Ивент вызывается при сохранении персонажа
         private async void OnSavePlayerCharacter(IDictionary<string, object> data)
         {
             await Delay(0);
+            // На всякий пожарный еще раз обновляем внешний вид
             OnCharacterCreatorChangeSettings(data);
-            
+
+            // TODO: ВСЮ ЭТУ ХРЕНЬ НУЖНО БУДЕТ ПЕРЕСМОТРЕТЬ В БУДУЩЕМ
             data.TryGetValue("name", out var name);
             data.TryGetValue("surname", out var surname);
             data.TryGetValue("gender", out var gender);
@@ -118,7 +136,9 @@ namespace Echo_ClientSide
             string skin = JsonConvert.SerializeObject(skinModel);
             string characrer = JsonConvert.SerializeObject(characterModel);
             // Ивент сохранения скина и создания персонажа
+
             TriggerServerEvent("onPlayerSaveCharacterInformation", skin, characrer);
+
         }
 
 
@@ -128,7 +148,7 @@ namespace Echo_ClientSide
         {
             ChangePlayerFreemode(true);
             SetEntityHealth(PlayerPedId(), 200);
-            /*SetEntityCoordsNoOffset(PlayerPedId(), 152.3851f, -1000.384f, -99f, false, false, false); */ // Вроде бы в этом нет необходимости
+            /*SetEntityCoordsNoOffset(PlayerPedId(), 152.3851f, -1000.384f, -99f, false, false, false);  // Вроде бы в этом нет необходимости*/
 
             NetworkResurrectLocalPlayer(152.3851f, -1000.384f, -100f, 180.3265f, true, false);
 
@@ -137,6 +157,7 @@ namespace Echo_ClientSide
             SetCamRot(spawnedCamera, -20.0f, 0.0f, 0.0f, 1);
             RenderScriptCams(true, false, 0, true, true);
 
+            DisplayRadar(false);
             ClearPedTasksImmediately(PlayerPedId());
             SetEntityHealth(PlayerPedId(), 300);
             RemoveAllPedWeapons(PlayerPedId(), true);
@@ -151,15 +172,16 @@ namespace Echo_ClientSide
 
             FreezeEntityPosition(PlayerPedId(), true);
             ShutdownLoadingScreen();
+            DisableAllControlActions(0);
             Game.Player.CanControlCharacter = false;
 
             // фокус на странице кастомизации
-            Exports["cef_creator"].focusCreatorCef();
-            /*         Exports["cef_creator"].renderCreatorCef();*/
+            Exports["cef_creator"].focusCreatorCef(true);
+            Exports["cef_creator"].renderCreatorCef(true);
 
             await Delay(1000);
             DoScreenFadeIn(1000);
-            EnableAllControlActions(0);
+            DisableAllControlActions(0);
         }
         // Вызывается при любой смене параметров перса на кастомизации
         private async void OnCharacterCreatorChangeSettings(IDictionary<string, object> data) 
@@ -167,7 +189,7 @@ namespace Echo_ClientSide
             await Delay(0);
 
             // TODO: ТУТ НЕ ВСЕ НАСТРОЙКИ ПЕРСОНАЖА ИЛИ НЕКОТОРЫЕ ЗАДЕЙСТВОВАНЫ НЕ ПОЛНОСТЬЮ
-
+            // TODO: ВСЮ ЭТУ ХРЕНЬ НУЖНО БУДЕТ ПЕРЕСМОТРЕТЬ В БУДУЩЕМ
             data.TryGetValue("firstHeadShape", out var firstHeadShape);
             data.TryGetValue("secondHeadShape", out var secondHeadShape);
             data.TryGetValue("shapeMix", out var shapeMix);
