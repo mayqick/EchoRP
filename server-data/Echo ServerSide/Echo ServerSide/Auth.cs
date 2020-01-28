@@ -15,7 +15,7 @@ namespace Echo_ServerSide
         {
             EventHandlers["playerConnecting"] += new Action<Player, string, dynamic, dynamic>(OnPlayerConnecting);
             EventHandlers.Add("onPlayerSpawned", new Action<Player>(OnPlayerSpawned));
-            EventHandlers.Add("onPlayerRegistration", new Action<Player, string>(OnPlayerRegistration));
+            EventHandlers.Add("onPlayerRegistration", new Action<Player, string> (OnPlayerRegistration));
             EventHandlers.Add("onPlayerSaveCharacterInformation", new Action<Player, string, string>(OnPlayerSaveCharacterInformation));
             EventHandlers.Add("onPlayerConnected", new Action<Player>(OnPlayerConnected));
         }
@@ -50,13 +50,17 @@ namespace Echo_ServerSide
             if (await Database.CheckPlayerMailAsync(mail))
             {
                 // todo: license не совпадает, но введенный mail есть в базе
-                Mail.SendEmailAsync(mail, "Echo Role Play", "Echo Role Play - код подтверждения", $"Ваш код подтверждения входа в аккаунт: {code}");
+                // todo: send mail
+                /*Mail.SendEmailAsync(mail, "Echo Role Play", "Echo Role Play - код подтверждения", $"Ваш код подтверждения входа в аккаунт: {code}");*/
             }
             else
             {
-                TriggerClientEvent("setPlayerRegisterMailCode", code);
-                Mail.SendEmailAsync(mail, "Echo Role Play", "Echo Role Play - код подтверждения", $"Ваш код подтверждения регистрации аккаунта: {code}");
+
+                /*Mail.SendEmailAsync(mail, "Echo Role Play", "Echo Role Play - код подтверждения", $"Ваш код подтверждения регистрации аккаунта: {code}");*/
+                // todo: если код совпадает, то создаем аккаунт
                 Database.RegisterAccountAsync(player.Identifiers["license"], mail, player.EndPoint);
+                TriggerClientEvent("onPlayerCharacterCreating");
+                /*TriggerClientEvent("setPlayerRegisterMailCode", code);*/
             }
         }
         private async void OnPlayerConnected([FromSource]Player player)
@@ -67,6 +71,7 @@ namespace Echo_ServerSide
             {
 
                 int accountId = await Database.GetAccountIdByLicenseAsync(licenseIdentifier);
+                // Проверяем, есть ли у аккаунта персонажи. Если ни одного, то создаем сразу, если есть, то переходим к выбору
                 if (await Database.CheckPlayerCharactersAsync(accountId))
                 {
                     // todo: если у аккаунта есть персонажи, то открываем их выбор

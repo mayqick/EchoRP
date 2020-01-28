@@ -195,6 +195,9 @@ namespace Echo_ClientSide
             ShutdownLoadingScreen();
             DisableAllControlActions(0);
             Game.Player.CanControlCharacter = false;
+            // скрытие страницы ввода mail
+            Exports["cef_auth"].focusAuthCef(false);
+            Exports["cef_auth"].renderAuthCef(false);
 
             // фокус на странице кастомизации
             Exports["cef_creator"].focusCreatorCef(true);
@@ -296,10 +299,10 @@ namespace Echo_ClientSide
         {
             await Delay(0);
             // Включение курсора и фокус на окне регистрации
-            Exports["cef_auth"].focusAuthCef();
+            Exports["cef_auth"].focusAuthCef(true);
 
             // Показ окна регистрации
-            Exports["cef_auth"].renderAuthCef();
+            Exports["cef_auth"].renderAuthCef(true);
 
         }
         // Ивент для NUI Callback, который принимает значения пола из JSON и передает в метод

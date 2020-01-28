@@ -1,11 +1,23 @@
-function renderAuthCef()
-    SendNUIMessage({
-        type = "render"
+function renderAuthCef(render)
+    if render then
+      SendNUIMessage({
+          type = 'render'
+      })
+    else 
+      SendNUIMessage({
+        type = 'unrender'
     })
-end
-function focusAuthCef()
-    SetNuiFocus(true, true)
-end
+    end
+  end
+  
+  function focusAuthCef(focus)
+    if focus then
+      SetNuiFocus(true, true)
+    else
+      SetNuiFocus(false, false)
+    end
+  end
+  
 
 RegisterNUICallback('sendMail', function(data, cb)
 

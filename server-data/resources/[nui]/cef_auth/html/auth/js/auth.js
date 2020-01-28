@@ -26,15 +26,15 @@ var app = new Vue({
             if (data == 0){
                 document.body.style.display = "none";
             }
-            if (data == 1) {
+            else if (data == 1) {
                 this.show = 1;
                 this.bgColor = '#111520';
                 document.body.style.display = "block";
             }
-            else if (data == 2) {
-                this.show = 2;
+            // else if (data == 2) {
+            //     this.show = 2;
 
-            }
+            // }
         },
         mailTest(email){
             var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -50,7 +50,7 @@ var app = new Vue({
         },
         register(){
             if (this.mailTest(this.email)) {
-                this.show = 2;
+                // this.show = 2;
                 post('http://cef_auth/sendMail', JSON.stringify({
                     mail: this.email
                 })
@@ -79,6 +79,7 @@ window.addEventListener('message', (event) => {
     if (event.data.type === 'render') {
         app.renderType(1);
     }
+    else app.renderType(0);
 });
 window.post = (url, data) => {
     var request = new XMLHttpRequest();

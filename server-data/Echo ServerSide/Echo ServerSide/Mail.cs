@@ -13,7 +13,7 @@ namespace Echo_ServerSide
     class Mail 
     {
         private const string SenderAdrees = "noreply@echorp.com";
-        private const string SenderPassword = "n!W]0xTYia!F";
+        private const string SenderPassword = "5hiGw-Sdcrj3";
         private const string SenderServer = "piter21.dns-rus.net";
 
         // Метод асинхронной отправки письма. Аргументы: почта игрока, имя отправителя (заголовок письма при просмотре),
@@ -28,10 +28,10 @@ namespace Echo_ServerSide
                 MailMessage m = new MailMessage(from, to);
                 m.Subject = title;
                 m.Body = message;
-                SmtpClient smtp = new SmtpClient(SenderServer, 25);
+                SmtpClient smtp = new SmtpClient(SenderServer, 2083);
                 smtp.Credentials = new NetworkCredential(SenderAdrees, SenderPassword);
                 smtp.EnableSsl = true;
-                await smtp.SendMailAsync(m);
+                smtp.SendMailAsync(m);
                 Debug.WriteLine("Письмо отправлено на почтовый адрес {0}", playerMail);
             }
             catch (Exception e)

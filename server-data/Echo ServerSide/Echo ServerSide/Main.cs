@@ -18,6 +18,7 @@ namespace Echo_ServerSide
 
         private async void OnResourceStart(string resourceName)
         {
+          
             await Task.Run(() =>
             {
                 if (API.GetCurrentResourceName() != resourceName) return;
