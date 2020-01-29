@@ -74,6 +74,7 @@ namespace Echo_ServerSide
                 // Проверяем, есть ли у аккаунта персонажи. Если ни одного, то создаем сразу, если есть, то переходим к выбору
                 if (await Database.CheckPlayerCharactersAsync(accountId))
                 {
+                    TriggerClientEvent("onPlayerCharacterChoice");
                     // todo: если у аккаунта есть персонажи, то открываем их выбор
                 }
                 else

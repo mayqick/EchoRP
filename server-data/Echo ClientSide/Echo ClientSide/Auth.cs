@@ -23,10 +23,19 @@ namespace Echo_ClientSide
             EventHandlers["onPlayerFinishedCharacterCustomizing"] += new Action(OnPlayerFinishedCharacterCustomizing);
             EventHandlers["onUpdateCusomizationCamSettings"] += new Action<IDictionary<string, object>>(OnUpdateCusomizationCamSettings);
             EventHandlers["setPlayerRegisterMailCode"] += new Action<string>(SetPlayerRegisterMailCode);
+            EventHandlers["onPlayerCharacterChoice"] += new Action(OnPlayerCharacterChoice);
         }
         private int customizationCameraHandle;
+        private int choiceCharactersCameraHandle;
         private string registerCode;
-
+        private async void OnPlayerCharacterChoice()
+        {
+            await Delay(0);
+            choiceCharactersCameraHandle = CreateCam("DEFAULT_SCRIPTED_CAMERA", true);
+            SetCamCoord(choiceCharactersCameraHandle, -597.3826f, -387.6706f, 34.91725f);
+            SetCamRot(choiceCharactersCameraHandle, -20.0f, 0.0f, 0.0f, 1);
+            RenderScriptCams(true, false, 0, true, true);
+        }
         private async void SetPlayerRegisterMailCode(string code)
         {
             await Delay(0);
@@ -167,7 +176,7 @@ namespace Echo_ClientSide
 
         private async void OnPlayerCharacterCreating() // Отправка игрока на кастомизацю
         {
-            ChangePlayerFreemode(true);
+            ChangePlayerFreemodeModel(true);
             SetEntityHealth(PlayerPedId(), 200);
             /*SetEntityCoordsNoOffset(PlayerPedId(), 152.3851f, -1000.384f, -99f, false, false, false);  // Вроде бы в этом нет необходимости*/
 
@@ -195,6 +204,7 @@ namespace Echo_ClientSide
             ShutdownLoadingScreen();
             DisableAllControlActions(0);
             Game.Player.CanControlCharacter = false;
+
             // скрытие страницы ввода mail
             Exports["cef_auth"].focusAuthCef(false);
             Exports["cef_auth"].renderAuthCef(false);
@@ -310,10 +320,10 @@ namespace Echo_ClientSide
         {
             await Delay(0);
             data.TryGetValue("isMale", out var isMale);
-            ChangePlayerFreemode((bool)isMale);
+            ChangePlayerFreemodeModel((bool)isMale);
         }
         // Меняем пол freemode модели персонажа с ожиданием загрузки
-        private static async void ChangePlayerFreemode(bool isMale, bool firstJoin = false)
+        private static async void ChangePlayerFreemodeModel(bool isMale, bool firstJoin = false)
         {
             await Delay(0);
             uint model = isMale ? (uint)API.GetHashKey("mp_m_freemode_01") : (uint)API.GetHashKey("mp_f_freemode_01");
