@@ -6500,8 +6500,12 @@
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.FREEZE_ENTITY_POSITION">
             <summary>
-            No, this should be called SET_ENTITY_KINEMATIC. It does more than just "freeze" it's position.  
+            ```
+            No, this should be called SET_ENTITY_KINEMATIC. It does more than just "freeze" it's position.
             ^Rockstar Devs named it like that, Now cry about it.
+            ```
+            
+            Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using SET_ENTITY_COORDS.
             </summary>
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.GET_ALL_VEHICLES">
@@ -6522,6 +6526,11 @@
         <member name="F:CitizenFX.Core.Native.Hash.GET_CURRENT_RESOURCE_NAME">
             <summary>
             Returns the name of the currently executing resource.
+            </summary>
+        </member>
+        <member name="F:CitizenFX.Core.Native.Hash.GET_ENTITY_COORDS">
+            <summary>
+            Gets the current coordinates for a specified entity. This native is used server side when using OneSync. See &lt;a href="#_0x3FEF770D40960D5A" &gt;GET_ENTITY_COORDS&lt;/a&gt; for client side.
             </summary>
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.GET_ENTITY_HEALTH">
@@ -6710,9 +6719,18 @@
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.SET_ENTITY_COORDS">
             <summary>
-            p7 is always 1 in the scripts. Set to 1, an area around the destination coords for the moved entity is cleared from other entities.   
-            Often ends with 1, 0, 0, 1); in the scripts. It works.   
+            ```
+            p7 is always 1 in the scripts. Set to 1, an area around the destination coords for the moved entity is cleared from other entities.
+            Often ends with 1, 0, 0, 1); in the scripts. It works.
             Axis - Invert Axis Flags
+            ```
+            
+            Sets an entity's coordinates in world space.
+            </summary>
+        </member>
+        <member name="F:CitizenFX.Core.Native.Hash.SET_ENTITY_HEADING">
+            <summary>
+            Set the heading of an entity in degrees also known as "Yaw".
             </summary>
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.SET_ENTITY_ROTATION">
@@ -6817,9 +6835,18 @@
         </member>
         <member name="M:CitizenFX.Core.Native.API.FreezeEntityPosition(System.Int32,System.Boolean)">
             <summary>
+            ```
             No, this should be called SET_ENTITY_KINEMATIC. It does more than just "freeze" it's position.
             ^Rockstar Devs named it like that, Now cry about it.
+            ```
+            Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using SET_ENTITY_COORDS.
             </summary>
+            <param name="entity">
+            The entity to freeze/unfreeze.
+            </param>
+            <param name="toggle">
+            Freeze or unfreeze entity.
+            </param>
         </member>
         <member name="M:CitizenFX.Core.Native.API.GetAllVehicles">
             <summary>
@@ -6847,6 +6874,17 @@
             </summary>
             <returns>
             The name of the resource.
+            </returns>
+        </member>
+        <member name="M:CitizenFX.Core.Native.API.GetEntityCoords(System.Int32)">
+            <summary>
+            Gets the current coordinates for a specified entity. This native is used server side when using OneSync. See &lt;a href="#_0x3FEF770D40960D5A" &gt;GET_ENTITY_COORDS&lt;/a&gt; for client side.
+            </summary>
+            <param name="entity">
+            The entity to get the coordinates from.
+            </param>
+            <returns>
+            The current entity coordinates.
             </returns>
         </member>
         <member name="M:CitizenFX.Core.Native.API.GetEntityHealth(System.Int32)">
@@ -7147,10 +7185,48 @@
         </member>
         <member name="M:CitizenFX.Core.Native.API.SetEntityCoords(System.Int32,System.Single,System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
+            ```
             p7 is always 1 in the scripts. Set to 1, an area around the destination coords for the moved entity is cleared from other entities.
             Often ends with 1, 0, 0, 1); in the scripts. It works.
             Axis - Invert Axis Flags
+            ```
+            Sets an entity's coordinates in world space.
             </summary>
+            <param name="entity">
+            The entity to change coordinates for.
+            </param>
+            <param name="xPos">
+            The x coordinate.
+            </param>
+            <param name="yPos">
+            The y coordinate.
+            </param>
+            <param name="zPos">
+            The z coordinate.
+            </param>
+            <param name="xAxis">
+            Whether to invert x axis.
+            </param>
+            <param name="yAxis">
+            Whether to invert y axis.
+            </param>
+            <param name="zAxis">
+            Whether to invert z axis.
+            </param>
+            <param name="clearArea">
+            Whether to clear other entities in area around entity.
+            </param>
+        </member>
+        <member name="M:CitizenFX.Core.Native.API.SetEntityHeading(System.Int32,System.Single)">
+            <summary>
+            Set the heading of an entity in degrees also known as "Yaw".
+            </summary>
+            <param name="entity">
+            The entity to set the heading for.
+            </param>
+            <param name="heading">
+            The heading in degrees.
+            </param>
         </member>
         <member name="M:CitizenFX.Core.Native.API.SetEntityRotation(System.Int32,System.Single,System.Single,System.Single,System.Int32,System.Boolean)">
             <summary>
