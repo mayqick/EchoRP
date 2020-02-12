@@ -46,9 +46,8 @@ namespace Echo_ClientSide
         public static GamePhase currentPhase = GamePhase.WAITING;
         private bool firstTick = true; // Первый тик для проверки на присоединение.
 
-        private async void OnPlayerSpawned()
+        private void OnPlayerSpawned()
         {
-            await Delay(0);
             /*          Game.Player.CanControlCharacter = false;
                       Game.PlayerPed.IsVisible = false;
                       Game.PlayerPed.IsInvincible = true;
@@ -58,23 +57,15 @@ namespace Echo_ClientSide
 
 
             TriggerServerEvent("onPlayerSpawned");
-
         }
-        private async void OnResourceStop(string resourceName)
+        private void OnResourceStop(string resourceName)
         {
-            await Delay(0);
             if (API.GetCurrentResourceName() != resourceName) return;
             API.NetworkSessionKickPlayer(Game.Player.Handle);
         }
-        private async void OnResourceStart(string resourceName)
+        private void OnResourceStart(string resourceName)
         {
-            await Delay(0);
             if (API.GetCurrentResourceName() != resourceName) return;
-
-
-            Debug.WriteLine($"The resource {resourceName} has been started.");
-
- 
         }
         private async Task OnTick()
         {
@@ -86,12 +77,10 @@ namespace Echo_ClientSide
                 AddEventOnPlayerConnected();
             }
         }
-        private static async void AddEventOnPlayerConnected()
+        private static void AddEventOnPlayerConnected()
         {
-            await Delay(0);
             TriggerServerEvent("onPlayerConnected");
             TriggerEvent("onPlayerConnected");
-
         }
     }
 }

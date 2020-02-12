@@ -15,11 +15,21 @@ namespace Echo_ServerSide
         {
             ConnectionOpen();
         }
-        private static string connectionString = "Server=localhost; Database=echorp; Uid=root; Pwd=";
-        private static MySqlConnection connection = new MySqlConnection(connectionString);
+        private static readonly string connectionString = "Server=localhost; Database=echorp; Uid=root; Pwd=";
+        private static readonly MySqlConnection connection = new MySqlConnection(connectionString);
         private static async void ConnectionOpen()
         {
-            await connection.OpenAsync();
+            try
+            {
+                await connection.OpenAsync();
+            }
+            catch
+            {
+                await connection.CloseAsync();
+                await Delay(1000);
+                await connection.OpenAsync();
+                await Delay(1000);
+            }
         }
         #region playercheck
         public static async Task<bool> CheckRegistrationAsync(string license)
@@ -43,7 +53,9 @@ namespace Echo_ServerSide
                     {
                         return false;
                     }
+
                 }
+
 
             }
             catch (Exception ex)
@@ -129,7 +141,6 @@ namespace Echo_ServerSide
                     {
                         return reader.GetInt32(0);
                     }
-
                 }
             }
 
@@ -162,7 +173,6 @@ namespace Echo_ServerSide
         }
         public static async void SetCharacterSkinAsync(Models.SkinModel skin, int characterId)
         {
-            await Delay(0);
             try
             {
                 MySqlCommand command = connection.CreateCommand();
@@ -243,11 +253,13 @@ namespace Echo_ServerSide
                 Debug.WriteLine("[EXCEPTION SetCharacterSkin] " + ex.StackTrace);
             }
         }
+
         public static async Task<int> CreateCharacterAsync(Models.CharacterModel character, int accountId)
         {
-            int characterId = 0;
+
             try
             {
+
                 MySqlCommand command = connection.CreateCommand();
                 command.CommandText = "INSERT INTO character_list (characterName, isMale, accountId) VALUES (@characterName, @isMale, @accountId)";
                 command.Parameters.AddWithValue("@characterName", character.characterName);
@@ -256,8 +268,9 @@ namespace Echo_ServerSide
                 await command.ExecuteNonQueryAsync();
 
                 // Получаем ID созданного персонажа
-                characterId = (int)command.LastInsertedId;
+                int characterId = (int)command.LastInsertedId;
                 return characterId;
+
             }
             catch (Exception ex)
             {
@@ -266,7 +279,7 @@ namespace Echo_ServerSide
             }
 
             return -1;
-            
+
         }
     }
 

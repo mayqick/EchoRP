@@ -18,27 +18,34 @@ namespace Echo_ServerSide
 
         // Метод асинхронной отправки письма. Аргументы: почта игрока, имя отправителя (заголовок письма при просмотре),
         // заголовок письма и текст письма.
-        public static async Task SendEmailAsync(string playerMail, string senderName, string title, string message)
+        public static async void SendMail(string playerMail, string senderName, string title, string message)
         {
-
             try
             {
 
                 MailAddress from = new MailAddress(SENDER_ADRESS, senderName);
                 MailAddress to = new MailAddress(playerMail);
-                MailMessage m = new MailMessage(from, to);
-                m.Subject = title;
-                m.Body = message;
-                SmtpClient smtp = new SmtpClient(SENDER_SERVER, 465);
-                smtp.Credentials = new NetworkCredential(SENDER_ADRESS, SENDER_PASSWORD);
-                smtp.EnableSsl = true;
-                smtp.SendMailAsync(m);
+                MailMessage m = new MailMessage(from, to)
+                {
+                    Subject = title,
+                    Body = message
+                };
+                SmtpClient smtp = new SmtpClient(SENDER_SERVER, 465)
+                {
+                    Credentials = new NetworkCredential(SENDER_ADRESS, SENDER_PASSWORD),
+                    EnableSsl = true
+                };
+                await smtp.SendMailAsync(m);
                 Debug.WriteLine("Send Mail to {0}", playerMail);
             }
             catch (Exception e)
             {
                 Debug.WriteLine(e.Message);
             }
+        }
+        public static async void SendEmailAsync(string playerMail, string senderName, string title, string message)
+        {
+            await Task.Run(() => SendMail(playerMail, senderName, title, message));
         }
     }
 }

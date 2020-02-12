@@ -74,7 +74,8 @@ var app = new Vue({
     ageingOpacity: 10,
     currentSkinColor: 0,
     render: false,
-    heightModel: 0
+    heightModel: 0,
+    created: false
   },
   methods: {
 
@@ -132,46 +133,50 @@ var app = new Vue({
       } else {
         this.surnameError = false;
       }
-      post('http://cef_creator/SaveCharacter', JSON.stringify({
-        name: this.name,
-        surname: this.surname,
-        gender: this.gender,
-        firstHeadShape: this.firstHeadShape,
-        secondHeadShape: this.secondHeadShape,
-        shapeMix: this.headMix,
-        blemishesModel: this.blemishesModel,
-        ageingModel: this.ageingModel,
-        ageingOpacity: this.ageingOpacity,
-        frecklesModel: this.frecklesModel,
-        currentEyeColor: this.currentEyeColor,
-        currentHairColor: this.currentHairColor,
-        currentBeardColor: this.currentBeardColor,
-        currentSkinColor: this.currentSkinColor,
-        hairStyle: this.hairStyle,
-        beardModel: this.beardModel,
-        beardOpacity: this.beardOpacity,
-        browModel: this.browModel,
-        browOpacity: this.browOpacity,
-        browHeight: this.browHeight,
-        browWidth: this.browWidth,
-        noseWidth: this.noseWidth,
-        noseHeight: this.noseHeight,
-        noseLength: this.noseLength,
-        noseTip: this.noseTip,
-        noseBridge: this.noseBridge,
-        noseShift: this.noseShift,
-        lips: this.lips,
-        cheekboneHeight: this.cheekboneHeight,
-        cheekboneWidth: this.cheekboneWidth,
-        jawHeight: this.jawHeight,
-        jawWidth: this.jawWidth,
-        chinLength: this.chinLength,
-        chinPosition: this.chinPosition,
-        chinWidth: this.chinWidth,
-        chinShape: this.chinShape,
-        neckWidth: this.neckWidth
-      })
-      );
+      if (this.created == false) {
+        this.created = true;
+        post('http://cef_creator/SaveCharacter', JSON.stringify({
+          name: this.name,
+          surname: this.surname,
+          gender: this.gender,
+          firstHeadShape: this.firstHeadShape,
+          secondHeadShape: this.secondHeadShape,
+          shapeMix: this.headMix,
+          blemishesModel: this.blemishesModel,
+          ageingModel: this.ageingModel,
+          ageingOpacity: this.ageingOpacity,
+          frecklesModel: this.frecklesModel,
+          currentEyeColor: this.currentEyeColor,
+          currentHairColor: this.currentHairColor,
+          currentBeardColor: this.currentBeardColor,
+          currentSkinColor: this.currentSkinColor,
+          hairStyle: this.hairStyle,
+          beardModel: this.beardModel,
+          beardOpacity: this.beardOpacity,
+          browModel: this.browModel,
+          browOpacity: this.browOpacity,
+          browHeight: this.browHeight,
+          browWidth: this.browWidth,
+          noseWidth: this.noseWidth,
+          noseHeight: this.noseHeight,
+          noseLength: this.noseLength,
+          noseTip: this.noseTip,
+          noseBridge: this.noseBridge,
+          noseShift: this.noseShift,
+          lips: this.lips,
+          cheekboneHeight: this.cheekboneHeight,
+          cheekboneWidth: this.cheekboneWidth,
+          jawHeight: this.jawHeight,
+          jawWidth: this.jawWidth,
+          chinLength: this.chinLength,
+          chinPosition: this.chinPosition,
+          chinWidth: this.chinWidth,
+          chinShape: this.chinShape,
+          neckWidth: this.neckWidth
+        })
+        );
+      }
+
     },
     updateHeight() {
       post('http://cef_creator/UpdateCustomizationCamSettings', JSON.stringify({

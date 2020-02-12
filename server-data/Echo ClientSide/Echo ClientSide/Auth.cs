@@ -24,17 +24,38 @@ namespace Echo_ClientSide
             EventHandlers["onUpdateCusomizationCamSettings"] += new Action<IDictionary<string, object>>(OnUpdateCusomizationCamSettings);
             EventHandlers["setPlayerRegisterMailCode"] += new Action<string>(SetPlayerRegisterMailCode);
             EventHandlers["onPlayerCharacterChoice"] += new Action(OnPlayerCharacterChoice);
+            EventHandlers["onPlayerConnected"] += new Action(OnPlayerConnected);
         }
         private int customizationCameraHandle;
         private int choiceCharactersCameraHandle;
         private string registerCode;
+        Ped[] pedChoice = new Ped[3]; // Педы на выборе персонажей аккаунта
         private async void OnPlayerCharacterChoice()
         {
-            await Delay(0);
+            ShutdownLoadingScreen();
+            DisableAllControlActions(0);
+            SetEntityVisible(Game.PlayerPed.Handle, false, false);
             choiceCharactersCameraHandle = CreateCam("DEFAULT_SCRIPTED_CAMERA", true);
-            SetCamCoord(choiceCharactersCameraHandle, -597.3826f, -387.6706f, 34.91725f);
-            SetCamRot(choiceCharactersCameraHandle, -20.0f, 0.0f, 0.0f, 1);
+           
+            DisplayRadar(false);
+            
+            SetCamCoord(choiceCharactersCameraHandle, 435.1f, -231.39f, 56.65f);   // X:-599,9314 Y:-385,6821 Z:35,01696                                                                
+            SetCamRot(choiceCharactersCameraHandle, -20.0f, 0.0f, 140.0f, 1);
+
+            uint[] models = new uint[2] { (uint)API.GetHashKey("mp_m_freemode_01"), (uint)API.GetHashKey("mp_f_freemode_01") };
+            RequestModel(models[0]);
+            RequestModel(models[1]);
+            while (!HasModelLoaded(models[0]) || !HasModelLoaded(models[1])) await Delay(0);
+
+           
+            pedChoice[0] = await World.CreatePed(PedHash.FreemodeMale01, new Vector3(433.2831f, -234.5817f, 55.97512f), -20.06292f);
+            pedChoice[1] = await World.CreatePed(PedHash.FreemodeMale01, new Vector3(434.3434f, -236.0498f, 55.97396f), -21.74893f);
+            pedChoice[2] = await World.CreatePed(PedHash.FreemodeMale01, new Vector3(437.5232f, -236.8879f, 56.03941f), -109.8001f);
+            for (int i = 0; i < 3; i++) FreezeEntityPosition(pedChoice[i].Handle, true);
+            
             RenderScriptCams(true, false, 0, true, true);
+            Game.PlayerPed.Position = new Vector3(433.2831f, -234.5817f, 55.97512f);
+            Game.Player.CanControlCharacter = false;
         }
         private async void SetPlayerRegisterMailCode(string code)
         {
@@ -115,52 +136,56 @@ namespace Echo_ClientSide
             data.TryGetValue("chinShape", out var chinShape);
             data.TryGetValue("neckWidth", out var neckWidth);
 
-            Models.SkinModel skinModel = new Models.SkinModel();
-            Models.CharacterModel characterModel = new Models.CharacterModel();
+            
+            Models.CharacterModel characterModel = new Models.CharacterModel
+            {
+                characterName = Convert.ToString(name) + "_" + Convert.ToString(surname),
+                isMale = Convert.ToString(gender) == "male" ? true : false
+            };
 
-            characterModel.characterName = Convert.ToString(name) + "_" + Convert.ToString(surname);
-            characterModel.isMale = Convert.ToString(gender) == "male" ? true : false;
+            Models.SkinModel skinModel = new Models.SkinModel
+            {
+                firstHeadShape = Convert.ToInt16(firstHeadShape),
+                secondHeadShape = Convert.ToInt16(secondHeadShape),
 
-            skinModel.firstHeadShape = Convert.ToInt16(firstHeadShape);
-            skinModel.secondHeadShape = Convert.ToInt16(secondHeadShape);
+                headMix = Convert.ToSingle(shapeMix),
+                blemishesModel = Convert.ToInt16(blemishesModel),
+                ageingModel = Convert.ToInt16(ageingModel),
+                ageingOpacity = Convert.ToInt16(ageingOpacity),
+                frecklesModel = Convert.ToInt16(frecklesModel),
+                eyesColor = Convert.ToInt16(currentEyeColor),
+                firstSkinTone = Convert.ToInt16(currentSkinColor),
+                secondSkinTone = Convert.ToInt16(currentSkinColor),
+                beardColor = Convert.ToInt16(currentBeardColor),
+                firstHairColor = Convert.ToInt16(currentHairColor),
+                secondHairColor = Convert.ToInt16(currentHairColor),
+                hairModel = Convert.ToInt16(hairStyle),
+                beardModel = Convert.ToInt16(beardModel),
+                beardOpacity = Convert.ToInt16(beardOpacity),
 
-            skinModel.headMix = Convert.ToSingle(shapeMix);
-            skinModel.blemishesModel = Convert.ToInt16(blemishesModel);
-            skinModel.ageingModel = Convert.ToInt16(ageingModel);
-            skinModel.ageingOpacity = Convert.ToInt16(ageingOpacity);
-            skinModel.frecklesModel = Convert.ToInt16(frecklesModel);
-            skinModel.eyesColor = Convert.ToInt16(currentEyeColor);
-            skinModel.firstSkinTone = Convert.ToInt16(currentSkinColor);
-            skinModel.secondSkinTone = Convert.ToInt16(currentSkinColor);
-            skinModel.beardColor = Convert.ToInt16(currentBeardColor);
-            skinModel.firstHairColor = Convert.ToInt16(currentHairColor);
-            skinModel.secondHairColor = Convert.ToInt16(currentHairColor);
-            skinModel.hairModel = Convert.ToInt16(hairStyle);
-            skinModel.beardModel = Convert.ToInt16(beardModel);
-            skinModel.beardOpacity = Convert.ToInt16(beardOpacity);
+                browHeight = Convert.ToSingle(browHeight),
+                browWidth = Convert.ToSingle(browWidth),
 
-            skinModel.browHeight = Convert.ToSingle(browHeight);
-            skinModel.browWidth = Convert.ToSingle(browWidth);
+                eyebrowsModel = Convert.ToInt16(browModel),
+                eyebrowsOpacity = Convert.ToInt16(browOpacity),
 
-            skinModel.eyebrowsModel = Convert.ToInt16(browModel);
-            skinModel.eyebrowsOpacity = Convert.ToInt16(browOpacity);
+                noseBridge = Convert.ToSingle(noseBridge),
+                noseHeight = Convert.ToSingle(noseHeight),
+                noseLength = Convert.ToSingle(noseLength),
+                noseShift = Convert.ToSingle(noseShift),
+                noseWidth = Convert.ToSingle(noseWidth),
+                noseTip = Convert.ToSingle(noseTip),
 
-            skinModel.noseBridge = Convert.ToSingle(noseBridge);
-            skinModel.noseHeight = Convert.ToSingle(noseHeight);
-            skinModel.noseLength = Convert.ToSingle(noseLength);
-            skinModel.noseShift = Convert.ToSingle(noseShift);
-            skinModel.noseWidth = Convert.ToSingle(noseWidth);
-            skinModel.noseTip = Convert.ToSingle(noseTip);
-
-            skinModel.lips = Convert.ToSingle(lips);
-            skinModel.cheekboneHeight = Convert.ToSingle(cheekboneHeight);
-            skinModel.cheekboneWidth = Convert.ToSingle(cheekboneWidth);
-            skinModel.jawHeight = Convert.ToSingle(jawHeight);
-            skinModel.jawWidth = Convert.ToSingle(jawWidth);
-            skinModel.chinPosition = Convert.ToSingle(chinPosition);
-            skinModel.chinLength = Convert.ToSingle(chinLength);
-            skinModel.chinShape = Convert.ToSingle(chinShape);
-            skinModel.neckWidth = Convert.ToSingle(neckWidth);
+                lips = Convert.ToSingle(lips),
+                cheekboneHeight = Convert.ToSingle(cheekboneHeight),
+                cheekboneWidth = Convert.ToSingle(cheekboneWidth),
+                jawHeight = Convert.ToSingle(jawHeight),
+                jawWidth = Convert.ToSingle(jawWidth),
+                chinPosition = Convert.ToSingle(chinPosition),
+                chinLength = Convert.ToSingle(chinLength),
+                chinShape = Convert.ToSingle(chinShape),
+                neckWidth = Convert.ToSingle(neckWidth)
+            };
 
             // преобразуем в JSON наши данные чтобы потом на стороне сервера преобразовать их к классовым типам. Гениально 
             string skin = JsonConvert.SerializeObject(skinModel);
@@ -170,11 +195,8 @@ namespace Echo_ClientSide
             TriggerServerEvent("onPlayerSaveCharacterInformation", skin, characrer);
 
         }
-
-
-
-
-        private async void OnPlayerCharacterCreating() // Отправка игрока на кастомизацю
+        // Отправка игрока на кастомизацю
+        private async void OnPlayerCharacterCreating() 
         {
             ChangePlayerFreemodeModel(true);
             SetEntityHealth(PlayerPedId(), 200);
@@ -202,7 +224,7 @@ namespace Echo_ClientSide
 
             FreezeEntityPosition(PlayerPedId(), true);
             ShutdownLoadingScreen();
-            DisableAllControlActions(0);
+     
             Game.Player.CanControlCharacter = false;
 
             // скрытие страницы ввода mail
@@ -340,6 +362,26 @@ namespace Echo_ClientSide
                 // Делаем проверку ибо при отправке на кастомизацю мы ужесбрасываем компоненты педа
                 if (firstJoin) SetPedDefaultComponentVariation(API.PlayerPedId()); 
                 SetPedHeadBlendData(Game.PlayerPed.Handle, 0, 0, 0, 0, 0, 0, 0.5f, 0.5f, 0f, false);
+            }
+        }
+        private static void OnPlayerConnected()
+        {
+            StopVisiblePlayerToNetwork(true);
+        }
+        private static void StopVisiblePlayerToNetwork(bool toggle)
+        {
+            if (toggle)
+            {
+                NetworkSetEntityVisibleToNetwork(GetPlayerPed(-1), false);
+                NetworkSetVoiceActive(false);   
+                SetEntityCollision(GetPlayerPed(-1), false, false);
+
+            }
+            else
+            {
+                NetworkSetEntityVisibleToNetwork(GetPlayerPed(-1), true);
+                NetworkSetVoiceActive(true);
+                SetEntityCollision(GetPlayerPed(-1), true, true);
             }
         }
     }

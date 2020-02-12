@@ -15,7 +15,7 @@ namespace Echo_ServerSide
         {
             EventHandlers["playerConnecting"] += new Action<Player, string, dynamic, dynamic>(OnPlayerConnecting);
             EventHandlers.Add("onPlayerSpawned", new Action<Player>(OnPlayerSpawned));
-            EventHandlers.Add("onPlayerRegistration", new Action<Player, string> (OnPlayerRegistration));
+            EventHandlers.Add("onPlayerRegistration", new Action<Player, string>(OnPlayerRegistration));
             EventHandlers.Add("onPlayerSaveCharacterInformation", new Action<Player, string, string>(OnPlayerSaveCharacterInformation));
             EventHandlers.Add("onPlayerConnected", new Action<Player>(OnPlayerConnected));
         }
@@ -23,27 +23,26 @@ namespace Echo_ServerSide
         // Получаем данные кастомизации, сохраняем скин и создаем нового персонада
         private async void OnPlayerSaveCharacterInformation([FromSource]Player player, string skin, string character)
         {
+
             // Преобразуем JSON к типам. А чо, звучит хайпово
             var skinModel = JsonConvert.DeserializeObject<Models.SkinModel>(skin);
             var characterModel = JsonConvert.DeserializeObject<Models.CharacterModel>(character);
 
             // получаем ИД аккаунта в БД чтобы создать персонажа с привязкой по этому ИД.
-            int accountId = await Database.GetAccountIdByLicenseAsync(player.Identifiers["license"]);
-
-
+            var accountId = await Database.GetAccountIdByLicenseAsync(player.Identifiers["license"]);
+   
             // Создаем персонажа и получаем его ИД
-            int characterId = await Database.CreateCharacterAsync(characterModel, accountId);
+            var characterId = await Database.CreateCharacterAsync(characterModel, accountId);
 
             // Сохраняем настройки кастомизации игрока
             Database.SetCharacterSkinAsync(skinModel, characterId);
 
-            TriggerClientEvent("onPlayerFinishedCharacterCustomizing");
+            TriggerClientEvent(player, "onPlayerFinishedCharacterCustomizing");
         }
         // 
-        private async void OnPlayerRegistration([FromSource]Player player, string mail)
+        private static async void OnPlayerRegistration([FromSource]Player player, string mail)
         {
-            await Delay(0);
-     
+
             Random random = new Random();
             string code = random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString() + random.Next(10).ToString();
             Debug.WriteLine(mail);
@@ -59,13 +58,14 @@ namespace Echo_ServerSide
                 /*Mail.SendEmailAsync(mail, "Echo Role Play", "Echo Role Play - код подтверждения", $"Ваш код подтверждения регистрации аккаунта: {code}");*/
                 // todo: если код совпадает, то создаем аккаунт
                 Database.RegisterAccountAsync(player.Identifiers["license"], mail, player.EndPoint);
-                TriggerClientEvent("onPlayerCharacterCreating");
+                TriggerClientEvent(player, "onPlayerCharacterCreating");
                 /*TriggerClientEvent("setPlayerRegisterMailCode", code);*/
             }
+
         }
         private async void OnPlayerConnected([FromSource]Player player)
         {
-            Debug.WriteLine("Player connected!");
+
             var licenseIdentifier = player.Identifiers["license"];
             if (await Database.CheckRegistrationAsync(licenseIdentifier))
             {
@@ -74,13 +74,14 @@ namespace Echo_ServerSide
                 // Проверяем, есть ли у аккаунта персонажи. Если ни одного, то создаем сразу, если есть, то переходим к выбору
                 if (await Database.CheckPlayerCharactersAsync(accountId))
                 {
-                    TriggerClientEvent("onPlayerCharacterChoice");
-                    // todo: если у аккаунта есть персонажи, то открываем их выбор
+                    TriggerClientEvent(player, "onPlayerCharacterChoice");
+                    // если у аккаунта есть персонажи, то открываем их выбор
                 }
                 else
                 {
-                    TriggerClientEvent("onPlayerCharacterCreating");
-                    // todo: у аккаунта нет ни одного персонажа. Открываем окно создания персонажа.
+
+                    TriggerClientEvent(player, "onPlayerCharacterCreating");
+                    // у аккаунта нет ни одного персонажа. Открываем окно создания персонажа.
                 }
 
 
@@ -88,7 +89,7 @@ namespace Echo_ServerSide
             else
             {
                 // Аккаунта с данным license идентефикатором нет. Открываем страницу регистрации (ввод mail)
-                TriggerClientEvent("onPlayerStartRegistation");
+                TriggerClientEvent(player, "onPlayerStartRegistation");
             }
         }
         private async void OnPlayerSpawned([FromSource]Player player)
@@ -96,7 +97,7 @@ namespace Echo_ServerSide
 
         }
         // Ивент вызывается при присоединении к серверу (до загрузки, в самом клиенте FiveM)
-        private async void OnPlayerConnecting([FromSource]Player player, string playerName, dynamic setKickReason, dynamic deferrals)
+        private static async void OnPlayerConnecting([FromSource]Player player, string playerName, dynamic setKickReason, dynamic deferrals)
         {
             deferrals.defer();
 

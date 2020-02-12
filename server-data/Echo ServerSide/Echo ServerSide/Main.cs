@@ -16,15 +16,10 @@ namespace Echo_ServerSide
         }
 
 
-        private async void OnResourceStart(string resourceName)
+        private void OnResourceStart(string resourceName)
         {
-            
-            await Task.Run(() =>
-            {
-                if (API.GetCurrentResourceName() != resourceName) return;
-                Mail.SendEmailAsync("iamoniel@yandex.ru", "EchoRP", "Test", "test message");
-                Debug.WriteLine($"The resource {resourceName} has been started.");
-            });
+            if (API.GetCurrentResourceName() != resourceName) return;
+            Debug.WriteLine($"The resource {resourceName} has been started.");
 
         }
 
