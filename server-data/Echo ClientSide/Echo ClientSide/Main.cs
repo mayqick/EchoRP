@@ -32,15 +32,7 @@ namespace Echo_ClientSide
                 });
             }), false);
 
-            RegisterCommand("setcampos", new Action<int>((source) =>
-            {
-
-                TriggerEvent("chat:addMessage", new
-                {
-                    color = new[] { 255, 0, 0 },
-                    args = new[] { "[Координаты]", $"{GetEntityCoords(GetPlayerPed(-1), true)} {GetEntityHeading(GetPlayerPed(-1))}" } //152.4227 -1001.112 -99
-                });
-            }), false);
+           
         }
         public enum GamePhase { WAITING, READY, STARTING, STARTED, RESET, DEAD };
         public static GamePhase currentPhase = GamePhase.WAITING;
@@ -76,6 +68,11 @@ namespace Echo_ClientSide
                 firstTick = false;
                 AddEventOnPlayerConnected();
             }
+            BeginTextCommandDisplayHelp("STRING");
+            AddTextComponentString(GetEntityCoords(GetPlayerPed(-1), true).ToString());
+            AddTextComponentString2(GetEntityHeading(GetPlayerPed(-1)).ToString());
+            DisplayHelpTextFromStringLabel(0, false, true, -1);
+
         }
         private static void AddEventOnPlayerConnected()
         {

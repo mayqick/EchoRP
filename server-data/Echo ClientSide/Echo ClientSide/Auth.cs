@@ -25,37 +25,76 @@ namespace Echo_ClientSide
             EventHandlers["setPlayerRegisterMailCode"] += new Action<string>(SetPlayerRegisterMailCode);
             EventHandlers["onPlayerCharacterChoice"] += new Action(OnPlayerCharacterChoice);
             EventHandlers["onPlayerConnected"] += new Action(OnPlayerConnected);
+            RegisterCommand("changepos", new Action<int, List<object>>((source, args) =>
+            {
+                int arg = Convert.ToInt32(args[0]);
+                switch (arg)
+                {
+                    case 1:
+                        SetCamCoord(choiceCharactersCameraHandle, 435.1f + 3.7f, -231.39f - 5.7f, 56.65f);
+                        SetCamRot(choiceCharactersCameraHandle, -20.0f + 10f, 0.0f, 180.0f - 110f, 1);
+                        break;
+                    case 2:
+                        SetCamCoord(choiceCharactersCameraHandle, 435.1f - 0.38f, -231.39f - 3.5f, 56.65f);
+                        SetCamRot(choiceCharactersCameraHandle, -20.0f + 10f, 0.0f, 180.0f - 20f, 1);
+                        break;
+                    case 3:
+                        SetCamCoord(choiceCharactersCameraHandle, 435.1f -1.58f, -231.39f -2.5f, 56.65f - 0.1f);
+                        SetCamRot(choiceCharactersCameraHandle, -20.0f + 10f, 0.0f, 180.0f - 20f, 1);
+                        break;
+                }
+            }), false);
+            RegisterCommand("setcampos", new Action<int, List<object>>((source, args) =>
+            {
+                // first: 3.7 -5.7 0
+                // second: -0.38 -3.5 0
+                // third: -1.58 -2.5 -0.1
+                SetCamCoord(choiceCharactersCameraHandle, 435.1f + Convert.ToSingle(args[0]), -231.39f + Convert.ToSingle(args[1]), 56.65f + Convert.ToSingle(args[2]));
+            }), false);
+            RegisterCommand("setcamrot", new Action<int, List<object>>((source, args) =>
+            {
+                // first: 10 0 -110
+                // second: 10 0 -20
+                // third: 10 0 -20
+                SetCamRot(choiceCharactersCameraHandle, -20.0f + Convert.ToSingle(args[0]), 0.0f + Convert.ToSingle(args[1]), 180.0f + Convert.ToSingle(args[2]), 1);
+            }), false);
         }
         private int customizationCameraHandle;
         private int choiceCharactersCameraHandle;
         private string registerCode;
         Ped[] pedChoice = new Ped[3]; // Педы на выборе персонажей аккаунта
+
         private async void OnPlayerCharacterChoice()
         {
             ShutdownLoadingScreen();
             DisableAllControlActions(0);
-            SetEntityVisible(Game.PlayerPed.Handle, false, false);
-            choiceCharactersCameraHandle = CreateCam("DEFAULT_SCRIPTED_CAMERA", true);
-           
             DisplayRadar(false);
-            
+            SetEntityVisible(Game.PlayerPed.Handle, false, false);
+
+            choiceCharactersCameraHandle = CreateCam("DEFAULT_SCRIPTED_CAMERA", true);
+
             SetCamCoord(choiceCharactersCameraHandle, 435.1f, -231.39f, 56.65f);   // X:-599,9314 Y:-385,6821 Z:35,01696                                                                
-            SetCamRot(choiceCharactersCameraHandle, -20.0f, 0.0f, 140.0f, 1);
+            SetCamRot(choiceCharactersCameraHandle, -20.0f, 0.0f, 180.0f, 1);
+
+            RenderScriptCams(true, true, 1, true, true);
 
             uint[] models = new uint[2] { (uint)API.GetHashKey("mp_m_freemode_01"), (uint)API.GetHashKey("mp_f_freemode_01") };
+
             RequestModel(models[0]);
             RequestModel(models[1]);
-            while (!HasModelLoaded(models[0]) || !HasModelLoaded(models[1])) await Delay(0);
 
+            while (!HasModelLoaded(models[0]) || !HasModelLoaded(models[1])) await Delay(0);
+            
            
             pedChoice[0] = await World.CreatePed(PedHash.FreemodeMale01, new Vector3(433.2831f, -234.5817f, 55.97512f), -20.06292f);
             pedChoice[1] = await World.CreatePed(PedHash.FreemodeMale01, new Vector3(434.3434f, -236.0498f, 55.97396f), -21.74893f);
             pedChoice[2] = await World.CreatePed(PedHash.FreemodeMale01, new Vector3(437.5232f, -236.8879f, 56.03941f), -109.8001f);
-            for (int i = 0; i < 3; i++) FreezeEntityPosition(pedChoice[i].Handle, true);
             
-            RenderScriptCams(true, false, 0, true, true);
+            
             Game.PlayerPed.Position = new Vector3(433.2831f, -234.5817f, 55.97512f);
-            Game.Player.CanControlCharacter = false;
+            Game.Player.CanControlCharacter = true;
+            
+            TaskPlayAnim(pedChoice[1].Handle, "base", "amb@world_human_aa_smoke@male@base", 8.0f, 8.0f, -1, 1, 0, false, false, true);
         }
         private async void SetPlayerRegisterMailCode(string code)
         {
